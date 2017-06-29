@@ -1,0 +1,1450 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/page/3/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Zoeken"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-e7-a5-9d-e5-90-9b-e5-ae-89-e5-a5-bd" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/11/21/e7-a5-9d-e5-90-9b-e5-ae-89-e5-a5-bd/" class="article-date">
+  <time datetime="2016-11-21T11:44:30.000Z" itemprop="datePublished">2016-11-21</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Life/">Life</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/11/21/e7-a5-9d-e5-90-9b-e5-ae-89-e5-a5-bd/">祝君安好</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>如果再见不能红着眼，是否还能红着脸。<br>再见，或许再也不见。<br>我希望你三十岁没嫁，我也不希望你三十岁没嫁。<br>故事总有结局，天涯各地，唯望君安。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/11/21/e7-a5-9d-e5-90-9b-e5-ae-89-e5-a5-bd/" data-id="cj4ii2sq8001r6z74sa77w63x" class="article-share-link">Delen</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-leetcode-e9-a2-98-e7-9b-ae-ugly-number" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/10/31/leetcode-e9-a2-98-e7-9b-ae-ugly-number/" class="article-date">
+  <time datetime="2016-10-31T15:16:02.000Z" itemprop="datePublished">2016-10-31</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Study/">Study</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/10/31/leetcode-e9-a2-98-e7-9b-ae-ugly-number/">LeetCode题目——ugly number</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>写一个函数判断一个数是不是“丑陋的数字”，丑陋的数字是约数只有2，3，5的数字，比如6，8是丑陋的数字，14就不是，因为它还有约数7。<br>用 javascript 写如下：</p>
+<pre><code>var isUgly = function(num) {
+    if(num &amp;lt;= 0) return false;
+    if(num === 1 || num === 2 || num === 3 || num===5) return true;
+    if(num%2 === 0){
+        return isUgly(num/2);
+    }else if(num%3 === 0){
+        return isUgly(num/3);
+    }else if(num%5 === 0){
+        return isUgly(num/5);
+    }else return false;
+};
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/10/31/leetcode-e9-a2-98-e7-9b-ae-ugly-number/" data-id="cj4ii2sqy002p6z74jdo0btru" class="article-share-link">Delen</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-e4-b8-89-e8-a1-8c-e8-af-97" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/10/29/e4-b8-89-e8-a1-8c-e8-af-97/" class="article-date">
+  <time datetime="2016-10-29T13:38:01.000Z" itemprop="datePublished">2016-10-29</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Life/">Life</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/10/29/e4-b8-89-e8-a1-8c-e8-af-97/">三行诗</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>最近重庆交通大学在搞一个三行诗的活动，之前网上也见好多人写过，还挺火。这次也想玩玩，就随便写了一些，有的被朋友拿去投稿了（因为我不是交大的，所以不能参加），其实写的很烂，不过好歹是原创，就贴在下面了。</p>
+<p>一共写了5篇：</p>
+<blockquote>
+<p>大学的铅华已过去<br>  交大的传承却永存我们内心<br>  让这个世界绿树常有，鸟语花香</p>
+<p>云影掠过<br>  常常<br>  我还是只是一只孤燕！！</p>
+<p>踏上事业之舟，划动奉献之桨<br>  渡向生命的最远方<br>  再见，交大！</p>
+<p>大学四年，时光荏苒<br>  也许就在这时候<br>  有人在努力，有人在睡觉，当然也有人在刷怪</p>
+<p>总是在不知不觉之中才发现家中的爸妈，头上多了些许白发<br>  多想时间可以放慢脚步，或许我还可以有机会<br>  闲坐在紫藤萝下，听村里的老爷爷讲完他过去的故事</p>
+</blockquote>
+<p>大家随便看看，如有引用还请注明出处。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/10/29/e4-b8-89-e8-a1-8c-e8-af-97/" data-id="cj4ii2son00096z74lo4f9b1m" class="article-share-link">Delen</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-e7-94-a8canvas-e7-94-bb-e5-b8-83-e7-94-bb-e4-b8-80-e9-9d-a2-e4-ba-94-e6-98-9f-e7-ba-a2-e6-97-97" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/10/25/e7-94-a8canvas-e7-94-bb-e5-b8-83-e7-94-bb-e4-b8-80-e9-9d-a2-e4-ba-94-e6-98-9f-e7-ba-a2-e6-97-97/" class="article-date">
+  <time datetime="2016-10-25T04:00:05.000Z" itemprop="datePublished">2016-10-25</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Study/">Study</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/10/25/e7-94-a8canvas-e7-94-bb-e5-b8-83-e7-94-bb-e4-b8-80-e9-9d-a2-e4-ba-94-e6-98-9f-e7-ba-a2-e6-97-97/">用canvas画布画一面五星红旗</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>最近在看canvas画布，其中有一些画直线和图形的方法，就正好试一下用画布来画一个五星红旗吧。<br>在html代码这一块就只需要写一个canvas标签再把需要的js代码文件引入即可，因为这很简单，js这边也不需要写太多，就当是学习过后的练习好了。<br>其中html代码如下：</p>
+<pre><code>&amp;lt;!DOCTYPE html&amp;gt;
+&amp;lt;html lang=&quot;en&quot;&amp;gt;
+&amp;lt;head&amp;gt;
+    &amp;lt;meta charset=&quot;UTF-8&quot;&amp;gt;
+    &amp;lt;title&amp;gt;star&amp;lt;/title&amp;gt;
+&amp;lt;/head&amp;gt;
+&amp;lt;body&amp;gt;
+
+    &amp;lt;canvas id=&quot;canvas&quot;&amp;gt;
+        你的浏览器版本太低不支持canvas，请更新最新版浏览器。
+    &amp;lt;/canvas&amp;gt;
+
+&amp;lt;script type=&quot;text/javascript&quot; src=&quot;star.js&quot;&amp;gt;&amp;lt;/script&amp;gt;
+
+&amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;
+`&lt;/pre&gt;
+
+js这边主要是一个画五角星的函数，分析一下五角星的外面五个顶点和里面五个顶点分别都在一个圆上，分析角度过后，可以写这样如下这样一个函数，函数中已经把五角星的用黄色填充好了。
+
+&lt;pre&gt;`function drawStar(cxt,r,R,x,y,rot){
+    cxt.beginPath();
+
+    for (var i = 0; i &amp;lt; 5; i++) {
+        cxt.lineTo(Math.cos((18 + i*72 - rot)/180*Math.PI)*R+x , -Math.sin((18 + i*72 - rot)/180*Math.PI)*R+y)
+        cxt.lineTo(Math.cos((54 + i*72 - rot)/180*Math.PI)*r+x , -Math.sin((54 + i*72 - rot)/180*Math.PI)*r+y)
+    }
+    cxt.fillStyle = &quot;#ff0&quot;;
+    cxt.closePath();
+    cxt.fill();
+    // cxt.stroke();
+}
+`&lt;/pre&gt;
+
+函数内的几个参数分别表示canvas的2d绘图环境context，内圆半径，外圆半径，五角星或者圆心的x坐标，y坐标，五角星的旋转角度。
+
+所以整个js代码部分可以写成这样：
+
+&lt;pre&gt;`var canvas = document.getElementById(&quot;canvas&quot;);
+var context = canvas.getContext(&quot;2d&quot;);
+
+canvas.width = 800;
+canvas.height = 600;
+
+function drawStar(cxt,r,R,x,y,rot){
+    cxt.beginPath();
+
+    for (var i = 0; i &amp;lt; 5; i++) {
+        cxt.lineTo(Math.cos((18 + i*72 - rot)/180*Math.PI)*R+x , -Math.sin((18 + i*72 - rot)/180*Math.PI)*R+y)
+        cxt.lineTo(Math.cos((54 + i*72 - rot)/180*Math.PI)*r+x , -Math.sin((54 + i*72 - rot)/180*Math.PI)*r+y)
+    }
+    cxt.fillStyle = &quot;#ff0&quot;;
+    cxt.closePath();
+    cxt.fill();
+}
+
+context.fillStyle = &quot;#f00&quot;;
+context.fillRect(100,100,600,400);
+
+drawStar(context,24,60,200,200,0);
+drawStar(context,8,20,300,140,36);
+drawStar(context,8,20,340,180,16);
+drawStar(context,8,20,340,240,0);
+drawStar(context,8,20,300,280,36);
+</code></pre><p>一个五星红旗就绘制完成了。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/10/25/e7-94-a8canvas-e7-94-bb-e5-b8-83-e7-94-bb-e4-b8-80-e9-9d-a2-e4-ba-94-e6-98-9f-e7-ba-a2-e6-97-97/" data-id="cj4ii2spz001h6z74kjzx9cig" class="article-share-link">Delen</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-e4-b8-8b-e6-b5-a9-e8-80-81-e8-a1-97-e6-b8-b8-e8-ae-b0" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/10/23/e4-b8-8b-e6-b5-a9-e8-80-81-e8-a1-97-e6-b8-b8-e8-ae-b0/" class="article-date">
+  <time datetime="2016-10-23T15:18:36.000Z" itemprop="datePublished">2016-10-23</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Life/">Life</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/10/23/e4-b8-8b-e6-b5-a9-e8-80-81-e8-a1-97-e6-b8-b8-e8-ae-b0/">下浩老街游记</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <pre><code>好久没更新博客了，自从国庆从深圳回来了之后就没管过它了，今天去老街走了走，顺道发个游后感吧！
+
+今天下午抽空和博文去了下浩老街，老街静谧地躺在长江江畔，那里曾是重庆大轰炸后遗留下来破旧重庆古城。现在附近的上新街已通了轻轨，蓬勃的城市发展带动了那一带的拆迁改造，现代又壮观的东水门大桥联通了长江两岸，附近车水马龙好不热闹，这和老街的安静和闲适形成了鲜明的对比，繁华都市里的一抹闲情更增添了我们游玩的兴致。
+</code></pre><p><img src="http://127.0.0.1/365/wp-content/uploads/2016/10/WechatIMG12-1024x758.jpeg" alt="东水门大桥"></p>
+<pre><code>走在老街古朴的青石板路上，两边古朴的民宅极其富有年代感，其中好多是危房，而且早已没人居住，剩下的居民们大多是中老年人，他们有的端几根板凳团坐在一起聊天，本地亲切的称为“摆龙门阵”；有的一起相约一桌麻将；有的借着古城的名气开起了小卖部，给来往的游客送来解渴的清泉；更富有商业头脑的居民在那儿开起了极富古香特色的茶馆，吸引着一批又一批游玩的文艺青年驻足休憩。
+
+老街由几条巷子相互连接串通而成，还有几条富有重庆特色的石阶路，一上一下增添了古城的立体感，也许老重庆的底蕴便是在这样的老街中还有所传承。我们慢悠悠的沿着一条小巷前行，由于没有路标，有的小巷直接把我们引入了居民的家里，还好老街的人们都很亲切和热情，避免了我们误闯民宅的尴尬。小巷总是那么清凉和湿润，路边石阶上、墙上还有屋顶砖瓦上的青苔是大自然最精美的礼物，慢慢地我们的心也沉浸了下来，这样的地方，这样的人们，这样的慢生活无疑是养老的上佳选择。
+
+老街里随处可见各种各样的猫咪，有的舒适的躺在路边的桌子上睡着，享受着倾泻的阳光；有的机敏的穿梭在秘密的角落处，仿佛随时都能逮住一只老鼠饱餐一顿；有的甚至在树上行走的，平衡性显得特别的好。我们走累了，来到了这个古色古香的茶馆里，点上一壶上好的茉莉花茶，花的清香沁润着我们的心脾，趁着休息的闲情欢声笑语的聊天，不知不觉，时间过的特别的快。
+
+转眼间天色已暗，泛黄的路灯下老街又是另一番景象，神秘又美丽，令人向往。我们在黑夜的老街里还差点迷了路，最后终于看到记忆中曾经路过的卖菜的小摊，走出了这令人难忘的下浩老街。
+
+繁华的都市永远那么浮躁和匆忙，我们更需要这样的老街沉淀来沉淀我们的内心。
+</code></pre><p><img src="http://127.0.0.1/365/wp-content/uploads/2016/10/WechatIMG6-225x300.jpeg" alt="wechatimg6"> <img src="http://127.0.0.1/365/wp-content/uploads/2016/10/WechatIMG7-225x300.jpeg" alt="wechatimg7"> <img src="http://127.0.0.1/365/wp-content/uploads/2016/10/WechatIMG4-225x300.jpeg" alt="wechatimg4"></p>
+<p><img src="http://127.0.0.1/365/wp-content/uploads/2016/10/WechatIMG8-300x225.jpeg" alt="wechatimg8">  <img src="http://127.0.0.1/365/wp-content/uploads/2016/10/WechatIMG5-300x225.jpeg" alt="wechatimg5"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/10/23/e4-b8-8b-e6-b5-a9-e8-80-81-e8-a1-97-e6-b8-b8-e8-ae-b0/" data-id="cj4ii2soj00076z74qcvevfpf" class="article-share-link">Delen</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-css-ef-bc-8dguide" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/09/27/css-ef-bc-8dguide/" class="article-date">
+  <time datetime="2016-09-27T14:54:16.000Z" itemprop="datePublished">2016-09-27</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Study/">Study</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/09/27/css-ef-bc-8dguide/">CSS－Guide</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>CSS不是一种聪明的语言，虽然它学习起来很简单也很容易上手，但很快在某些合理的规模下变的问题百出。我们不能改变CSS的工作原理，但我们能改变对页面的创作和架构方式。</p>
+<p>在一个长期运行的大型项目中，随着几十个开发人员专业领域和能力的不同，在工作中确立一些统一的标准是非常重要的。比如以下方面：</p>
+<ul>
+<li>保持样式表易于维护；</li>
+<li>持代码透明、健全、可读性高；</li>
+<li>保持样式表的可扩展性；</li>
+</ul>
+<p>我们有很多种技术方法来实现上述目标，而这篇CSS高级指南是非常值得推荐的帮助文档。</p>
+<h3 id="styleguide的重要性"><a href="#styleguide的重要性" class="headerlink" title="styleguide的重要性"></a>styleguide的重要性</h3><p>样式的代码指南（非视觉设计指南）对以下团队的人群是一个很有价值的工具：</p>
+<ul>
+<li>在一段合理时间内建立和维护产品；</li>
+<li>团队由不同能力，不同专长领域的开发者组成；</li>
+<li>有许多能在任何一段给定时间内专注致力于开发产品的不同开发者；</li>
+<li>定期带领指导新员工；</li>
+<li>有许多开发者不断完善和取用的代码库。</li>
+</ul>
+<p>虽然styleguide通常更适合于持续时间较长，规模较大的项目团队，该团队通常有着许多开发者长时间贡献的代码库，但是所有的开发者都应该争取提高代码的标准化程度。</p>
+<p>当我们遵循一个好的styleguide的时候将会</p>
+<ul>
+<li>根据代码库设置代码质量的标准；</li>
+<li>促进整个代码库的一致性；</li>
+<li>开发者对代码库有一种熟悉的感觉；</li>
+<li>提升效率</li>
+</ul>
+<p>在一个统一的项目中，styleguide应该被学习并深入理解然后随时参照执行，任何偏差的存在都必须要有充分的理由。</p>
+<h3 id="免责声明"><a href="#免责声明" class="headerlink" title="免责声明"></a>免责声明</h3><p>CSS Guidelines只是一种styleguide。对于我，我会坚定不移的将它所包含的方法、技术和技巧推荐给我的客户和团队，但是你的情况和偏好可能会有所不同，参照使用时还需结合你的实际情况。</p>
+<h2 id="语法和格式"><a href="#语法和格式" class="headerlink" title="语法和格式"></a>语法和格式</h2><p>一个最简单的styleguide形式就是一组有关语法和格式的规则，一直用一个标准的方式来写CSS代码会让团队里的所有成员有一种熟悉的感觉。</p>
+<p>此外，代码看上去干净整洁是一个好的多的工作环境，它还能促使团队内其他成员也保持同样的代码标准。丑陋的代码会从一开始就设立一个不好的先例。</p>
+<p>我们希望一个高水平的styleguide是这样的：</p>
+<ul>
+<li>缩进两个空格，不是制表符；</li>
+<li>一行代码宽度最多80个字符；</li>
+<li>多行书写CSS；</li>
+<li>有意义的使用空白；</li>
+</ul>
+<p>但是，正如所有的事情一样，某些地方是无关紧要的，但是统一性是关键。</p>
+<h3 id="多个文件"><a href="#多个文件" class="headerlink" title="多个文件"></a>多个文件</h3><p>随着预处理器的迅速崛起，开发者们经常拆分多个CSS文件。</p>
+<p>即使不使用预处理器，将代码分割成不同用途的代码块，在构建项目的时候也是一个好的想法。</p>
+<p>如果出于某种原因，你没有在多个文件下进行工作，下面这一小节你可能需要走一些弯路来适应你的设置。</p>
+<h3 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h3><p>做一个目录是一个相当实质性的维护开销,但它带来的好处远远大于成本。它需要勤奋的开发人员保持更新目录,但它是值得坚持的。在CSS项目中，一个最新的目录为团队提供了一个简单规范的概览指引,包括该项目的目的和开发顺序。</p>
+<p>一个简单实用的目录将会按照一定顺序自然的介绍每个板块的名字和简要的总结包括它的目标和作用。例如：</p>
+<pre><code>/**
+* CONTENTS
+*
+* SETTINGS
+* Global...............Globally-available variables and config.
+*
+* TOOLS
+* Mixins...............Useful mixins.
+*
+* GENERIC
+* Normalize.css........A level playing field.
+* Box-sizing...........Better default `box-sizing`.
+*
+* BASE
+* Headings.............H1–H6 styles.
+*
+* OBJECTS
+* Wrappers.............Wrapping and constraining elements.
+*
+* COMPONENTS
+* Page-head............The main page header.
+* Page-foot............The main page footer.
+* Buttons..............Button elements.
+*
+* TRUMPS
+* Text.................Text helpers.
+*/
+`&lt;/pre&gt;
+
+列表中的每一项都映射到项目中某一个部分。
+
+当然，在大多数项目中这部分将变的大得多，但我希望我们可以看到这一节在主样式表中，为开发人员提供一个项目范围视图。我们可以清晰的看到被渲染的样式代码目的是什么，在什么位置等等。
+
+### 宽度为80个字符
+
+在可能的情况下，将CSS文件的宽度限制到80个字符，原因包括：
+</code></pre><ul>
+<li>能够使得打开多个文件并排放置，方便浏览；</li>
+<li>像GitHub网站或者终端一样查看CSS；</li>
+<li><p>为注释提供一个舒适的长度；</p>
+<pre>`/**
+    * I am a long-form comment. I describe, in detail, the CSS that follows. I am
+    * such a long comment that I easily break the 80 character limit, so I am
+    * broken across several lines.
+*/
+`</pre>
+
+<p>这里将会有不可避免的例外规则，比如URL或者梯度语法，这些都不用担心。</p>
+<h3 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h3><p>CSS中每一个主要的部分都开始于一个标题</p>
+<pre>`/*------------------------------------*\
+#SECTION-TITLE
+\*------------------------------------*/
+
+.selector { }
+`</pre>
+
+<p>每一部分都标题都是以“<code>＃</code>”为前缀，以使我们能够进行更有针对性的搜索（如<code>grep</code>等等），而不是只搜索标题名(<code>SECTION-TITLE</code>)，那样可能会产生许多搜索结果。在大范围中搜索带“＃”号的标题(<code>#SECTION-TITLE</code>)，应该只返回一个所需标题的结果。</p>
+<p>在标题和下一行代码之间敲一个回车（中间可以写一写注释或者SASS或者CSS）。</p>
+<p>如果你正在的项目里,每一个部分都有自己的文件,那么标题就应该出现在每一个部分的顶部。如果你正在做的项目每个文件包含多个部分,那么每个标题后面最好敲5个回车，这样标题再加上后面多出来的空白区域将会使新的部分在一个大的文件中滚动的时候更容易被发现。</p>
+<pre>`/*------------------------------------*\
+#A-SECTION
+\*------------------------------------*/
+
+.selector { }
+
+/*------------------------------------*\
+#ANOTHER-SECTION
+\*------------------------------------*/
+
+/**
+* Comment
+*/
+
+.another-selector { }
+`</pre>
+
+<h3 id="rulesets的剖析"><a href="#rulesets的剖析" class="headerlink" title="rulesets的剖析"></a>rulesets的剖析</h3><p>在我们讨论我们如何书写我们的rulesets之前，让我们先熟悉一下相关术语：</p>
+<p><pre>`[selector] {</pre></p>
+</li>
+</ul>
+<pre><code>  [property]: [value];
+  [&amp;lt;--declaration---&amp;gt;]
+}
+`&lt;/pre&gt;
+
+比如：
+
+&lt;pre&gt;`.foo, .foo--bar,
+.baz {
+  display: block;
+  background-color: green;
+  color: red;
+}
+`&lt;/pre&gt;
+
+在这里，你可以看到：
+</code></pre><ul>
+<li>相关的选择器写在同一行，不相关的选择器另起一行书写；</li>
+<li>在起始大括号（<code>{</code>）之前有一个空格；</li>
+<li>属性名和属性值放在同一行；</li>
+<li>在属性名的冒号（<code>:</code>）后，留有一个空格，再接着写属性值；</li>
+<li>每一个声明都开始于新的一行；</li>
+<li>和起始大括号（<code>{</code>）同一行的是最后一个选择器；</li>
+<li>第一个声明在起始大括号（<code>{</code>）后新的一行；</li>
+<li>结束大括号（<code>}</code>）独占新的一行；</li>
+<li>每个声明都缩进两个空格；</li>
+<li><p>每个声明都以一个分号（<code>;</code>）结束；</p>
+<p>这种格式似乎是目前通用的标准（除了在空格数量上的变化，许多开发者还是喜欢两个空格）。</p>
+<p>像下面代码这样的书写就是不正确的：</p>
+<pre>`.foo, .foo--bar, .baz
+{
+        display:block;
+        background-color:green;
+        color:red }
+`</pre>
+
+<p>问题点包括：</p>
+</li>
+<li><p>用制表符代替空格；</p>
+</li>
+<li>不相关的选择器写在了同一行；</li>
+<li>起始大括号（<code>{</code>）独占一行；</li>
+<li>结束大括号（<code>}</code>）没有独占一行；</li>
+<li>最后的结束的（<code>;</code>）丢失（当然，分号是可选的，为了保持一个好习惯，最好还是写上）；</li>
+<li><p>在冒号（<code>:</code>）后面没有空格；</p>
+<h3 id="多行CSS"><a href="#多行CSS" class="headerlink" title="多行CSS"></a>多行CSS</h3><p>CSS应该多行书写，除了在某些非常特殊的情况下，这样写有许多好处：</p>
+</li>
+<li><p>降低代码合并引发冲突的几率，因为每一条样式声明都存在于它独自的一行。</p>
+</li>
+<li><p>更“真实”，差异更可靠，因为一行只有一个变化。</p>
+<p>这一规则的特殊情况应该很明显，比如类似的rulesets，只带一个声明：</p>
+<pre>`.icon {
+  display: inline-block;
+  width:  16px;
+  height: 16px;
+  background-image: url(/img/sprite.svg);
+}
+
+.icon--home     { background-position:   0     0  ; }
+.icon--person   { background-position: -16px   0  ; }
+.icon--files    { background-position:   0   -16px; }
+.icon--settings { background-position: -16px -16px; }
+`</pre>
+
+<p>这些类型的规则受益于单行是因为：</p>
+</li>
+<li><p>他们仍然符合one-reason-to-change-per-line规则;</p>
+</li>
+<li><p>它们分享了足够多的相似之处，而这些在其他rulesets下不需要被彻底解读，这样书写使得我们浏览选择器更加直观方便。</p>
+<h3 id="缩进"><a href="#缩进" class="headerlink" title="缩进"></a>缩进</h3><p>除了缩进单独声明外，整个rulesets中的缩进都和它们相互之间的关系相关联，例如：</p>
+<pre>`.foo { }
+
+  .foo__bar { }
+
+    .foo__baz { }
+`</pre>
+
+<p>通过这样做，开发者可以一眼就看到它们的结构关系是<code>.foo__baz {}</code>在<code>.foo__bar {}</code>内部，且它们都在<code>.foo {}</code>内部。</p>
+<p>这样对DOM节点的准复制能让开发人员不用查看HTML片段就知道这些类是在怎样的结构中被使用的。</p>
+<h4 id="缩进SASS"><a href="#缩进SASS" class="headerlink" title="缩进SASS"></a>缩进SASS</h4><p>Sass提供嵌套功能。也就是说,通过编写下面这样的代码:</p>
+<pre>`.foo {
+  color: red;
+
+  .bar {
+    color: blue;
+  }
+
+}
+`</pre>
+
+<p>编译成CSS就是这样：</p>
+<pre>`.foo { color: red; }
+.foo .bar { color: blue; }
+`</pre>
+
+<p>在缩进sass的时候，我们坚持同样的两个空格，在嵌套规则的前后我们还留下一个空行。</p>
+<p>注意：在sass缩进的时候尽量避免嵌套，更多细节请看<strong>特异性</strong>那一章。</p>
+<h4 id="对齐"><a href="#对齐" class="headerlink" title="对齐"></a>对齐</h4><p>尝试对齐相关声明中相同的字符串，例如：</p>
+<pre>`.foo {
+  -webkit-border-radius: 3px;
+     -moz-border-radius: 3px;
+          border-radius: 3px;
+}
+
+.bar {
+  position: absolute;
+  top:    0;
+  right:  0;
+  bottom: 0;
+  left:   0;
+  margin-right: -10px;
+  margin-left:  -10px;
+  padding-right: 10px;
+  padding-left:  10px;
+}
+`</pre>
+
+<p>这使生活变得更容易一些，对开发人员来说，如果他们的代码编辑器支持多列编辑，这样就可以一次性编辑多列对齐的相同内容。</p>
+<h3 id="有意义的空白"><a href="#有意义的空白" class="headerlink" title="有意义的空白"></a>有意义的空白</h3><p>除了缩进，我们可以通过自由和明智地使用rulesets之间的空白提供大量的信息。我们使用：</p>
+</li>
+<li><p>密切相关的rulesets之间留一个空行。</p>
+</li>
+<li>关联性不大的rulesets之间使用两个空行。</li>
+<li><p>全新的部分板块之间留5个空行。</p>
+<p>例如：</p>
+<pre>`/*------------------------------------*\
+#FOO
+\*------------------------------------*/
+
+.foo { }
+
+  .foo__bar { }
+
+.foo--baz { }
+
+/*------------------------------------*\
+#BAR
+\*------------------------------------*/
+
+.bar { }
+
+  .bar__baz { }
+
+  .bar__foo { }
+`</pre>
+
+<p>不应该出现两个rulesets之间没有空行的情况，比如下面这样就是错误的：</p>
+<pre>`.foo { }
+  .foo__bar { }
+.foo--baz { }
+`</pre>
+
+<h3 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h3><p>由于HTML和CSS本质上的相互关联性，这里我将疏忽一些我不介绍的语法和格式标记指南。</p>
+<p>永远记着给属性打上引号，尽管没有引号也能正常工作。这将减少发生意外的可能性，而且这是大部分开发者更熟悉的格式。下面这行代码是有效的：</p>
+<pre>`&lt;div class=box&gt;
+`</pre>
+
+<p>但更受欢迎的格式应该是这样的：</p>
+<pre>`&lt;div class="box"&gt;
+`</pre>
+
+<p>这里的引号不是必须的，但从安全的角度考虑，我们应该将类名“box”用引号包起来。</p>
+<p>当同时有多个类的值时，用两个空格将它们分隔开，像这样：</p>
+<pre>`&lt;div class="foo  bar"&gt;
+`</pre>
+
+<p>当有多个类的值是相关联的时候，用中括号把它们分别括起来，像这样：</p>
+<pre>`&lt;div class="[ box  box--highlight ]  [ bio  bio--long ]"&gt;
+`</pre>
+
+<p>这不是一个坚定的推荐，我自己现在还在试验这样的写法，但它确实给我带来了许多好处，更多细节请看<strong>分组相关类的标记</strong>。</p>
+<p>正如我们的rulesets一样，您可以在HTML中使用有意义的空白。您可以用5个空行来隔断主题和内容部分，例如：</p>
+<pre>`&lt;header class="page-head"&gt;
+  ...
+&lt;/header&gt;
+
+&lt;main class="page-content"&gt;
+  ...
+&lt;/main&gt;
+
+&lt;footer class="page-foot"&gt;
+  ...
+&lt;/footer&gt;
+`</pre>
+
+<p>用一个空行分隔标记相互独立且关联度不高的相关片段，例如：</p>
+<pre>`&lt;ul class="primary-nav"&gt;
+
+  &lt;li class="primary-nav__item"&gt;
+    &lt;a href="/" class="primary-nav__link"&gt;Home&lt;/a&gt;
+  &lt;/li&gt;
+
+  &lt;li class="primary-nav__item  primary-nav__trigger"&gt;
+    &lt;a href="/about" class="primary-nav__link"&gt;About&lt;/a&gt;
+
+    &lt;ul class="primary-nav__sub-nav"&gt;
+      &lt;li&gt;&lt;a href="/about/products"&gt;Products&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="/about/company"&gt;Company&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+
+  &lt;/li&gt;
+
+  &lt;li class="primary-nav__item"&gt;
+    &lt;a href="/contact" class="primary-nav__link"&gt;Contact&lt;/a&gt;
+  &lt;/li&gt;
+
+&lt;/ul&gt;
+`</pre>
+
+<p>这使得开发人员能够对DOM的不同部分一目了然，也让像Vim这样的文本编辑器使用起来更加方便，例如，操纵用空行分隔标记的代码块。</p>
+<h3 id="更多阅读"><a href="#更多阅读" class="headerlink" title="更多阅读"></a>更多阅读</h3></li>
+<li><p><em><a href="http://csswizardry.com/2014/05/grouping-related-classes-in-your-markup/" target="_blank" rel="external">分组相关类的标记</a></em></p>
+<h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h2><p>写好CSS的认知开销是巨大的，有太多需要注意的地方，还有许多实际项目中的细微差别需要记住，最糟糕的情况是随着代码量的加大，结构混乱，许多开发者都忘记了自己有没有写过这样的代码。记住让自己定义的类、规则、对象、辅助工具是在自己可控制的程度，但是任何人都很少有机会继承你的CSS。</p>
+<p><strong>CSS需要更多的注释</strong></p>
+<p>由于CSS是一种声明语言，并没有离开页面太多的东西，所以单独只看CSS文件的时候通常很难辨认以下内容：</p>
+</li>
+<li><p>一些CSS是否依赖于其他地方的某些代码；</p>
+</li>
+<li>修改一段CSS代码，页面中的其它地方会受到什么样的影响；</li>
+<li>还有什么地方可能会使用到一些CSS；</li>
+<li>某个标签可能会继承到什么样的样式（有意或者无意的）；</li>
+<li>什么标签的样式可能会传递；</li>
+<li><p>作者的意图是想把这段CSS代码用到什么地方。</p>
+<p>这甚至还没考虑一些CSS其它的怪癖，比如各种声明overflow的状态触发了BFC（block formatting context），或者某些动画属性值的改变触发了硬件加速。这些都让开发者在继承项目的时候困惑不已。</p>
+<p>由于CSS不能很好地讲述自己的故事,所以它确实是一个受益于大量注释的语言。</p>
+<p>作为一项规则，如果你只看代码，不那么显而易见的看出它的意义的话就应该马上为那段代码加上一些注释。那就是说，没必要写注释告诉别人color: red;会让某个东西变成红色（因为太显而易见了），但如果你正在用overflow: hidden;来清除浮动溢出，这就是值得添加一些注释的地方了。</p>
+<h3 id="高层次"><a href="#高层次" class="headerlink" title="高层次"></a>高层次</h3><p>对于文档中整个板块或者部分的一大段注释，我们用文档块式的多行注释，这比较适合宽度为80个字符的规则。</p>
+<p>下面是一个真实的例子，是在<a href="http://csswizardry.com/" target="_blank" rel="external">CSS Wizardry</a>中用CSS注释页眉。</p>
+<pre>`/**
+ * The site’s main page-head can have two different states:
+ *
+ * 1) Regular page-head with no backgrounds or extra treatments; it just
+ *    contains the logo and nav.
+ * 2) A masthead that has a fluid-height (becoming fixed after a certain point)
+ *    which has a large background image, and some supporting text.
+ *
+ * The regular page-head is incredibly simple, but the masthead version has some
+ * slightly intermingled dependency with the wrapper that lives inside it.
+ */
+`</pre>
+
+<p>这种层次的注释详细程度应该是所有正式代码的基准，包括状态的描述、排列规范、满足条件、深入探讨等。</p>
+<h4 id="对象拓展指针"><a href="#对象拓展指针" class="headerlink" title="对象拓展指针"></a>对象拓展指针</h4><p>当跨多个片段工作或以面向对象的方式编写CSS时，几个可以彼此关联一起工作的rulesets并不总是在同一个文件或同一个位置,例如：你可能有一个通用按钮对象，它只提供了按钮的结构样式，这个按钮将被用在一个组件的拓展部分，用来添加装饰。我们用简单的对象扩展指针来记录这种跨文件的关系。在对象文件里：</p>
+<pre>`/**
+ * Extend `.btn {}` in _components.buttons.scss.
+ */
+
+.btn { }
+`</pre>
+
+<p>在你的主题文件里：</p>
+<pre>`/**
+ * These rules extend `.btn {}` in _objects.buttons.scss.
+ */
+
+.btn--positive { }
+
+.btn--negative { }
+`</pre>
+
+<p>这个简单、低成本的注释可以做出很大的贡献，它让还没意识到项目之间的关系的开发者们知道其它某些样式可能是怎样以及从哪里继承而来的。</p>
+<h3 id="低层次"><a href="#低层次" class="headerlink" title="低层次"></a>低层次</h3><p>通常情况下，我们想在一个ruleset里的某一条具体的声明同一行后面加上注释，为此我们使用一种逆向脚注用来补充说明。这里是一个更复杂的注释，详细说明上述网站的头部部分：</p>
+<pre>`/**
+ * Large site headers act more like mastheads. They have a faux-fluid-height
+ * which is controlled by the wrapping element inside it.
+ *
+ * 1\. Mastheads will typically have dark backgrounds, so we need to make sure
+ *    the contrast is okay. This value is subject to change as the background
+ *    image changes.
+ * 2\. We need to delegate a lot of the masthead’s layout to its wrapper element
+ *    rather than the masthead itself: it is to this wrapper that most things
+ *    are positioned.
+ * 3\. The wrapper needs positioning context for us to lay our nav and masthead
+ *    text in.
+ * 4\. Faux-fluid-height technique: simply create the illusion of fluid height by
+ *    creating space via a percentage padding, and then position everything over
+ *    the top of that. This percentage gives us a 16:9 ratio.
+ * 5\. When the viewport is at 758px wide, our 16:9 ratio means that the masthead
+ *    is currently rendered at 480px high. Let’s…
+ * 6\. …seamlessly snip off the fluid feature at this height, and…
+ * 7\. …fix the height at 480px. This means that we should see no jumps in height
+ *    as the masthead moves from fluid to fixed. This actual value takes into
+ *    account the padding and the top border on the header itself.
+ */
+
+.page-head--masthead {
+  margin-bottom: 0;
+  background: url(/img/css/masthead.jpg) center center #2e2620;
+  @include vendor(background-size, cover);
+  color: $color-masthead; /* [1] */
+  border-top-color: $color-masthead;
+  border-bottom-width: 0;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1) inset;
+
+  @include media-query(lap-and-up) {
+background-image: url(/img/css/masthead-medium.jpg);
+  }
+
+  @include media-query(desk) {
+    background-image: url(/img/css/masthead-large.jpg);
+  }
+
+  &gt; .wrapper { /* [2] */
+    position: relative; /* [3] */
+    padding-top: 56.25%; /* [4] */
+
+    @media screen and (min-width: 758px) { /* [5] */
+      padding-top: 0; /* [6] */
+      height: $header-max-height - double($spacing-unit) - $header-border-width; /* [7] */
+    }
+
+  }
+
+}
+`</pre>
+
+<p>这些类型的注释能够把所有的注释文档放在一个地方，同时指向它们的指针放在ruleset里的对应具体位置。</p>
+<h3 id="预处理注释"><a href="#预处理注释" class="headerlink" title="预处理注释"></a>预处理注释</h3><p>对于绝大多数与处理器来说，我们写的注释不会编译生成到最后的CSS文件当中，通常，使用这些注释文档的代码也不会被写入CSS文件，如果您正在编写将要编译的代码，那么请使用将要编译的注释。例如下面就是正确的写法：</p>
+<pre>`// Dimensions of the @2x image sprite:
+$sprite-width:  920px;
+$sprite-height: 212px;
+
+/**
+ * 1\. Default icon size is 16px.
+ * 2\. Squash down the retina sprite to display at the correct size.
+ */
+.sprite {
+  width:  16px; /* [1] */
+  height: 16px; /* [1] */
+  background-image: url(/img/sprites/main.png);
+  background-size: ($sprite-width / 2 ) ($sprite-height / 2); /* [2] */
+}
+`</pre>
+
+<p>当我们调试编译的样式表的时候，我们只能看到正确有用且相关联的信息，其它比如注释就无法看到了。</p>
+<h3 id="删除注释"><a href="#删除注释" class="headerlink" title="删除注释"></a>删除注释</h3><p>不用说都知道，在生产部署环境中是应该没有注释的，所有的CSS文件都会被压缩，体积会变小，注释相应也会丢失。</p>
+<h2 id="命名约定"><a href="#命名约定" class="headerlink" title="命名约定"></a>命名约定</h2><p>命名约定在CSS中非常有用，它能使你的代码更严格、更透明、信息更丰富。</p>
+<p>一个好的命名约定将会告诉你和你的团队以下信息：</p>
+</li>
+<li><p>这个类是用来做什么样的事情；</p>
+</li>
+<li>哪里会用到这个类；</li>
+<li><p>这个类可能会与其它什么东西有关联。</p>
+<p>我遵循的命名约定很简单：用连字符(-)分隔字符串，用BEM命名法来应对更复杂的情况。</p>
+<p>值得注意的是，命名约定并不只是在CSS发展中很有用处，它真正展现威力的是在HTML的标记中，它能让我们浏览HTML文档时对结构和内容一目了然。</p>
+<h3 id="连字符分隔"><a href="#连字符分隔" class="headerlink" title="连字符分隔"></a>连字符分隔</h3><p>所有类名的字符串都是用连字符来分隔的，例如：</p>
+<pre>`.page-head { }
+
+.sub-content { }
+`</pre>
+
+<p>用驼峰命名法或者下划线的方式分隔字符串并不经常用在CSS的类名上，例如下面就是不正确的写法：</p>
+<pre>`.pageHead { }
+
+.sub_content { }
+`</pre>
+
+<h3 id="像BEM一样命名"><a href="#像BEM一样命名" class="headerlink" title="像BEM一样命名"></a>像BEM一样命名</h3><p>对于更多更大的UI片段，我们需要定义许多相关联的类，这时我们就可以用BEM命名法。</p>
+<p>BEM的意思就是块（block）、元素（element）、修饰符（modifier）,是由Yandex团队提出的一种前端命名方法论。这种巧妙的命名方法让你的CSS类对其他开发者来说更加透明而且更有意义。BEM命名约定更加严格，而且包含更多的信息，它们用于一个团队开发一个耗时的大项目。</p>
+<p>重要的是要注意，我使用的基于BEM的命名方式是经过Nicolas Gallagher修改过的。这篇文章中介绍的这种命名技术并不是原始的BEM，但却是一个我更喜欢的改进版。无论实际使用了什么样的符号，它们其实都是基于同样的BEM原则。</p>
+<p>我们做一个比喻（注意，不是实例）</p>
+<pre>`.person { }
+.person__head { }
+.person--tall { }
+`</pre>
+</li>
+<li><p><code>.person{}</code>是一个块（Block），代表了单独的组件根源。</p>
+</li>
+<li><code>.person__head{}</code>是一个元素（Element），代表.block的后代，用于形成一个完整的.block的整体。中间用两个下划线连接。</li>
+<li><p><code>.person--tall{}</code>是一个修饰语，代表.block的不同状态或不同版本。中间用两个连字符连接。</p>
+<h4 id="开始正文"><a href="#开始正文" class="headerlink" title="开始正文"></a>开始正文</h4><p>块（Block）开始于一个最有逻辑的、自己独立的且与其它不相关的位置，继续我们之前对人对那个比喻，我们没有一个<code>.room__person{}</code>这样的类，原因就是房间是另一个有逻辑且独立不相关的块，我们可以这样写来独立不同的块：</p>
+<pre>`.room { }
+
+  .room__door { }
+
+.room--kitchen { }
+
+.person { }
+
+  .person__head { }
+`</pre>
+
+<p>如果你确实想表示人<code>.person{}</code>在房间<code>.room{}</code>里面，这里用后代选择器更合适<code>.room .person {}</code>。</p>
+<p>一个更实际的例子来表示适当范围的块可能是这样，其中每个部分的代码都表示自己的块:</p>
+<pre>`.page { }
+
+.content { }
+
+.sub-content { }
+
+.footer { }
+
+  .footer__copyright { }
+`</pre>
+
+<p>像下面这样的写法就是不正确的：</p>
+<pre>`.page { }
+
+  .page__content { }
+
+  .page__sub-content { }
+
+  .page__footer { }
+
+    .page__copyright { }
+`</pre>
+
+<p>重要的是要知道BEM命名范围是从哪里开始，哪里结束的。作为一个规则，BEM适用于独立，互不相关的UI组件。</p>
+<h4 id="更多层级"><a href="#更多层级" class="headerlink" title="更多层级"></a>更多层级</h4><p>如果我们准备往人<code>.person{}</code>这个组件中添加一个<code>.person__eye{}</code>的元素，我们没有必要按照DOM的层级来书写，也就是说，正确的标记方式为<code>.person__eye{}</code>而不是<code>.person__head__eye{}</code>，定义的类不用反映出所有的DOM层级关系。</p>
+<h4 id="修改元素"><a href="#修改元素" class="headerlink" title="修改元素"></a>修改元素</h4><p>你可以添加一个元素的变体，根据它的作用可以有很多种表示方法，还是接着上面人的例子，如果你要添加一个蓝色的眼睛可以这样表示：</p>
+<pre>`.person__eye--blue { }
+`</pre>
+
+<p>在这里我们是直接修改眼睛这个元素。</p>
+<p>然而，事情有时候会变得更复杂。请原谅我粗糙的比喻，让我们想象我们有一个很帅的脸元素。但是这个人本身并不帅，所以我们直接将不帅的人的脸修改为一张很帅的脸：</p>
+<pre>`.person__face--handsome { }
+`</pre>
+
+<p>但是如果那个人本身就很帅，基于这个事实，我们想要他脸的样式。一个很帅的人的一张普通的脸的样式就可以这样表示：</p>
+<pre>`.person--handsome .person__face { }
+`</pre>
+
+<p>这就是我们基于BEM，用后代选择器修改元素样式的少数几种情况之一</p>
+<p>如果用SASS，我们很可能会这样写：</p>
+<pre>`.person { }
+
+  .person__face {
+
+    .person--handsome &amp; { }
+
+  }
+
+.person--handsome { }
+`</pre>
+
+<p>注意我们没有在<code>.person--handsome {}</code>里面嵌套一个新的<code>.person__face {}</code>，相反，我们利用SASS的<code>&amp;amp;</code>符号代表父代的<code>.person__face</code>，所以将<code>.person--handsome</code>放到了<code>.person__face</code>的前面，这就是说所有与<code>.person__face</code>相关的规则只在一个地方，不会扩散到其他文件里去。当我们在处理嵌套代码的时候，这是一个比较好的做法：把上下文中所有相关的样式代码（比如这里的<code>.person__face</code>）封装在一个位置。</p>
+<h3 id="HTML中的命名约定"><a href="#HTML中的命名约定" class="headerlink" title="HTML中的命名约定"></a>HTML中的命名约定</h3><p>像我之前就暗示过，命名约定并不只是在CSS发展中很有用处，它真正展现威力的是在HTML的标记中，它能让我们浏览HTML文档时对结构和内容一目了然。</p>
+<p>我们来看一下下面这段没有用命名约定的HTML代码：</p>
+<pre>`&lt;div class="box  profile  pro-user"&gt;
+
+  &lt;img class="avatar  image" /&gt;
+
+  &lt;p class="bio"&gt;...&lt;/p&gt;
+
+&lt;/div&gt;
+`</pre>
+
+<p>可以看到，这样根本看不出<code>box</code>，<code>profile</code>，<code>avatar</code>这些的关联性，你也不知道在CSS中它们是否在同一个位置，更不知道其它地方会不会也出现这几个同样的类名。</p>
+<p>如果用BEM命名法修改成下面这样：</p>
+<pre>`&lt;div class="box  profile  profile--is-pro-user"&gt;
+
+  &lt;img class="avatar  profile__image" /&gt;
+
+  &lt;p class="profile__bio"&gt;...&lt;/p&gt;
+
+&lt;/div&gt;
+`</pre>
+
+<p>现在你可以清楚的看到哪些类和其它是否相关，如果相关又是怎样关联的，我们知道哪些类超出了这个组件范围就不能用了，哪些类在其它地方可以任意重复使用</p>
+<h3 id="JavaScript的钩子"><a href="#JavaScript的钩子" class="headerlink" title="JavaScript的钩子"></a>JavaScript的钩子</h3><p>我们都知道，在HTML文档中，将CSS和JS操作都绑定到同一个类名上是不明智的，我们最好把JS所需要操作的类绑定到一个特殊的类名上，这样可以让我们的代码更干净整洁，更透明，更易于维护。</p>
+<p>我以前尝试重构CSS的时候，不知不觉删除了一些JS的功能，就因为它们绑定在了同一个类上，我们可能单独删除CSS或JS中的任何一个功能。</p>
+<p>所以通常，这些类都加了一个”js-“的前缀，例如：</p>
+<p><pre>`&lt;input type=”submit” class=”btn  js-btn” value=”Follow” /&gt;</pre></p>
+</li>
+</ul>
+<p>这就意味着我们可以在其它地方有一个<code>.btn {}</code>样式的按钮元素，但是没有<code>.js-btn</code>的行为。</p>
+<h4 id="data-属性"><a href="#data-属性" class="headerlink" title="data-*属性"></a>data-*属性</h4><p>我们通常用data-<em> 属性来作为JS的钩子，但这是不正确的。按照标准的规范，data-</em> 属性用于存储页面或应用程序的私有自定义数据。而不是作为连接JS的被绑定的钩子。</p>
+<h3 id="更近一步"><a href="#更近一步" class="headerlink" title="更近一步"></a>更近一步</h3><p>正如前面所提到的，这些都是非常简单的命名约定，并没有在表示3个以上的类组上做更多贡献。</p>
+<p>我鼓励在你自己的命名约定上研究更深，看的更远以提供更多的功能，而这也是我渴望进一步研究和探讨的。</p>
+<h3 id="更多阅读-1"><a href="#更多阅读-1" class="headerlink" title="更多阅读"></a>更多阅读</h3><ul>
+<li><a href="http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/" target="_blank" rel="external">MindBEMding – getting your head ’round BEM syntax</a></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/09/27/css-ef-bc-8dguide/" data-id="cj4ii2sop000b6z74itfxskv7" class="article-share-link">Delen</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-e6-b1-82-e5-ad-97-e7-ac-a6-e4-b8-b2-e4-b8-ad-e7-ac-ac-e4-b8-80-e4-b8-aa-e6-b2-a1-e9-87-8d-e5-a4-8d-e7-9a-84-e5-ad-97-e7-ac-a6" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/09/23/e6-b1-82-e5-ad-97-e7-ac-a6-e4-b8-b2-e4-b8-ad-e7-ac-ac-e4-b8-80-e4-b8-aa-e6-b2-a1-e9-87-8d-e5-a4-8d-e7-9a-84-e5-ad-97-e7-ac-a6/" class="article-date">
+  <time datetime="2016-09-23T07:49:17.000Z" itemprop="datePublished">2016-09-23</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Study/">Study</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/09/23/e6-b1-82-e5-ad-97-e7-ac-a6-e4-b8-b2-e4-b8-ad-e7-ac-ac-e4-b8-80-e4-b8-aa-e6-b2-a1-e9-87-8d-e5-a4-8d-e7-9a-84-e5-ad-97-e7-ac-a6/">求字符串中第一个没重复的字符</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>这是LeetCode中的题目：387. First Unique Character in a String<br>给一个字符串，返回字符串中第一个没重复的字符，如果都是重复的则返回－1。<br>比如：</p>
+<pre><code>s = &quot;leetcode&quot;
+return 0.
+
+s = &quot;loveleetcode&quot;,
+return 2.
+`&lt;/pre&gt;
+下面用JavaScript实现：
+&lt;pre&gt;`var firstUniqChar = function(s) {
+    var s1 = s.split(&quot;&quot;);
+    var s2 = {};
+    for(var i=0; i&amp;lt;s1.length; i++){
+        var a = s1[i];
+        if(!s2[a]){
+            s2[a] = 1;
+        }else{
+            s2[a]++;
+        }
+    }
+    for(var j=0; j&amp;lt;s1.length; j++){
+        var b = s1[j];
+        if(s2[b] === 1) return j;
+    }
+    return -1;
+}
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/09/23/e6-b1-82-e5-ad-97-e7-ac-a6-e4-b8-b2-e4-b8-ad-e7-ac-ac-e4-b8-80-e4-b8-aa-e6-b2-a1-e9-87-8d-e5-a4-8d-e7-9a-84-e5-ad-97-e7-ac-a6/" data-id="cj4ii2spx001d6z74yxgc1lwb" class="article-share-link">Delen</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-web-e6-8e-92-e7-89-88-e6-8a-80-e6-9c-af-e7-9a-84-e6-8c-87-e5-8d-97-e4-b8-8e-e6-8a-80-e5-b7-a7" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/09/14/web-e6-8e-92-e7-89-88-e6-8a-80-e6-9c-af-e7-9a-84-e6-8c-87-e5-8d-97-e4-b8-8e-e6-8a-80-e5-b7-a7/" class="article-date">
+  <time datetime="2016-09-14T09:59:23.000Z" itemprop="datePublished">2016-09-14</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Study/">Study</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/09/14/web-e6-8e-92-e7-89-88-e6-8a-80-e6-9c-af-e7-9a-84-e6-8c-87-e5-8d-97-e4-b8-8e-e6-8a-80-e5-b7-a7/">Web排版技术的指南与技巧</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>编者注：本文写的时间有点久了，请谨慎参考实践。</strong></p>
+<p>   人们都说Web页面95%都是看排版，我认为这是一个非常准确的说法：我们通常都是带着阅读的意图去访问网站的。这就是你现在正在做的事情——阅读。考虑到这一点，我们有理由相信，你的排版应该是你网页设计最应该考虑的一个方面。</p>
+<p>   不幸的是，每一个最应该关注甚至痴迷排版最微小细节的人，许多这样的人都对排版漠不关心，这真是一个耻辱。如果你打算花时间写点东西，你不希望它看起来非常易于阅读吗？</p>
+<p><strong>排版的创意和技术</strong></p>
+<p>   我不确定这两点是不是业界所公认的，但在我看来，排版最主要的两个要点就是创意和技术。</p>
+<p>   有创意的排版需要做出设计决策，比如面向哪一种使用、页面应该创造怎样的心情类型、它应该怎样被设计、它应该有怎样的基调——例如，页面应该是轻快的、宽敞的、阳光的还是浓缩的、大胆的、紧绷的，用更少的空白或者深黑。这些决策必须在每个项目的基础上做出。你应该不会在一个女孩的派对邀请函和讣告使用相同的字体吧。对我来说，创意的排版就是要根据现实应用的场景和变化来设计。</p>
+<p>   排版技术更像是一种类型的理论，某些特定的规则和惯例均适用于派对邀请函和讣告。这些总是被遵循的小规则，被证明独立于设计工作。好消息是，正是由于这些规则，就算是最不会设计的人也可以利用它们瞬间让排版从混乱不堪变得整洁大方，提升页面质量。</p>
+<p>   我们将专注于本文中的技术类型。我们将讨论一套小的规则的复杂性和细微差别，并学习用代码来创建它们。</p>
+<p>   我们将会学习如下内容：</p>
+<ul>
+<li>怎样选择字体模块</li>
+<li>怎样选择字体大小</li>
+<li>使用栅格</li>
+<li>制定措施</li>
+<li>垂直节奏和基线网格</li>
+<li>选择一个排版比例</li>
+<li>如何正确使用引号</li>
+<li>如何正确使用破折号</li>
+<li>如何正确使用省略号</li>
+<li>如何悬挂标点符号</li>
+<li>在网格中处理图像<br>友情提示：这是一篇比较深入的文章，它需要一些基本知识的CSS。如果你对CSS还不是很了解，请先学习相关知识。如果文中的代码有任何疑惑或者错误，还请给我留言，谢谢！</li>
+</ul>
+<p><strong>相关设置准备</strong></p>
+<p>   在开始之前，请新建一个html文件，然后将以下代码复制进去，保存到桌面。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/09/14/web-e6-8e-92-e7-89-88-e6-8a-80-e6-9c-af-e7-9a-84-e6-8c-87-e5-8d-97-e4-b8-8e-e6-8a-80-e5-b7-a7/" data-id="cj4ii2sr4002z6z74ug7cacnl" class="article-share-link">Delen</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-e8-bf-94-e5-9b-9e-e4-b8-80-e4-b8-aa-e6-95-b0-e7-bb-84-e4-b8-ad-e6-9c-80-e5-a4-a7-e6-88-96-e8-80-85-e6-9c-80-e5-b0-8f-e7-9a-84-e6-95-b0" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/09/05/e8-bf-94-e5-9b-9e-e4-b8-80-e4-b8-aa-e6-95-b0-e7-bb-84-e4-b8-ad-e6-9c-80-e5-a4-a7-e6-88-96-e8-80-85-e6-9c-80-e5-b0-8f-e7-9a-84-e6-95-b0/" class="article-date">
+  <time datetime="2016-09-05T02:07:45.000Z" itemprop="datePublished">2016-09-05</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Study/">Study</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/09/05/e8-bf-94-e5-9b-9e-e4-b8-80-e4-b8-aa-e6-95-b0-e7-bb-84-e4-b8-ad-e6-9c-80-e5-a4-a7-e6-88-96-e8-80-85-e6-9c-80-e5-b0-8f-e7-9a-84-e6-95-b0/">返回一个数组中最大或者最小的数</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>以返回最大值为例。</p>
+<p>方法一：遍历数组</p>
+<pre>function returnMax(array) {
+        var max = array[0]
+        for (var i = 1; i &lt; array.length; i++) {
+            if (max &lt; array[i]) {
+                max = array[i];
+            }
+        }
+        return max;
+    }</pre>
+方法二：使用apply方法
+
+&nbsp;
+<pre>function returnMax2(array){
+        return Math.max.apply(Math,array);
+    }</pre>
+也可以写成
+
+Math.max.apply({},array); 的简写形式。
+总结：两个方法都可以作为对象方法扩展存在，例如
+<pre>Array.prototype.max = function() {
+    return Math.max.apply({},this); 
+};//prototype可以像对象添加属性或方法，
+</pre>
+
+<p>调用的时候就成了<br>var array = new Array(1,2,3,5,4,6,7,8,9);</p>
+<p>array.max();//9</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/09/05/e8-bf-94-e5-9b-9e-e4-b8-80-e4-b8-aa-e6-95-b0-e7-bb-84-e4-b8-ad-e6-9c-80-e5-a4-a7-e6-88-96-e8-80-85-e6-9c-80-e5-b0-8f-e7-9a-84-e6-95-b0/" data-id="cj4ii2sqc001v6z74pmhrpxby" class="article-share-link">Delen</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-e5-b8-b8-e7-94-a8html-e5-92-8ccss-e5-b8-83-e5-b1-80-e6-8a-80-e5-b7-a7" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/09/02/e5-b8-b8-e7-94-a8html-e5-92-8ccss-e5-b8-83-e5-b1-80-e6-8a-80-e5-b7-a7/" class="article-date">
+  <time datetime="2016-09-02T05:53:24.000Z" itemprop="datePublished">2016-09-02</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Study/">Study</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/09/02/e5-b8-b8-e7-94-a8html-e5-92-8ccss-e5-b8-83-e5-b1-80-e6-8a-80-e5-b7-a7/">常用HTML和CSS布局技巧</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <pre><code>常见布局是每个前端开发者都应该掌握的基本知识，现在做一个简单的总结。（注：下面各个实例中实现的是 child 元素的对齐操作，child 元素的父容器是 parent 元素）
+</code></pre><p><strong>单列布局</strong></p>
+<p>一、水平居中布局</p>
+<p>1、使用 <strong>inline-block</strong> 和 <strong>text-align</strong> 实现</p>
+<pre>.parent{
+          text-align: center;
+}
+.child{
+      display: inline-block;
+}</pre>
+
+<p>优点：兼容性好。</p>
+<p>缺点：需同时设置父元素和子元素。</p>
+<p>2、使用 <strong>margin:0 auto</strong>来实现</p>
+<pre>.child{
+    width: 200px;
+    margin: 0 auto;
+}</pre>
+
+<p>优点：兼容性好。</p>
+<p>缺点：需指定宽度。</p>
+<p>3、使用 <strong>table</strong> 实现</p>
+<pre>.child{
+        display:table;
+        margin:0 auto;
+}</pre>
+
+<p>优点：只需要对自身进行设置</p>
+<p>缺点：IE6、7需要调整结构</p>
+<p> 4、使用绝对定位实现</p>
+<pre>.parent{
+     position: relative;
+}
+.child{
+     width: 200px;
+     position: absolute;
+     left: 50%;
+     margin-left: -100px;
+}</pre>
+
+<p>5、使用 <strong>flex</strong> 实现</p>
+<pre>.parent{
+        display:flex;
+        justify-content:center;
+}
+</pre>
+
+<p> 缺点：兼容性不好</p>
+<p>二、垂直居中布局（此项详情请看我的另一篇文章：<a><a href="http://127.0.0.1/365/2016/08/11/如何竖直居中盒子里面的内容/" target="_blank" rel="external">http://127.0.0.1/365/2016/08/11/如何竖直居中盒子里面的内容/</a></a></p>
+<p><strong>多列布局</strong></p>
+<p>三、左列定宽，右列自适应<br><img src="http://127.0.0.1/365/wp-content/uploads/2016/09/564c16cb00015c4603710131.png" alt="564c16cb00015c4603710131"></p>
+<p>1、利用 <strong>float+margin </strong>实现</p>
+<pre>.left{
+    float:left;
+    width:100px;
+} 
+.right{
+    margin-left:100px;
+}
+</pre>
+
+<p>2、使用 <strong>float+overflow</strong> 实现</p>
+<pre>.left{
+    float:left;
+    width:100px;
+} 
+.right{
+    overflow:hidden;
+}</pre>
+
+<p>如果我们需要将两列设置为等高，可以用下述方法将“背景”设置为等高，其实并不是内容的等高</p>
+<pre>.left{
+    width:100px;float:left;
+} 
+.right{
+    overflow:hidden;
+} 
+.parent{
+    overflow:hidden;
+} 
+.left,.right{
+    padding-bottom:9999px;
+    margin-bottom:-9999px;
+}
+</pre>
+
+<p>或者使用 <strong>table</strong> 实现</p>
+<pre>.parent{
+    display:table;
+    table-layout:fixed;
+    width:100%;
+} 
+.left{
+    width:100px;
+} 
+.right,.left{
+    display:table-cell;
+}
+</pre>
+
+<p>或者使用 <strong>flex</strong> 实现</p>
+<pre>.parent{
+    display:flex;
+} 
+.left{
+    width:100px;
+} 
+.right{
+    flex:1;
+}
+</pre>
+
+<p>利用右侧容器的flex:1，均分了剩余的宽度，也实现了同样的效果。而align-items 默认值为stretch，故二者高度相等。<br>sdfa</p>
+<p>作者：mrshi 原文地址：<a><a href="http://segmentfault.com/a/1190000003931851" target="_blank" rel="external">http://segmentfault.com/a/1190000003931851</a></a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/09/02/e5-b8-b8-e7-94-a8html-e5-92-8ccss-e5-b8-83-e5-b1-80-e6-8a-80-e5-b7-a7/" data-id="cj4ii2spi000z6z748yomslsq" class="article-share-link">Delen</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+
+  <nav id="page-nav">
+    <a class="extend prev" rel="prev" href="/page/2/">&laquo; __('prev')</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/4/">__('next') &raquo;</a>
+  </nav>
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categorieën</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Life/">Life</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/">Study</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Work/">Work</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/未分类/">未分类</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archieven</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recente berichten</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/06/28/helloworld/">helloworld</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/27/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/10/e5-8f-88-e8-a7-81-e5-91-a8-e6-9c-ab/">又见周末</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/06/oracle-e4-b9-8bsql-e5-9f-ba-e7-a1-80-e5-ad-a6-e4-b9-a0-ef-bc-88-e4-b8-89-ef-bc-89/">Oracle之SQL基础学习（三）</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/03/oracle-e4-b9-8bsql-e5-9f-ba-e7-a1-80-e5-ad-a6-e4-b9-a0-ef-bc-88-e4-ba-8c-ef-bc-89/">Oracle之SQL基础学习（二）</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

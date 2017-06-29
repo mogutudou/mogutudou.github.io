@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/page/4/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Zoeken"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-normalize-css-e4-b8-8e-reset-css-e7-9a-84-e4-b8-8d-e5-90-8c-e4-b9-8b-e5-a4-84" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/08/26/normalize-css-e4-b8-8e-reset-css-e7-9a-84-e4-b8-8d-e5-90-8c-e4-b9-8b-e5-a4-84/" class="article-date">
+  <time datetime="2016-08-26T03:05:01.000Z" itemprop="datePublished">2016-08-26</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Study/">Study</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/08/26/normalize-css-e4-b8-8e-reset-css-e7-9a-84-e4-b8-8d-e5-90-8c-e4-b9-8b-e5-a4-84/">Normalize.css 与 Reset.css 的不同之处</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><span style="color: #ff0000;"><strong>1、Normalize.css 保留了一些有用的默认样式，而不是清除并重置所有样式。</strong></span>例如 &lt;sup&gt; 和 &lt;sub&gt; 这两个定义上标和下标文本的标签在引用了 Normalize.css 之后仍能显示原来那样的样式（实际上已变的更强大），而在引用了 Reset.css 之后的样式看起来和正常文本几乎没什么区别。所以，Normalize.css 在视觉上并不会在标签上施加的样式起点，这可能不会让每个人都喜欢它，最好的办法就是不断在两者之间进行试验和修改，再确定哪个更适合自己。</p>
+<p><span style="color: #ff0000;">2、<strong>Normalize.css 纠正了超出 Reset.css 范围的一些常见的 bug。</strong></span>它具有比 Reset.css 更广的范围，并且还提供修复了一些常见问题的 bug ，例如HTML5元素的 display 属性，在继承表单元素时元素字体属性值缺失问题，修正补偿了&lt;pre&gt; 标签内的字体大小，IE9 中 SVG 的溢出问题以及 IOS 中按钮样式的bug。</p>
+<p><span style="color: #ff0000;">3、<strong>Normalize.css 不会弄乱你的开发工具。</strong></span>在使用 Reset.css 时一个常见的苦恼就是在浏览器 CSS 调试工具中大量的继承显示，而这在 Normalize.css 中为了达到目标样式并不是一个问题。</p>
+<p><span style="color: #ff0000;">4、<strong>Normalize.css 更加模块化。</strong></span>该项目被分解成很多相对独立的部分，您可以轻松删除可能的部分（如表单的样式标准化），如果你知道他们永远不会在你的网站中用到。</p>
+<p><span style="color: #ff0000;">5、</span><strong><span style="color: #ff0000;">Normalize.css有更好的参考文档资料。</span>N</strong>ormalize.css 代码在线托管在 GitHub 上，有更全面的记录。这意味着你可以找出每行代码是干什么的，为什么它会被列入，不同浏览器显示之间的差别是什么。你可以更容易地运行自己的测试。该项目的目标就是为了帮助教育人们对浏览器如何渲染默认的元素，并让他们参与改进的提交变得更容易。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/08/26/normalize-css-e4-b8-8e-reset-css-e7-9a-84-e4-b8-8d-e5-90-8c-e4-b9-8b-e5-a4-84/" data-id="cj4ii2sqz002r6z74egl0jqdy" class="article-share-link">Delen</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-e8-bf-99-e5-b0-b1-e6-98-afhsla" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/08/18/e8-bf-99-e5-b0-b1-e6-98-afhsla/" class="article-date">
+  <time datetime="2016-08-18T13:44:10.000Z" itemprop="datePublished">2016-08-18</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Study/">Study</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/08/18/e8-bf-99-e5-b0-b1-e6-98-afhsla/">这就是HSLa</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <pre><code>你以为我是在说低合金高强度钢？不，我们说的是Hue(色调)、Saturation(饱和度)、Lightness(亮度)和alpha(透明度)，它是CSS中声明颜色的一种方式，一般我们会这样写它：
+</code></pre><pre>#some-element{
+    background-color: hsla(170,50%,45%,1);
+}
+</pre>
+
+<pre><code>它类似于RGBa方式声明颜色，前三个参数值确定颜色，第四个参数值确定透明度，你可以在后面阅读更多关于浏览器支持的信息，但基本上是任何支持 rgba 的浏览器同样也支持 hsla。
+</code></pre><ul>
+<li>Hue（色调）－ 联想一个色相环，0°或者360°是红色，120°是绿色，240°是蓝色。你可以使用0-360之间的任何值，如果使用大于360或者小于0的值会默认为360。</li>
+<li>Saturation（饱和度）－ 0％是彻底失真（灰度），100%是完全饱和（全彩）。</li>
+<li>Lightness（亮度）－ 0％是彻底暗（黑），100％是彻底亮（白），50％是平均亮度。</li>
+<li>alpha（透明度）－ 0是完全透明，1是完全不透明，0.5是半透明。<br>让我们再深入了解。</li>
+</ul>
+<h6 id="为什么它那么酷"><a href="#为什么它那么酷" class="headerlink" title="为什么它那么酷"></a>为什么它那么酷</h6><pre><code>HSLa的真正魅力在于它更直观意义的显示出改变其中的参数的值会改变的颜色。增加第二个参数值将增加这种颜色的饱和度。减少第三个参数值将减少这种颜色的亮度。通过这种方式使得我们能更容易的创建自己的颜色变化动态。我敢打赌,我们大多数人无法通过RGBa模式创建好一致的颜色变化。
+
+HSLa模型也使改变颜色值的编程更加容易。
+</code></pre><h6 id="为什么它被使用的那么少呢？"><a href="#为什么它被使用的那么少呢？" class="headerlink" title="为什么它被使用的那么少呢？"></a>为什么它被使用的那么少呢？</h6><pre><code>HSLa被很少使用是我的一个重大假设，但据我所知，在实际编程中 HSLa 远不如 RGBa 使用的多，我认为的原因是因为HSL的值很难得到除非通过屏幕取样或者 photoshop 文件。如果你对此有疑惑或者有其他任何想法，请在评论中分享。
+</code></pre><p><img src="http://127.0.0.1/365/wp-content/uploads/2016/08/photoshopcolorpickerhsla2.jpg" alt="photoshopcolorpickerhsla2"></p>
+<h6 id="浏览器支持情况"><a href="#浏览器支持情况" class="headerlink" title="浏览器支持情况"></a>浏览器支持情况</h6><p>电脑支持情况如下：</p>
+<p><img src="http://127.0.0.1/365/wp-content/uploads/2016/08/WechatIMG1-1024x663.jpeg" alt="WechatIMG1"></p>
+<p>移动端支持如下：</p>
+<p><img src="http://127.0.0.1/365/wp-content/uploads/2016/08/WechatIMG2-1024x403.jpeg" alt="WechatIMG2"></p>
+<pre><code>对于不支持的浏览器，你可以声明一个后备颜色，IE 8也不支持RGBa，所以使用十六进制代码是最好的办法。
+</code></pre><pre>#some-element{
+    background-color: #e2ecf0;  /* Fallback */
+    background-color: hsla(170,50%,45%,1);
+}
+</pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/08/18/e8-bf-99-e5-b0-b1-e6-98-afhsla/" data-id="cj4ii2sqh00216z74roh7aiqp" class="article-share-link">Delen</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-e9-9d-a2-e8-af-95-e5-9b-9e-e9-a1-be" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/08/17/e9-9d-a2-e8-af-95-e5-9b-9e-e9-a1-be/" class="article-date">
+  <time datetime="2016-08-17T08:15:27.000Z" itemprop="datePublished">2016-08-17</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Life/">Life</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/08/17/e9-9d-a2-e8-af-95-e5-9b-9e-e9-a1-be/">面试回顾</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <pre><code>今天去面试了一个创业公司（深圳我连网），因为是创业公司，对于前端开发岗位主要还是想招一个经验丰富，技术过硬的前端开发工程师。约的时间是下午三点，我怕迟到便两点的时候就已经到公司楼下了，周围转了转，都是些办公写字楼，还有在建的几栋写字楼，公交方便，地铁出来要走相对较长的路，整体环境还是不错的。
+
+大概两点半的时候我上楼到了公司门口，整体情况依旧干净整洁大方，前台一个接待的美女态度也很好，里面虽然布局有点紧凑，不过也不影响，我还是比较满意的。
+
+面试是在边上一个会议室，没有笔试，直接一个技术主管或者更高职位的大哥，看起来就像技术大神的人来面我，一来也是边看我简历边让我自我介绍，然后第一个问题就问我关于前端框架的东西，对于这方面我没用过，也只有实话实说，如果我说react、angular怎样怎样，也都是些皮毛的东西，稍微再深一点就没法继续了。也许第一下把我懵住了，后来的问题显的有点紧张和底气不足，不过也算是把自己该说的都说了。后来还问了ajax的原理及跨域问题、html5的一些新特性、css动画animation和transition、bootstrap的缩放问题，还有一些我回答不上的问题记不清了，基本都是些比较新的前端知识。
+
+整个面试中规中矩，问题基本答对一半吧（自己经验不够丰富，面试官好像不是很满意）我会的基本都答出来了，不会的也没办法，毕竟自己也不是大神，回答的过程稍显我底气不足，说是考虑后再给答复。自己的优势是学习能力突出，刻苦专研的精神是让自己也骄傲的，所有的这些东西都是我自学的，每当面对任何一个棘手的技术问题我会想尽办法去解决它，网上搜也好，看别人写的技术博客也好，问身边的大神朋友也好，解决不了我睡不着觉。对于一个毕业了还跨专业跨行业就业的人这份勇气也是自己都不敢相信的。我连网公司都是一些年轻有为的有志青年组成的团队，环境氛围很好，大神也不少，在里面肯定能学到不少东西，自己还是比较希望加入的。
+
+尽人事，听天命吧。不管能不能过，依旧学习的路上我不会停止。
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/08/17/e9-9d-a2-e8-af-95-e5-9b-9e-e9-a1-be/" data-id="cj4ii2sqm00276z74wpwzpmty" class="article-share-link">Delen</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-leet-code-e9-a2-98-e7-9b-ae-roman-to-integer" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/08/15/leet-code-e9-a2-98-e7-9b-ae-roman-to-integer/" class="article-date">
+  <time datetime="2016-08-15T02:40:18.000Z" itemprop="datePublished">2016-08-15</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Study/">Study</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/08/15/leet-code-e9-a2-98-e7-9b-ae-roman-to-integer/">Leet Code题目——Roman to Integer</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>罗马数字转换成阿拉伯数字。</p>
+<p>罗马数字共有七个，即I(1)，V(5)，X(10)，L(50)，C(100)，D(500)，M(1000)。按照下面的规则可以表示任意正整数。</p>
+<p>重复数次：一个罗马数字重复几次，就表示这个数的几倍。</p>
+<p>右加左减：在一个较大的罗马数字的右边记上一个较小的罗马数字，表示大数字加小数字。在一个较大的数字的左边记上一个较小的罗马数字，表示大数字减小数字。但是，左减不能跨越等级。比如，99不可以用IC表示，用XCIX表示。</p>
+<p>加线乘千：在一个罗马数字的上方加上一条横线或者在右下方写M，表示将这个数字乘以1000，即是原数的1000倍。同理，如果上方有两条横线，即是原数的1000000倍。</p>
+<p>单位限制：同样单位只能出现3次，如40不能表示为XXXX，而要表示为XL。</p>
+<p>我们也可以每次跟前面的数字比较，如果小于等于前面的数字，我们先加上当前的数字，如果大于的前面的数字，我们加上当前的数字减去二倍前面的数字，这样可以把在上一个循环多加数减掉，参见代码如下:</p>
+<p>&nbsp;</p>
+<pre>var romanToInt = function(s) {
+    var roman = function(c){
+        switch(c){
+            case "I":
+                return 1;
+            case "V":
+                return 5;
+            case "X":
+                return 10;
+            case "L":
+                return 50;
+            case "C":
+                return 100;
+            case "D":
+                return 500;
+            case "M":
+                return 1000;
+            default:
+                return 0;
+        }
+    };
+    var a;
+    a = s.split("");
+    var b = roman(a[0]);
+    for(var i=1; i&lt;a.length+1; i++){
+      if(roman(a[i-1]) &gt;= roman(a[i])){
+            b += roman(a[i]);
+        }else{
+            b = b - 2*roman(a[i-1]) + roman(a[i]);
+        }
+    }
+    return b;
+};
+</pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/08/15/leet-code-e9-a2-98-e7-9b-ae-roman-to-integer/" data-id="cj4ii2sqp002d6z7452umlfnl" class="article-share-link">Delen</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-e5-a6-82-e4-bd-95-e5-9c-a8-e4-b8-80-e4-b8-aa-e6-95-b0-e7-bb-84-e4-b8-ad-e5-88-a0-e9-99-a4-e6-8c-87-e5-ae-9a-e5-80-bc-ef-bc-88-e4-b8-8d-e7-a1-ae-e5-ae-9a-e4-bd-8d-e7-bd-ae-ef-bc-89-e7-9a-84-e5-85-83" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/08/13/e5-a6-82-e4-bd-95-e5-9c-a8-e4-b8-80-e4-b8-aa-e6-95-b0-e7-bb-84-e4-b8-ad-e5-88-a0-e9-99-a4-e6-8c-87-e5-ae-9a-e5-80-bc-ef-bc-88-e4-b8-8d-e7-a1-ae-e5-ae-9a-e4-bd-8d-e7-bd-ae-ef-bc-89-e7-9a-84-e5-85-83/" class="article-date">
+  <time datetime="2016-08-12T16:02:44.000Z" itemprop="datePublished">2016-08-13</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Study/">Study</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/08/13/e5-a6-82-e4-bd-95-e5-9c-a8-e4-b8-80-e4-b8-aa-e6-95-b0-e7-bb-84-e4-b8-ad-e5-88-a0-e9-99-a4-e6-8c-87-e5-ae-9a-e5-80-bc-ef-bc-88-e4-b8-8d-e7-a1-ae-e5-ae-9a-e4-bd-8d-e7-bd-ae-ef-bc-89-e7-9a-84-e5-85-83/">如何在一个数组中删除指定值（不确定位置）的元素</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>今天看到一个问题，如何删除一个数组中指定值（不确定位置）的元素？比如数组[1,2,3,3,4,4,5,3,3,6,5]，我要删除其中的元素3，但是这个3的位置我是不知道的,而且这个3还可能不止一个。</p>
+<p>下面我就用JavaScript来写个函数来实现它。</p>
+<pre><code>    var removeElement = function(nums, val) {
+        for(var i=0; i&amp;lt;nums.length; i++){
+          if(nums[i] === val){
+              nums.splice(i,1);
+              i--;
+          }
+      }
+    return nums;
+};
+</code></pre><p>&nbsp;</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/08/13/e5-a6-82-e4-bd-95-e5-9c-a8-e4-b8-80-e4-b8-aa-e6-95-b0-e7-bb-84-e4-b8-ad-e5-88-a0-e9-99-a4-e6-8c-87-e5-ae-9a-e5-80-bc-ef-bc-88-e4-b8-8d-e7-a1-ae-e5-ae-9a-e4-bd-8d-e7-bd-ae-ef-bc-89-e7-9a-84-e5-85-83/" data-id="cj4ii2spc000t6z7493ct8zqw" class="article-share-link">Delen</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-e5-a6-82-e4-bd-95-e7-ab-96-e7-9b-b4-e5-b1-85-e4-b8-ad-e7-9b-92-e5-ad-90-e9-87-8c-e9-9d-a2-e7-9a-84-e5-86-85-e5-ae-b9" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/08/11/e5-a6-82-e4-bd-95-e7-ab-96-e7-9b-b4-e5-b1-85-e4-b8-ad-e7-9b-92-e5-ad-90-e9-87-8c-e9-9d-a2-e7-9a-84-e5-86-85-e5-ae-b9/" class="article-date">
+  <time datetime="2016-08-11T10:02:47.000Z" itemprop="datePublished">2016-08-11</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Study/">Study</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/08/11/e5-a6-82-e4-bd-95-e7-ab-96-e7-9b-b4-e5-b1-85-e4-b8-ad-e7-9b-92-e5-ad-90-e9-87-8c-e9-9d-a2-e7-9a-84-e5-86-85-e5-ae-b9/">如何竖直居中盒子里面的内容</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <pre><code>竖直居中一直不是没有水平居中那么容易解决，vertical-align属性总是不那么好掌握。
+
+具体情况如下：一个固定宽高（宽500px，高300px）的div里有一段文字，目标是将那段文字放到div的竖直居中和水平居中的位置。
+
+html代码如下：
+</code></pre><p>&lt;div class=”middle”&gt;<br>&lt;p&gt;我是竖直居中的文字&lt;/p&gt;<br>&lt;/div&gt;</p>
+<pre><code>方法一：通过display:table-cell;和virtical-align:middle;完成。
+</code></pre><p>.middle{<br>display: table-cell;<br>vertical-align: middle;<br>text-align: center;<br>width: 500px;<br>height: 300px;<br>background: #ff0;<br>}</p>
+<pre><code>方法二：通过直接设置p元素的line-height属性完成。
+</code></pre><p>.middle{<br>width: 500px;<br>height: 300px;<br>background: #ff0;<br>text-align: center;<br>}<br>.middle p{<br>line-height: 300px;<br>}</p>
+<pre><code>方法三：通过伪元素 :before 或者 :after 设置。
+</code></pre><p>.middle{<br>width: 500px;<br>height: 300px;<br>background: #ff0;<br>text-align: center;<br>font-size: 0;<br>}</p>
+<p>.middle:after{<br>display: inline-block;<br>height: 100%;<br>vertical-align: middle;<br>content: “”;<br>}</p>
+<p>.middle p{<br>display: inline-block;<br>font-size: 14px;<br>}</p>
+<pre><code>方法四：通过display:flex设置。
+</code></pre><p>.middle{<br>display: flex;<br>align-items: center;<br>justify-content: center;<br>width: 500px;<br>height: 300px;<br>background: #ff0;<br>}</p>
+<pre><code>方法五：通过绝对定位设置。
+</code></pre><p>.middle{<br>position: relative;<br>width: 500px;<br>height: 300px;<br>background: #ff0;<br>}<br>.middle p{<br>position: absolute;<br>top: 50%;<br>left: 50%;<br>display: inline-block;<br>margin-left: -72px;<br>margin-top: -8px;<br>}</p>
+<pre><code>最后的效果如图：
+</code></pre><p><img src="http://127.0.0.1/365/wp-content/uploads/2016/08/1.pic_.jpg" alt="1.pic"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/08/11/e5-a6-82-e4-bd-95-e7-ab-96-e7-9b-b4-e5-b1-85-e4-b8-ad-e7-9b-92-e5-ad-90-e9-87-8c-e9-9d-a2-e7-9a-84-e5-86-85-e5-ae-b9/" data-id="cj4ii2spg000x6z7476j8p04w" class="article-share-link">Delen</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-20-e7-82-b9-e6-8f-90-e9-ab-98-e7-bd-91-e7-ab-99-e8-ae-bf-e9-97-ae-e9-80-9f-e5-ba-a6-e7-bc-a9-e7-9f-ad-e7-bd-91-e9-a1-b5-e5-8a-a0-e8-bd-bd-e6-97-b6-e9-97-b4-ef-bc-81" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/08/08/20-e7-82-b9-e6-8f-90-e9-ab-98-e7-bd-91-e7-ab-99-e8-ae-bf-e9-97-ae-e9-80-9f-e5-ba-a6-e7-bc-a9-e7-9f-ad-e7-bd-91-e9-a1-b5-e5-8a-a0-e8-bd-bd-e6-97-b6-e9-97-b4-ef-bc-81/" class="article-date">
+  <time datetime="2016-08-08T03:00:39.000Z" itemprop="datePublished">2016-08-08</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Study/">Study</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/08/08/20-e7-82-b9-e6-8f-90-e9-ab-98-e7-bd-91-e7-ab-99-e8-ae-bf-e9-97-ae-e9-80-9f-e5-ba-a6-e7-bc-a9-e7-9f-ad-e7-bd-91-e9-a1-b5-e5-8a-a0-e8-bd-bd-e6-97-b6-e9-97-b4-ef-bc-81/">20点提高网站访问速度缩短网页加载时间！</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>20点提高网站访问速度缩短网页加载时间！（转自 <a href="http://www.jb51.net/yunying/245637.html" target="_blank" rel="external">http://www.jb51.net/yunying/245637.html</a> ）</p>
+<pre><code>网友上网都不喜欢用太多的时间等待网页的打开，等待的越长，用户可能会直接关闭网页，这样就会损失很多流量！其次，关键字的排名与网页的打开速度也有关系，这个主要体现搜索引擎对用户体验度上，用户体验度好，排名相对其它网站就好些。因此我觉得我们有必要去提高网页的打开速度，这个不需要太多的成本投入，只需要平时多注意一些小技巧就行了！下面给出20种方法帮你提高网站访问速度缩短网页加载时间。
+</code></pre><p>1、减少页面HTTP请求数量</p>
+<p>比较直接的理解就是要减少调用其他页面、文件的数量。</p>
+<p>A.我们在使用css格式控制的时候，经常会采用background载入很多图形文件，每个background的图像至少产生1次HTTP请求，一般我们为了让页面生动活泼会大量使用background来加载背景图，要改善这个状况，可以采用css的1个有用的background-position属性来加载背景图，我们将需要频繁加载的多个图片合成为1个单独的图片，需要加载时，采用以下形式加载即可将这部分图片加载的HTTP请求缩减为1个。</p>
+<p>B.采用Image maps，这个方法也比较常用，只是限于同1个区域使用。</p>
+<p>C.Inline images，这个方法很少见到，但对于很小很简单的图像却是很实用的，相关语法标准参照：tools.ietf.org/html/rfc2397。</p>
+<p>2、使用CDN(Content Delivery Network)网络加速</p>
+<p>现在国内做CDN加速业务的公司很多，简单讲，就是将你的图片、视频扩散到CDN网络所能到达之处，让用户访问时能就近下载到这些文件，从而达到网络提速的目的，这样做，同时能减轻你自己网站的负载。</p>
+<p>3、添加文件过期或缓存头</p>
+<p>对于同一用户频繁访问的图片、Js脚本文件等可以在Apache或Nginx设置其缓冲 时间，例如设置24小时过期时间，这样用户在访问过该页面之后再次访问时，同一组图片或JS不会再重复下载，从而减少了HTTP请求，用户访问速度明显有 所提升，同时服务器负载也会下降。下面给出nginx配置中缓存控制的例子：</p>
+<p>4、服务器开启gzip压缩</p>
+<p>这个大家都比较了解，即将需要传输的内容压缩后传输到客户端再解压，这样在网络上传输的 数据量会大幅减小。通常在服务器上的Apache、Nginx可以直接开启这个设置，也可以从代码角度直接设置传输文件头，增加gzip的设置，也可以从 负载均衡设备直接设置。不过需要留意的是，这个设置会略微增加服务器的负担。</p>
+<p>5、css格式定义放置在文件头部</p>
+<p>这项设置对于用户端是慢速网络或网页内容比较庞大的情况比较有利，可以在网页逐步呈现的同时仍会保持格式信息，不影响网页美感。</p>
+<p>6、Javascript脚本放在文件末尾</p>
+<p>很多Javascript脚本执行效率低下，或者有的第3方域名脚本出现意外无法载入， 如果将这些脚本放置到页面比较靠前的位置，可能会导致我们自己网站的内容载入速度下降甚至无法正常加载，所以一般将这些脚本放置在网页文件末尾，一定要放 置在前面的脚本要改用所谓的“后载入”方式加载，在主体网页加载完成后再加载，防止其影响到主体网页的加载速度。</p>
+<p>7、避免使用CSS脚本(CSS Expressions)</p>
+<p>有时为了要css的参数动态改变，可能会采用css expression来实现，但这样做得不偿失，会使用户端浏览器负担明显加重，所以不建议这样做，如果需要改变，可以使用Javascript脚本去实现。</p>
+<p>8、css、javascript改由外部调用</p>
+<p>如果css、js内容比较庞大，尽量不要写到同1个页面中去，改由外部载入比较妥当，因为浏览器本身会对css、js文件进行缓存。</p>
+<p>9、压缩Javascript、CSS代码</p>
+<p>一般js、css文件中存在大量的空格、换行、注释，这些利于阅读，如果能够压缩掉，将会很有利于网络传输。这方面的工具也有很多，一般可以保留开发版本，利用工具生成生产版本，2个文件比较，一般压缩率能达到50%以上，减少的数据量还是比较可观的。</p>
+<p>我这个博客刚改版完成，各种代码还没有进行优化和压缩，目前yslow评级只能达到D,等有时间进行部分优化，达到C等级应该问题不大。</p>
+<p>10、避免采用301、302转向</p>
+<p>11、养成良好的开发维护习惯，尽量避免脚本重复调用</p>
+<p>12、配置ETags</p>
+<p>13、Ajax采用缓存调用</p>
+<p>这个的使用可以参照Discuz论坛代码，里面对于大量使用的Ajax调用都采用了缓存 调用方式，一般采用附加特征参数方式实现，注意其中的</p>
+<p>就是特征参数，这个参数不变化就使用缓存文件，如果发生变化则重新下载新文件或更新信 息。</p>
+<p>14、合理使用Flush</p>
+<p>用户端发送浏览请求后，服务器端一般要花销200-500ms去处理这些请求，在此期间，用户端浏览器处于等待状态，如果要减少用户等待时间，可以在适当的位置使用flush，将已经就绪的内容推送到用户端，这在php中很容易实现例如：</p>
+<p>15、Ajax调用尽量采用GET方法调用</p>
+<p>实际使用XMLHttpRequest时，如果使用POST方法实现，会发生2次HTTP请求，而使用GET方法只会发生1次HTTP请求。如果改用GET方法，HTTP请求减少50%！</p>
+<p>16、尽可能减少DCOM元素</p>
+<p>这个很好理解，就是尽可能减少网页中各种&lt;&gt;元素数量，例如</p>
+<p>的冗余很严重，而我们完全可以用取代之。</p>
+<p>17、使用多域名负载网页内的多个文件、图片</p>
+<p>记得有资料说明，IE在网页载入过程中，在同1时刻，对同1域名并行加的HTTP请求数 量最高为2个，如果网页需要加载的文件数量超过2个(通常远远超过..)，要加快网页访问速度，最好将文件分布到多个域名，例如19楼，其js文件采用独 立的域名，据说百度的图片服务器数量在20台以上。</p>
+<p>18、缩减iframe的使用，如无必要，尽量不要使用</p>
+<p>iframe通常用于不同域名内容的加载，这同时也可能因iframe内容加载速度影响到主网页加载速度，如果可能，把需要加载的内容抓取到本地直接嵌入。如果实在需要iframe加载，采用后载入方式实现。</p>
+<p>19、优化图片文件</p>
+<p>优化图片文件，减小其尺寸，特别是缩略图，一定要按尺寸生成缩略图然后调用，不要在网页中用resize方法实现，虽然这样看到的图片外形笑了，但是其加载的数据量一点也没减少。曾经见过有人在网页中加载的缩略图，其真实尺寸有10M之巨…</p>
+<p>普通图像、icon也要尽可能压缩后，可以采用web图像保存、减少颜色数等等方法实现。</p>
+<p>20、当页面内容庞大到一定程度，可以采用分页的方式展现，或者taobao的那种翻页后载入方式。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/08/08/20-e7-82-b9-e6-8f-90-e9-ab-98-e7-bd-91-e7-ab-99-e8-ae-bf-e9-97-ae-e9-80-9f-e5-ba-a6-e7-bc-a9-e7-9f-ad-e7-bd-91-e9-a1-b5-e5-8a-a0-e8-bd-bd-e6-97-b6-e9-97-b4-ef-bc-81/" data-id="cj4ii2so300016z74al4adiwv" class="article-share-link">Delen</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-e5-89-8d-e7-ab-af-e9-9d-a2-e8-af-95-e6-80-bb-e7-bb-93" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/08/06/e5-89-8d-e7-ab-af-e9-9d-a2-e8-af-95-e6-80-bb-e7-bb-93/" class="article-date">
+  <time datetime="2016-08-06T15:14:02.000Z" itemprop="datePublished">2016-08-06</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Life/">Life</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/08/06/e5-89-8d-e7-ab-af-e9-9d-a2-e8-af-95-e6-80-bb-e7-bb-93/">前端面试总结</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <pre><code>最近在准备面试，在这个行业我还算是个新人，俗话说不打无准备的仗，多看一点多总结一些经验总是好的。所以把网上看到的一些面试题，不管基础的还是困难的都做一遍，也算是自己的复习了。
+</code></pre><p>1、行内元素有哪些？块级元素有哪些？ 空(void)元素有那些？</p>
+<p>答：每个元素都有 display 属性，我理解的块级元素就是“石头”，对应的 display 属性为 block；行内元素就“水”，对应的 display 属性为 inline；display 属性为 inline-block 的就是“果冻”。主要就是这三个，其它还有 display 属性为 table-cell 或者 flex 或者 list-item 等很多这里暂时不做讨论。</p>
+<p>行内元素有：span , label , img , a , b , input , strong , select 等。</p>
+<p>块级元素有：p , h1~h6 , ul , li , div , ol , dl ,dd , dt 等。</p>
+<p>空元素有：br , hr , img , input , link , meta 等。</p>
+<p>2、样式的引入方式有哪些？</p>
+<p>答：一般来说有3种：</p>
+<p>(1).最常用的，引入样式表，在样式表中编写样式，引入方式如下：<br>&lt;link href=”css/style.css” rel=”stylesheet” type=”text/css”&gt;</p>
+<p>或者像方式(2)通过@import 引入：</p>
+<p>&lt;style type=”text/css”&gt;<br>@improt url(“xxxx.css”)<br>&lt;/style&gt;</p>
+<p>(2).在Html头部用&lt;style&gt;&lt;/style&gt;包起来，在这里面编写样式：<br>&lt;style type=”text/css”&gt;<br>*{<br>padding: 0;margin: 0<br>}<br>&lt;/style&gt;</p>
+<p>(3).在标签里面直接编写行内样式。</p>
+<p>&lt;div style=”color: #333”&gt;&lt;div&gt;</p>
+<p>3、页面导入样式时，使用link和@import有什么区别？</p>
+<p><span style="line-height: 1.5;">（1）<span class="hljs-selector-tag">link</span>属于<span class="hljs-selector-tag">XHTML</span>标签，除了加载<span class="hljs-selector-tag">CSS</span>外，还能用于定义<span class="hljs-selector-tag">RSS</span>, 定义<span class="hljs-selector-tag">rel</span>连接属性等作用；而@<span class="hljs-keyword">import</span>是<span class="hljs-keyword">CSS</span>提供的，只能用于加载<span class="hljs-keyword">CSS</span>; </span></p>
+<p><span style="line-height: 1.5;">（2）页面被加载的时，<span class="hljs-selector-tag">link</span>会同时被加载，而@<span class="hljs-keyword">import</span>引用的<span class="hljs-keyword">CSS</span>会等到页面被加载完再加载; （3）<span class="hljs-selector-tag">import</span>是<span class="hljs-selector-tag">CSS2</span><span class="hljs-selector-class">.1</span> 提出的，只在<span class="hljs-selector-tag">IE5</span>以上才能被识别，而<span class="hljs-selector-tag">link</span>是<span class="hljs-selector-tag">XHTML</span>标签，无兼容问题;</span></p>
+<p><span style="line-height: 1.5;">（4）Link 支持使用javascript改变样式，后者不可</span></p>
+<p><span style="line-height: 1.5;">4、title与h1的区别、b与strong的区别、i与em的区别？</span></p>
+<p>（1）title属性没有明确意义只表示是个标题，h1则表示层次明确的标题，对页面信息的抓取也有很大的影响；</p>
+<p>（2）strong是标明重点内容，有语气加强的含义，使用阅读设备阅读网络时：<span class="hljs-tag">&lt;<span class="hljs-name">strong</span>&gt;</span>会重读，而<span class="hljs-tag">&lt;<span class="hljs-name">b</span>&gt;</span>是展示强调内容。</p>
+<p>（3） i内容展示为斜体，em表示强调的文本；</p>
+<p>5、html5有哪些新特性？如何区分html 和html5？</p>
+<p>HTML5 主要是关于图像，位置，存储，多任务等功能的增加。</p>
+<p>绘画 canvas;</p>
+<p>用于媒介回放的 video 和 audio 元素;</p>
+<p>本地离线存储 localStorage 长期存储数据，浏览器关闭后数据不丢失;</p>
+<p>sessionStorage 的数据在浏览器关闭后自动删除;</p>
+<p>语意化更好的内容元素，比如 article、footer、header、nav、section;</p>
+<p>表单控件，calendar、date、time、email、url、search;</p>
+<p>新的技术webworker, websocket, Geolocation;</p>
+<p>如何区分HTML5： DOCTYPE声明\新增的结构元素\功能元素</p>
+<p>6、简述一下你对HTML语义化的理解？</p>
+<p>用正确的标签做正确的事情。 html语义化让页面的内容结构化，结构更清晰，便于对浏览器、搜索引擎解析;</p>
+<p>即使在没有样式CSS情况下也以一种文档格式显示，并且是容易阅读的; 搜索引擎的爬虫也依赖于HTML标记来确定上下文和各个关键字的权重，利于SEO;</p>
+<p>使阅读源代码的人对网站更容易将网站分块，便于阅读维护理解。</p>
+<p>7、你能描述一下渐进增强和优雅降级之间的不同吗？</p>
+<p>（1）渐进增强 progressive enhancement：针对低版本浏览器进行构建页面，保证最基本的功能，然后再针对高级浏览器进行效果、交互等改进和追加功能达到更好的用户体验。<br>（2）优雅降级 graceful degradation：一开始就构建完整的功能，然后再针对低版本浏览器进行兼容。</p>
+<p>区别：优雅降级是从复杂的现状开始，并试图减少用户体验的供给，而渐进增强则是从一个非常基础的，能够起作用的版本开始，并不断扩充，以适应未来环境的需要。降级（功能衰减）意味着往回看；而渐进增强则意味着朝前看，同时保证其根基处于安全地带。</p>
+<p>8、简述一下src与href之间的区别？</p>
+<p>src用于替换当前元素，href用于在当前文档和引用资源之间确立联系，src的内容，是页面必不可少的一部分，是引入。href的内容，是与页面有关联，是引用。区别就是引入和引用。</p>
+<p>src是source的缩写，指向外部资源的位置，指向的内容将会嵌入到文档中当前标签所在位置；在请求src资源时会将其指向的资源下载并应用到文档内，例如js脚本，img图片和frame等元素。<br>&lt;script src =”js.js”&gt;&lt;/script&gt;<br>当浏览器解析到该元素时，会暂停其他资源的下载和处理，直到将该资源加载、编译、执行完毕，图片和框架等元素也如此，类似于将所指向资源嵌入当前标签内。这也是为什么将js脚本放在底部而不是头部。</p>
+<p>href是Hypertext Reference的缩写，指向网络资源所在位置，建立和当前元素（锚点）或当前文档（链接）之间的链接，如果我们在文档中添加<br>&lt;link href=”common.css” rel=”stylesheet”/&gt;<br>那么浏览器会识别该文档为css文件，就会并行下载资源并且不会停止对当前文档的处理。这也是为什么建议使用link方式来加载css，而不是使用@import方式。</p>
+<p>9、CSS都有哪些选择器？</p>
+<p>派生选择器（用HTML标签申明）<br>•id选择器（用DOM的ID申明）<br>•类选择器（用一个样式类名申明）<br>•属性选择器（用DOM的属性申明，属于CSS2，IE6不支持，不常用，不知道就算了）<br>除了前3种基本选择器，还有一些扩展选择器，包括</p>
+<p>•后代选择器（利用空格间隔，比如div .a{  }）<br>•群组选择器（利用逗号间隔，比如p,div,#a{  }）<br>那么问题来了，CSS选择器的优先级是怎么样定义的？</p>
+<p>基本原则：</p>
+<p>一般而言，选择器越特殊，它的优先级越高。也就是选择器指向的越准确，它的优先级就越高。</p>
+<p>复杂的计算方法：</p>
+<p>•用1表示派生选择器的优先级<br>•用10表示类选择器的优先级<br>•用100标示ID选择器的优先级<br>•div.test1 .span var 优先级 1+10 +10 +1<br>•span#xxx .songs li 优先级1+100 + 10 + 1<br>•#xxx li 优先级 100 +1</p>
+<p>10、CSS中可以通过哪些属性定义，使得一个DOM元素不显示在浏览器可视范围内？</p>
+<p>最基本的：设置display属性为none，或者设置visibility属性为hidden</p>
+<p>技巧性：设置宽高为0，设置透明度为0，设置z-index位置在-1000</p>
+<p>11、超链接访问过后hover样式就不出现的问题是什么？如何解决？</p>
+<p>被点击访问过的超链接样式不在具有hover和active了,解决方法是改变CSS属性的排列顺序: L-V-H-A（link,visited,hover,active）</p>
+<p>12、什么是Css Hack？ie6,7,8的hack分别是什么？</p>
+<p>针对不同的浏览器写不同的CSS code的过程，就是CSS hack。</p>
+<p>具体细说有点长，网上有总结的很好的博客，比如<a href="http://blog.csdn.net/freshlover/article/details/12132801" target="_blank" rel="external">http://blog.csdn.net/freshlover/article/details/12132801</a></p>
+<p>13、请用Css写一个简单的幻灯片效果页面。</p>
+<p>通过用css3的animation动画实现。代码如下（幻灯片就用的背景颜色变换展示，浏览器为内核为webkit的谷歌浏览器）：</p>
+<p>html代码为：&lt;div class=”nihao”&gt;&lt;/div&gt;</p>
+<p>css代码为：</p>
+<p>.nihao{<br>width: 100px;<br>height: 100px;<br>-webkit-animation: ppt 5s linear;<br>}</p>
+<p>@-webkit-keyframes ppt{<br>0%{<br>background: #000;<br>}<br>25%{<br>background: #f00;<br>}<br>50%{<br>background: #00f;<br>}<br>75%{<br>background: #0ff;<br>}<br>100%{<br>background: #ff0;<br>}<br>}</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/08/06/e5-89-8d-e7-ab-af-e9-9d-a2-e8-af-95-e6-80-bb-e7-bb-93/" data-id="cj4ii2sp0000k6z74oz3vwvj8" class="article-share-link">Delen</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-e7-94-a8js-e5-ae-9e-e7-8e-b0-e5-b8-b8-e7-94-a8-e6-8e-92-e5-ba-8f-e7-ae-97-e6-b3-95" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/08/01/e7-94-a8js-e5-ae-9e-e7-8e-b0-e5-b8-b8-e7-94-a8-e6-8e-92-e5-ba-8f-e7-ae-97-e6-b3-95/" class="article-date">
+  <time datetime="2016-08-01T14:59:19.000Z" itemprop="datePublished">2016-08-01</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Study/">Study</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/08/01/e7-94-a8js-e5-ae-9e-e7-8e-b0-e5-b8-b8-e7-94-a8-e6-8e-92-e5-ba-8f-e7-ae-97-e6-b3-95/">用JS实现常用排序算法</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <pre><code>看到排序算法这里，发现有些面试官喜欢考这个，所以我大概总结一下，也为自己做好准备，以下内容为我个人见解，如有错误的地方还欢迎指正。以下例子均是给一个数字数组按从小到大排序
+</code></pre><p>一、js原生有sort()方法</p>
+<pre>function paixu(array){
+    return array.sort(function(a,b){return (a-b)})
+}
+</pre>
+
+<p>二、冒泡排序</p>
+<pre>function paixu2(array){
+    var temp;
+    for (var i = 0; i &lt; array.length; i++) {
+        for (var j = i+1; j &lt; array.length; j++) {
+                    if(array[i] &gt; array[j]){
+                temp = array[i];
+                array[i] = array[j];
+                array[j] = temp;
+            }
+        }
+    }
+    return array;
+}
+
+</pre>
+
+<p>三、插入排序</p>
+<pre>function paixu3(array){
+    for (var i = 0; i &lt; array.length; i++) {
+            var temp = array[i];
+            var j = i - 1; 
+            while (j &gt;= 0 &amp;&amp; array[j] &gt; temp) {
+                array[j + 1] = array[j];
+                j--;
+            }
+            array[j + 1] = temp;
+        }
+        return array;
+    }
+</pre>
+四、快排
+<pre>function kuaipai(array){
+    if (array.length &lt;= 1) {return array;}
+    var base = array.splice(0,1)[0];
+    var left = [];
+    var right = [];
+    for (var i = 0; i &lt; array.length; i++) {
+        if(array[i] &lt; base){
+            left.push(array[i]);
+        } else{
+            right.push(array[i]);
+        }
+    }
+    return kuaipai(left).concat([base],kuaipai(right));
+}
+</pre>
+
+<p>关于排序，还有其它很多算法，以后再慢慢补充。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/08/01/e7-94-a8js-e5-ae-9e-e7-8e-b0-e5-b8-b8-e7-94-a8-e6-8e-92-e5-ba-8f-e7-ae-97-e6-b3-95/" data-id="cj4ii2sq3001n6z74ixn4ggpw" class="article-share-link">Delen</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-leetcode-e9-a2-98-e7-9b-ae-add-digits" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/08/01/leetcode-e9-a2-98-e7-9b-ae-add-digits/" class="article-date">
+  <time datetime="2016-08-01T02:01:27.000Z" itemprop="datePublished">2016-08-01</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Study/">Study</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/08/01/leetcode-e9-a2-98-e7-9b-ae-add-digits/">LeetCode题目—— Add Digits</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <pre><code>给一个非负整数，把每一位上的数字相加，若和不为一位数则继续把每一位上的数字相加，直到相加只和为一位数为止，最后返回那个数。英文原文如下：
+</code></pre><blockquote>
+<p>Given a non-negative integer <code>num</code>, repeatedly add all its digits until the result has only one digit.</p>
+<p>For example:</p>
+<p>Given <code>num = 38</code>, the process is like: <code>3 + 8 = 11</code>, <code>1 + 1 = 2</code>. Since <code>2</code> has only one digit, return it.</p>
+</blockquote>
+<pre><code>这题主要是要掌握字符串和数字之间的转换，以及递归方法的掌握。下面我们就用 Javascript 写一个函数实现它，如果有其它更好的方法，还请给我评论或者联系我。
+</code></pre><pre>var addDigits = function(num) {
+    var num2 = String(num).split('');
+    var num3 = 0;
+    for(var i=0; i&lt;num2.length; i++){
+        num3 += Number(num2[i]);
+    }
+    if(num3 &lt; 10) return num3;
+    else return addDigits(num3);
+};
+</pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/08/01/leetcode-e9-a2-98-e7-9b-ae-add-digits/" data-id="cj4ii2sqs002h6z74i6gjp3xr" class="article-share-link">Delen</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+
+  <nav id="page-nav">
+    <a class="extend prev" rel="prev" href="/page/3/">&laquo; __('prev')</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/5/">__('next') &raquo;</a>
+  </nav>
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categorieën</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Life/">Life</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/">Study</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Work/">Work</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/未分类/">未分类</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archieven</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recente berichten</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/06/28/helloworld/">helloworld</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/27/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/10/e5-8f-88-e8-a7-81-e5-91-a8-e6-9c-ab/">又见周末</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/06/oracle-e4-b9-8bsql-e5-9f-ba-e7-a1-80-e5-ad-a6-e4-b9-a0-ef-bc-88-e4-b8-89-ef-bc-89/">Oracle之SQL基础学习（三）</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/03/oracle-e4-b9-8bsql-e5-9f-ba-e7-a1-80-e5-ad-a6-e4-b9-a0-ef-bc-88-e4-ba-8c-ef-bc-89/">Oracle之SQL基础学习（二）</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>git学习 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="git学习git对我来说还是很陌生，就以前跟着练习了一些命令，建立了一些git仓库，也上传了一些文件到GitHub远程仓库，git要想熟练甚至精通简直太难，现在来说我只想重新掌握一些日常简单的命令，多练习达到熟练的程度就可以了。今天再重新翻出来，算是复习，也算是重新学习吧。 在看git之前我觉得很有必要了解一些终端的命令，最常见的几个大概是这几个：  pwd显示当前目录的路径名*   ls显示当前">
+<meta property="og:type" content="article">
+<meta property="og:title" content="git学习">
+<meta property="og:url" content="http://yoursite.com/2016/12/05/git-e5-ad-a6-e4-b9-a0/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="git学习git对我来说还是很陌生，就以前跟着练习了一些命令，建立了一些git仓库，也上传了一些文件到GitHub远程仓库，git要想熟练甚至精通简直太难，现在来说我只想重新掌握一些日常简单的命令，多练习达到熟练的程度就可以了。今天再重新翻出来，算是复习，也算是重新学习吧。 在看git之前我觉得很有必要了解一些终端的命令，最常见的几个大概是这几个：  pwd显示当前目录的路径名*   ls显示当前">
+<meta property="og:updated_time" content="2017-06-29T13:54:53.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="git学习">
+<meta name="twitter:description" content="git学习git对我来说还是很陌生，就以前跟着练习了一些命令，建立了一些git仓库，也上传了一些文件到GitHub远程仓库，git要想熟练甚至精通简直太难，现在来说我只想重新掌握一些日常简单的命令，多练习达到熟练的程度就可以了。今天再重新翻出来，算是复习，也算是重新学习吧。 在看git之前我觉得很有必要了解一些终端的命令，最常见的几个大概是这几个：  pwd显示当前目录的路径名*   ls显示当前">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Zoeken"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-git-e5-ad-a6-e4-b9-a0" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/12/05/git-e5-ad-a6-e4-b9-a0/" class="article-date">
+  <time datetime="2016-12-05T08:56:18.000Z" itemprop="datePublished">2016-12-05</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Study/">Study</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      git学习
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="git学习"><a href="#git学习" class="headerlink" title="git学习"></a>git学习</h4><p>git对我来说还是很陌生，就以前跟着练习了一些命令，建立了一些git仓库，也上传了一些文件到GitHub远程仓库，git要想熟练甚至精通简直太难，现在来说我只想重新掌握一些日常简单的命令，多练习达到熟练的程度就可以了。今天再重新翻出来，算是复习，也算是重新学习吧。</p>
+<p>在看git之前我觉得很有必要了解一些终端的命令，最常见的几个大概是这几个：</p>
+<ul>
+<li><code>pwd</code>显示当前目录的路径名*   <code>ls</code>显示当前目录的内容，如果需要显示隐藏文件则加参数a，如<code>ls -a</code></li>
+<li><code>cd</code>改变当前目录，后面跟目录名称，另外如果后面不加参数则是返回根目录， <code>cd ..</code>是返回上一级目录</li>
+<li><code>mkdir</code>建立新目录，后面跟新建的目录名字，如<code>mkdir ruirui</code></li>
+<li><code>cat</code>显示或连接一个文件，后面跟文件名字，如<code>cat liurui.html</code></li>
+<li><code>rm</code>删除一个文件或目录，后面跟文件名字，如<code>rm liurui.html</code></li>
+<li><code>mv</code>移动或者重命名一个文件或目录，后面跟两个文件名字，如<code>mv liuliu.html ruirui.html</code></li>
+</ul>
+<h4 id="创建版本库"><a href="#创建版本库" class="headerlink" title="创建版本库"></a>创建版本库</h4><p>现在再来了解git，我们可以先创建一个新目录learngit，通过<code>git init</code>命令把这个目录变成Git可以管理的仓库</p>
+<pre><code>$ mkdir learngit
+$ cd learngit
+$ pwd
+/Users/michael/learngit
+$ git init
+Initialized empty Git repository in /Users/michael/learngit/.git/
+`&lt;/pre&gt;
+
+#### 提交文件到版本库
+
+我们再到这个learngit文件夹中创建一个文件，叫做readme.txt，里面随便写点什么，再用命令`git add`告诉Git，把文件添加到仓库，最后用命令`git commit`告诉Git，把文件提交到仓库：
+
+&lt;pre&gt;`$ git add readme.txt
+$ git commit -m &quot;wrote a readme file&quot;
+[master (root-commit) cb926e7] wrote a readme file
+ 1 file changed, 2 insertions(+)
+ create mode 100644 readme.txt
+`&lt;/pre&gt;
+
+解释一下`git commit`命令，-m后面输入的是本次提交的说明，可以输入任意内容，当然最好是有意义的，这样你就能从历史记录里方便地找到改动记录。你也可以多次用`git add`命令来添加多个文件，最后再用`git commit`一次性提交到仓库。
+
+`git status`可以查看仓库当前的状态，如果你对仓库中文件进行了修改，通过这个命令就可以看到哪个文件被修改了，如果想看具体修改了哪些内容可通过`git diff`这个命令查看。如我对readme.txt进行了修改，就可以通过`git diff readme.txt`看到哪些地方被改动过了。
+
+#### 版本回退
+
+如果我们不断对文件进行修改，然后不断通过`git commit`提交修改到版本库里，有时候我们修改错了或者甚至误删了文件，我们都可以从某一次commit进行恢复。我们可以通过`git log`命令查看历史提交记录。
+`git log`命令显示从最近到最远的提交日志，如果嫌输出信息太多，看得眼花缭乱的，可以试试加上`--pretty=oneline`参数即`git log --pretty=oneline`命令。
+我们会看到一大串类似3628164...882e1e0的是commit id（版本号），每一次提交都会生成一个独有的id，只要有这个id我们可以回到任何一个之前提交的版本。
+我们可以使用`git reset`命令回到以前的版本，但是Git必须知道当前版本是哪个版本，在Git中，用HEAD表示当前版本，也就是最新的提交3628164...882e1e0（注意我的提交ID和你的肯定不一样），上一个版本就是`HEAD^`，上上一个版本就是`HEAD^^`，当然往上100个版本写100个`^`比较容易数不过来，所以写成`HEAD~100`。
+
+&lt;pre&gt;`$ git reset --hard HEAD^
+HEAD is now at ea34578 add distributed
+`&lt;/pre&gt;
+
+我们还可以用`git log`命令看看现在版本库的状态，也可以用`git reflog`用来记录你的每一次命令：
+
+&lt;pre&gt;`$ git reflog
+ea34578 HEAD@{0}: reset: moving to HEAD^
+3628164 HEAD@{1}: commit: append GPL
+ea34578 HEAD@{2}: commit: add distributed
+cb926e7 HEAD@{3}: commit (initial): wrote a readme file
+`&lt;/pre&gt;
+
+这样我们就可以用`git reset`加版本id来恢复到之前的版本了，注意加了一个`hard`参数：
+
+&lt;pre&gt;`$ git reset --hard 3628164
+HEAD is now at 3628164 append GPL
+`&lt;/pre&gt;
+
+#### 工作区和暂存区
+
+git版本库有工作区和暂存区，暂存区作为中间的一个过渡区，可以用`git add`将工作区的文件添加到暂存区，再用`git commit`提交到版本库，这个概念比较简单。
+我们也可以用`git checkout -- file`可以丢弃工作区的修改。
+
+&lt;pre&gt;`$ git checkout -- readme.txt
+`&lt;/pre&gt;
+
+命令`git checkout -- readme.txt`意思就是，把`readme.txt`文件在工作区的修改全部撤销，这里有两种情况：
+一种是`readme.txt`自修改后还没有被放到暂存区，现在，撤销修改就回到和版本库一模一样的状态；
+一种是`readme.txt`已经添加到暂存区后，又作了修改，现在，撤销修改就回到添加到暂存区后的状态。
+总之，就是让这个文件回到最近一次`git commit`或`git add`时的状态。
+
+#### 添加到远程库
+
+每次我们在本地更新版本库后可以通过使用命令`git push origin master`推送到自己的GitHub远程仓库，也可以用`git clone`将远程的库克隆到本地。
+
+#### 分支管理
+
+我们可以用`git checkout -b dev`命令创建并切换到dev分支：
+
+&lt;pre&gt;`$ git checkout -b dev
+Switched to a new branch &apos;dev&apos;
+`&lt;/pre&gt;
+
+`git checkout`命令加上`-b`参数表示创建并切换，相当于以下两条命令：
+
+&lt;pre&gt;`$ git branch dev
+$ git checkout dev
+Switched to branch &apos;dev&apos;
+`&lt;/pre&gt;
+
+可以用`git branch`查看当前分支
+
+&lt;pre&gt;`$ git branch
+* dev
+  master
+`&lt;/pre&gt;
+
+`git branch`命令会列出所有分支，当前分支前面会标一个`*`号。
+我们在新的分支`dev`上对文件进行修改，切换回master分支后修改内容就不见了，我们需要将分支合并到主分支上，用`git merge`可以完成：
+
+&lt;pre&gt;`$ git merge dev
+Updating d17efd8..fec145a
+Fast-forward
+ readme.txt |    1 +
+ 1 file changed, 1 insertion(+)
+`&lt;/pre&gt;
+
+注意到上面的`Fast-forward`信息，Git告诉我们，这次合并是“快进模式”，也就是直接把`maste`r指向`dev`的当前提交，所以合并速度非常快。
+当然，也不是每次合并都能`Fast-forward`，我们后面会讲其他方式的合并。
+合并完成后，就可以放心地删除dev分支了，这里使用`git branch -d`命令：
+
+&lt;pre&gt;`$ git branch -d dev
+Deleted branch dev (was fec145a).
+</code></pre><p>当Git无法自动合并分支时，就必须首先解决冲突。解决冲突后，再提交，合并完成。<br>用<code>git log --graph</code>命令可以看到分支合并图。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/12/05/git-e5-ad-a6-e4-b9-a0/" data-id="cj4ii2sr600336z7445z1p5s8" class="article-share-link">Delen</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/01/15/e6-80-80-e5-bf-b5-e6-99-b4-e7-a9-ba-e4-b8-87-e9-87-8c/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Nieuwer</strong>
+      <div class="article-nav-title">
+        
+          怀念晴空万里
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/12/03/e9-87-8d-e6-96-b0-e5-ad-a6-e4-b9-a0-e4-b9-8b-e6-97-85/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ouder</strong>
+      <div class="article-nav-title">重新学习之旅</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categorieën</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Life/">Life</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/">Study</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Work/">Work</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/未分类/">未分类</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archieven</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recente berichten</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/06/28/helloworld/">helloworld</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/27/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/10/e5-8f-88-e8-a7-81-e5-91-a8-e6-9c-ab/">又见周末</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/06/oracle-e4-b9-8bsql-e5-9f-ba-e7-a1-80-e5-ad-a6-e4-b9-a0-ef-bc-88-e4-b8-89-ef-bc-89/">Oracle之SQL基础学习（三）</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/03/oracle-e4-b9-8bsql-e5-9f-ba-e7-a1-80-e5-ad-a6-e4-b9-a0-ef-bc-88-e4-ba-8c-ef-bc-89/">Oracle之SQL基础学习（二）</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
