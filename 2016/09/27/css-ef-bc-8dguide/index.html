@@ -66,46 +66,40 @@
 * TRUMPS
 * Text.................Text helpers.
 */
-`&lt;/pre&gt;
-
-列表中的每一项都映射到项目中某一个部分。
-
-当然，在大多数项目中这部分将变的大得多，但我希望我们可以看到这一节在主样式表中，为开发人员提供一个项目范围视图。我们可以清晰的看到被渲染的样式代码目的是什么，在什么位置等等。
-
-### 宽度为80个字符
-
-在可能的情况下，将CSS文件的宽度限制到80个字符，原因包括：
-</code></pre><ul>
+</code></pre><p>列表中的每一项都映射到项目中某一个部分。</p>
+<p>当然，在大多数项目中这部分将变的大得多，但我希望我们可以看到这一节在主样式表中，为开发人员提供一个项目范围视图。我们可以清晰的看到被渲染的样式代码目的是什么，在什么位置等等。</p>
+<h3 id="宽度为80个字符"><a href="#宽度为80个字符" class="headerlink" title="宽度为80个字符"></a>宽度为80个字符</h3><p>在可能的情况下，将CSS文件的宽度限制到80个字符，原因包括：</p>
+<ul>
 <li>能够使得打开多个文件并排放置，方便浏览；</li>
 <li>像GitHub网站或者终端一样查看CSS；</li>
 <li><p>为注释提供一个舒适的长度；</p>
-<pre>`/**
+<pre>/**
     * I am a long-form comment. I describe, in detail, the CSS that follows. I am
     * such a long comment that I easily break the 80 character limit, so I am
     * broken across several lines.
 */
-`</pre>
+</pre>
 
 <p>这里将会有不可避免的例外规则，比如URL或者梯度语法，这些都不用担心。</p>
 <h3 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h3><p>CSS中每一个主要的部分都开始于一个标题</p>
-<pre>`/*------------------------------------*\
-#SECTION-TITLE
+<pre>/*------------------------------------*\
+SECTION-TITLE
 \*------------------------------------*/
 
 .selector { }
-`</pre>
+</pre>
 
 <p>每一部分都标题都是以“<code>＃</code>”为前缀，以使我们能够进行更有针对性的搜索（如<code>grep</code>等等），而不是只搜索标题名(<code>SECTION-TITLE</code>)，那样可能会产生许多搜索结果。在大范围中搜索带“＃”号的标题(<code>#SECTION-TITLE</code>)，应该只返回一个所需标题的结果。</p>
 <p>在标题和下一行代码之间敲一个回车（中间可以写一写注释或者SASS或者CSS）。</p>
 <p>如果你正在的项目里,每一个部分都有自己的文件,那么标题就应该出现在每一个部分的顶部。如果你正在做的项目每个文件包含多个部分,那么每个标题后面最好敲5个回车，这样标题再加上后面多出来的空白区域将会使新的部分在一个大的文件中滚动的时候更容易被发现。</p>
-<pre>`/*------------------------------------*\
-#A-SECTION
+<pre>/*------------------------------------*\
+A-SECTION
 \*------------------------------------*/
 
 .selector { }
 
 /*------------------------------------*\
-#ANOTHER-SECTION
+ANOTHER-SECTION
 \*------------------------------------*/
 
 /**
@@ -113,26 +107,26 @@
 */
 
 .another-selector { }
-`</pre>
+</pre>
 
 <h3 id="rulesets的剖析"><a href="#rulesets的剖析" class="headerlink" title="rulesets的剖析"></a>rulesets的剖析</h3><p>在我们讨论我们如何书写我们的rulesets之前，让我们先熟悉一下相关术语：</p>
-<p><pre>`[selector] {</pre></p>
+<p><pre>[selector] {</pre></p>
 </li>
 </ul>
 <pre><code>  [property]: [value];
   [&amp;lt;--declaration---&amp;gt;]
 }
-`&lt;/pre&gt;
+&lt;/pre&gt;
 
 比如：
 
-&lt;pre&gt;`.foo, .foo--bar,
+&lt;pre&gt;.foo, .foo--bar,
 .baz {
   display: block;
   background-color: green;
   color: red;
 }
-`&lt;/pre&gt;
+&lt;/pre&gt;
 
 在这里，你可以看到：
 </code></pre><ul>
@@ -148,12 +142,12 @@
 <li><p>每个声明都以一个分号（<code>;</code>）结束；</p>
 <p>这种格式似乎是目前通用的标准（除了在空格数量上的变化，许多开发者还是喜欢两个空格）。</p>
 <p>像下面代码这样的书写就是不正确的：</p>
-<pre>`.foo, .foo--bar, .baz
+<pre>.foo, .foo--bar, .baz
 {
         display:block;
         background-color:green;
         color:red }
-`</pre>
+</pre>
 
 <p>问题点包括：</p>
 </li>
@@ -170,7 +164,7 @@
 </li>
 <li><p>更“真实”，差异更可靠，因为一行只有一个变化。</p>
 <p>这一规则的特殊情况应该很明显，比如类似的rulesets，只带一个声明：</p>
-<pre>`.icon {
+<pre>.icon {
   display: inline-block;
   width:  16px;
   height: 16px;
@@ -181,7 +175,7 @@
 .icon--person   { background-position: -16px   0  ; }
 .icon--files    { background-position:   0   -16px; }
 .icon--settings { background-position: -16px -16px; }
-`</pre>
+</pre>
 
 <p>这些类型的规则受益于单行是因为：</p>
 </li>
@@ -189,17 +183,17 @@
 </li>
 <li><p>它们分享了足够多的相似之处，而这些在其他rulesets下不需要被彻底解读，这样书写使得我们浏览选择器更加直观方便。</p>
 <h3 id="缩进"><a href="#缩进" class="headerlink" title="缩进"></a>缩进</h3><p>除了缩进单独声明外，整个rulesets中的缩进都和它们相互之间的关系相关联，例如：</p>
-<pre>`.foo { }
+<pre>.foo { }
 
   .foo__bar { }
 
     .foo__baz { }
-`</pre>
+</pre>
 
 <p>通过这样做，开发者可以一眼就看到它们的结构关系是<code>.foo__baz {}</code>在<code>.foo__bar {}</code>内部，且它们都在<code>.foo {}</code>内部。</p>
 <p>这样对DOM节点的准复制能让开发人员不用查看HTML片段就知道这些类是在怎样的结构中被使用的。</p>
 <h4 id="缩进SASS"><a href="#缩进SASS" class="headerlink" title="缩进SASS"></a>缩进SASS</h4><p>Sass提供嵌套功能。也就是说,通过编写下面这样的代码:</p>
-<pre>`.foo {
+<pre>.foo {
   color: red;
 
   .bar {
@@ -207,17 +201,17 @@
   }
 
 }
-`</pre>
+</pre>
 
 <p>编译成CSS就是这样：</p>
-<pre>`.foo { color: red; }
+<pre>.foo { color: red; }
 .foo .bar { color: blue; }
-`</pre>
+</pre>
 
 <p>在缩进sass的时候，我们坚持同样的两个空格，在嵌套规则的前后我们还留下一个空行。</p>
 <p>注意：在sass缩进的时候尽量避免嵌套，更多细节请看<strong>特异性</strong>那一章。</p>
 <h4 id="对齐"><a href="#对齐" class="headerlink" title="对齐"></a>对齐</h4><p>尝试对齐相关声明中相同的字符串，例如：</p>
-<pre>`.foo {
+<pre>.foo {
   -webkit-border-radius: 3px;
      -moz-border-radius: 3px;
           border-radius: 3px;
@@ -234,7 +228,7 @@
   padding-right: 10px;
   padding-left:  10px;
 }
-`</pre>
+</pre>
 
 <p>这使生活变得更容易一些，对开发人员来说，如果他们的代码编辑器支持多列编辑，这样就可以一次性编辑多列对齐的相同内容。</p>
 <h3 id="有意义的空白"><a href="#有意义的空白" class="headerlink" title="有意义的空白"></a>有意义的空白</h3><p>除了缩进，我们可以通过自由和明智地使用rulesets之间的空白提供大量的信息。我们使用：</p>
@@ -244,7 +238,7 @@
 <li>关联性不大的rulesets之间使用两个空行。</li>
 <li><p>全新的部分板块之间留5个空行。</p>
 <p>例如：</p>
-<pre>`/*------------------------------------*\
+<pre>/*------------------------------------*\
 #FOO
 \*------------------------------------*/
 
@@ -263,35 +257,35 @@
   .bar__baz { }
 
   .bar__foo { }
-`</pre>
+</pre>
 
 <p>不应该出现两个rulesets之间没有空行的情况，比如下面这样就是错误的：</p>
-<pre>`.foo { }
+<pre>.foo { }
   .foo__bar { }
 .foo--baz { }
-`</pre>
+</pre>
 
 <h3 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h3><p>由于HTML和CSS本质上的相互关联性，这里我将疏忽一些我不介绍的语法和格式标记指南。</p>
 <p>永远记着给属性打上引号，尽管没有引号也能正常工作。这将减少发生意外的可能性，而且这是大部分开发者更熟悉的格式。下面这行代码是有效的：</p>
-<pre>`&lt;div class=box&gt;
-`</pre>
+<pre>&lt;div class=box&gt;
+</pre>
 
 <p>但更受欢迎的格式应该是这样的：</p>
-<pre>`&lt;div class="box"&gt;
-`</pre>
+<pre>&lt;div class="box"&gt;
+</pre>
 
 <p>这里的引号不是必须的，但从安全的角度考虑，我们应该将类名“box”用引号包起来。</p>
 <p>当同时有多个类的值时，用两个空格将它们分隔开，像这样：</p>
-<pre>`&lt;div class="foo  bar"&gt;
-`</pre>
+<pre>&lt;div class="foo  bar"&gt;
+</pre>
 
 <p>当有多个类的值是相关联的时候，用中括号把它们分别括起来，像这样：</p>
-<pre>`&lt;div class="[ box  box--highlight ]  [ bio  bio--long ]"&gt;
-`</pre>
+<pre>&lt;div class="[ box  box--highlight ]  [ bio  bio--long ]"&gt;
+</pre>
 
 <p>这不是一个坚定的推荐，我自己现在还在试验这样的写法，但它确实给我带来了许多好处，更多细节请看<strong>分组相关类的标记</strong>。</p>
 <p>正如我们的rulesets一样，您可以在HTML中使用有意义的空白。您可以用5个空行来隔断主题和内容部分，例如：</p>
-<pre>`&lt;header class="page-head"&gt;
+<pre>&lt;header class="page-head"&gt;
   ...
 &lt;/header&gt;
 
@@ -302,10 +296,10 @@
 &lt;footer class="page-foot"&gt;
   ...
 &lt;/footer&gt;
-`</pre>
+</pre>
 
 <p>用一个空行分隔标记相互独立且关联度不高的相关片段，例如：</p>
-<pre>`&lt;ul class="primary-nav"&gt;
+<pre>&lt;ul class="primary-nav"&gt;
 
   &lt;li class="primary-nav__item"&gt;
     &lt;a href="/" class="primary-nav__link"&gt;Home&lt;/a&gt;
@@ -326,7 +320,7 @@
   &lt;/li&gt;
 
 &lt;/ul&gt;
-`</pre>
+</pre>
 
 <p>这使得开发人员能够对DOM的不同部分一目了然，也让像Vim这样的文本编辑器使用起来更加方便，例如，操纵用空行分隔标记的代码块。</p>
 <h3 id="更多阅读"><a href="#更多阅读" class="headerlink" title="更多阅读"></a>更多阅读</h3></li>
@@ -347,7 +341,7 @@
 <p>作为一项规则，如果你只看代码，不那么显而易见的看出它的意义的话就应该马上为那段代码加上一些注释。那就是说，没必要写注释告诉别人color: red;会让某个东西变成红色（因为太显而易见了），但如果你正在用overflow: hidden;来清除浮动溢出，这就是值得添加一些注释的地方了。</p>
 <h3 id="高层次"><a href="#高层次" class="headerlink" title="高层次"></a>高层次</h3><p>对于文档中整个板块或者部分的一大段注释，我们用文档块式的多行注释，这比较适合宽度为80个字符的规则。</p>
 <p>下面是一个真实的例子，是在<a href="http://csswizardry.com/" target="_blank" rel="external">CSS Wizardry</a>中用CSS注释页眉。</p>
-<pre>`/**
+<pre>/**
  * The site’s main page-head can have two different states:
  *
  * 1) Regular page-head with no backgrounds or extra treatments; it just
@@ -358,30 +352,30 @@
  * The regular page-head is incredibly simple, but the masthead version has some
  * slightly intermingled dependency with the wrapper that lives inside it.
  */
-`</pre>
+</pre>
 
 <p>这种层次的注释详细程度应该是所有正式代码的基准，包括状态的描述、排列规范、满足条件、深入探讨等。</p>
 <h4 id="对象拓展指针"><a href="#对象拓展指针" class="headerlink" title="对象拓展指针"></a>对象拓展指针</h4><p>当跨多个片段工作或以面向对象的方式编写CSS时，几个可以彼此关联一起工作的rulesets并不总是在同一个文件或同一个位置,例如：你可能有一个通用按钮对象，它只提供了按钮的结构样式，这个按钮将被用在一个组件的拓展部分，用来添加装饰。我们用简单的对象扩展指针来记录这种跨文件的关系。在对象文件里：</p>
-<pre>`/**
+<pre>/**
  * Extend `.btn {}` in _components.buttons.scss.
  */
 
 .btn { }
-`</pre>
+</pre>
 
 <p>在你的主题文件里：</p>
-<pre>`/**
+<pre>/**
  * These rules extend `.btn {}` in _objects.buttons.scss.
  */
 
 .btn--positive { }
 
 .btn--negative { }
-`</pre>
+</pre>
 
 <p>这个简单、低成本的注释可以做出很大的贡献，它让还没意识到项目之间的关系的开发者们知道其它某些样式可能是怎样以及从哪里继承而来的。</p>
 <h3 id="低层次"><a href="#低层次" class="headerlink" title="低层次"></a>低层次</h3><p>通常情况下，我们想在一个ruleset里的某一条具体的声明同一行后面加上注释，为此我们使用一种逆向脚注用来补充说明。这里是一个更复杂的注释，详细说明上述网站的头部部分：</p>
-<pre>`/**
+<pre>/**
  * Large site headers act more like mastheads. They have a faux-fluid-height
  * which is controlled by the wrapping element inside it.
  *
@@ -433,11 +427,11 @@ background-image: url(/img/css/masthead-medium.jpg);
   }
 
 }
-`</pre>
+</pre>
 
 <p>这些类型的注释能够把所有的注释文档放在一个地方，同时指向它们的指针放在ruleset里的对应具体位置。</p>
 <h3 id="预处理注释"><a href="#预处理注释" class="headerlink" title="预处理注释"></a>预处理注释</h3><p>对于绝大多数与处理器来说，我们写的注释不会编译生成到最后的CSS文件当中，通常，使用这些注释文档的代码也不会被写入CSS文件，如果您正在编写将要编译的代码，那么请使用将要编译的注释。例如下面就是正确的写法：</p>
-<pre>`// Dimensions of the @2x image sprite:
+<pre>// Dimensions of the @2x image sprite:
 $sprite-width:  920px;
 $sprite-height: 212px;
 
@@ -451,7 +445,7 @@ $sprite-height: 212px;
   background-image: url(/img/sprites/main.png);
   background-size: ($sprite-width / 2 ) ($sprite-height / 2); /* [2] */
 }
-`</pre>
+</pre>
 
 <p>当我们调试编译的样式表的时候，我们只能看到正确有用且相关联的信息，其它比如注释就无法看到了。</p>
 <h3 id="删除注释"><a href="#删除注释" class="headerlink" title="删除注释"></a>删除注释</h3><p>不用说都知道，在生产部署环境中是应该没有注释的，所有的CSS文件都会被压缩，体积会变小，注释相应也会丢失。</p>
@@ -465,32 +459,32 @@ $sprite-height: 212px;
 <p>我遵循的命名约定很简单：用连字符(-)分隔字符串，用BEM命名法来应对更复杂的情况。</p>
 <p>值得注意的是，命名约定并不只是在CSS发展中很有用处，它真正展现威力的是在HTML的标记中，它能让我们浏览HTML文档时对结构和内容一目了然。</p>
 <h3 id="连字符分隔"><a href="#连字符分隔" class="headerlink" title="连字符分隔"></a>连字符分隔</h3><p>所有类名的字符串都是用连字符来分隔的，例如：</p>
-<pre>`.page-head { }
+<pre>.page-head { }
 
 .sub-content { }
-`</pre>
+</pre>
 
 <p>用驼峰命名法或者下划线的方式分隔字符串并不经常用在CSS的类名上，例如下面就是不正确的写法：</p>
-<pre>`.pageHead { }
+<pre>.pageHead { }
 
 .sub_content { }
-`</pre>
+</pre>
 
 <h3 id="像BEM一样命名"><a href="#像BEM一样命名" class="headerlink" title="像BEM一样命名"></a>像BEM一样命名</h3><p>对于更多更大的UI片段，我们需要定义许多相关联的类，这时我们就可以用BEM命名法。</p>
 <p>BEM的意思就是块（block）、元素（element）、修饰符（modifier）,是由Yandex团队提出的一种前端命名方法论。这种巧妙的命名方法让你的CSS类对其他开发者来说更加透明而且更有意义。BEM命名约定更加严格，而且包含更多的信息，它们用于一个团队开发一个耗时的大项目。</p>
 <p>重要的是要注意，我使用的基于BEM的命名方式是经过Nicolas Gallagher修改过的。这篇文章中介绍的这种命名技术并不是原始的BEM，但却是一个我更喜欢的改进版。无论实际使用了什么样的符号，它们其实都是基于同样的BEM原则。</p>
 <p>我们做一个比喻（注意，不是实例）</p>
-<pre>`.person { }
+<pre>.person { }
 .person__head { }
 .person--tall { }
-`</pre>
+</pre>
 </li>
 <li><p><code>.person{}</code>是一个块（Block），代表了单独的组件根源。</p>
 </li>
 <li><code>.person__head{}</code>是一个元素（Element），代表.block的后代，用于形成一个完整的.block的整体。中间用两个下划线连接。</li>
 <li><p><code>.person--tall{}</code>是一个修饰语，代表.block的不同状态或不同版本。中间用两个连字符连接。</p>
 <h4 id="开始正文"><a href="#开始正文" class="headerlink" title="开始正文"></a>开始正文</h4><p>块（Block）开始于一个最有逻辑的、自己独立的且与其它不相关的位置，继续我们之前对人对那个比喻，我们没有一个<code>.room__person{}</code>这样的类，原因就是房间是另一个有逻辑且独立不相关的块，我们可以这样写来独立不同的块：</p>
-<pre>`.room { }
+<pre>.room { }
 
   .room__door { }
 
@@ -499,11 +493,11 @@ $sprite-height: 212px;
 .person { }
 
   .person__head { }
-`</pre>
+</pre>
 
 <p>如果你确实想表示人<code>.person{}</code>在房间<code>.room{}</code>里面，这里用后代选择器更合适<code>.room .person {}</code>。</p>
 <p>一个更实际的例子来表示适当范围的块可能是这样，其中每个部分的代码都表示自己的块:</p>
-<pre>`.page { }
+<pre>.page { }
 
 .content { }
 
@@ -512,10 +506,10 @@ $sprite-height: 212px;
 .footer { }
 
   .footer__copyright { }
-`</pre>
+</pre>
 
 <p>像下面这样的写法就是不正确的：</p>
-<pre>`.page { }
+<pre>.page { }
 
   .page__content { }
 
@@ -524,26 +518,26 @@ $sprite-height: 212px;
   .page__footer { }
 
     .page__copyright { }
-`</pre>
+</pre>
 
 <p>重要的是要知道BEM命名范围是从哪里开始，哪里结束的。作为一个规则，BEM适用于独立，互不相关的UI组件。</p>
 <h4 id="更多层级"><a href="#更多层级" class="headerlink" title="更多层级"></a>更多层级</h4><p>如果我们准备往人<code>.person{}</code>这个组件中添加一个<code>.person__eye{}</code>的元素，我们没有必要按照DOM的层级来书写，也就是说，正确的标记方式为<code>.person__eye{}</code>而不是<code>.person__head__eye{}</code>，定义的类不用反映出所有的DOM层级关系。</p>
 <h4 id="修改元素"><a href="#修改元素" class="headerlink" title="修改元素"></a>修改元素</h4><p>你可以添加一个元素的变体，根据它的作用可以有很多种表示方法，还是接着上面人的例子，如果你要添加一个蓝色的眼睛可以这样表示：</p>
-<pre>`.person__eye--blue { }
-`</pre>
+<pre>.person__eye--blue { }
+</pre>
 
 <p>在这里我们是直接修改眼睛这个元素。</p>
 <p>然而，事情有时候会变得更复杂。请原谅我粗糙的比喻，让我们想象我们有一个很帅的脸元素。但是这个人本身并不帅，所以我们直接将不帅的人的脸修改为一张很帅的脸：</p>
-<pre>`.person__face--handsome { }
-`</pre>
+<pre>.person__face--handsome { }
+</pre>
 
 <p>但是如果那个人本身就很帅，基于这个事实，我们想要他脸的样式。一个很帅的人的一张普通的脸的样式就可以这样表示：</p>
-<pre>`.person--handsome .person__face { }
-`</pre>
+<pre>.person--handsome .person__face { }
+</pre>
 
 <p>这就是我们基于BEM，用后代选择器修改元素样式的少数几种情况之一</p>
 <p>如果用SASS，我们很可能会这样写：</p>
-<pre>`.person { }
+<pre>.person { }
 
   .person__face {
 
@@ -552,36 +546,36 @@ $sprite-height: 212px;
   }
 
 .person--handsome { }
-`</pre>
+</pre>
 
 <p>注意我们没有在<code>.person--handsome {}</code>里面嵌套一个新的<code>.person__face {}</code>，相反，我们利用SASS的<code>&amp;amp;</code>符号代表父代的<code>.person__face</code>，所以将<code>.person--handsome</code>放到了<code>.person__face</code>的前面，这就是说所有与<code>.person__face</code>相关的规则只在一个地方，不会扩散到其他文件里去。当我们在处理嵌套代码的时候，这是一个比较好的做法：把上下文中所有相关的样式代码（比如这里的<code>.person__face</code>）封装在一个位置。</p>
 <h3 id="HTML中的命名约定"><a href="#HTML中的命名约定" class="headerlink" title="HTML中的命名约定"></a>HTML中的命名约定</h3><p>像我之前就暗示过，命名约定并不只是在CSS发展中很有用处，它真正展现威力的是在HTML的标记中，它能让我们浏览HTML文档时对结构和内容一目了然。</p>
 <p>我们来看一下下面这段没有用命名约定的HTML代码：</p>
-<pre>`&lt;div class="box  profile  pro-user"&gt;
+<pre>&lt;div class="box  profile  pro-user"&gt;
 
   &lt;img class="avatar  image" /&gt;
 
   &lt;p class="bio"&gt;...&lt;/p&gt;
 
 &lt;/div&gt;
-`</pre>
+</pre>
 
 <p>可以看到，这样根本看不出<code>box</code>，<code>profile</code>，<code>avatar</code>这些的关联性，你也不知道在CSS中它们是否在同一个位置，更不知道其它地方会不会也出现这几个同样的类名。</p>
 <p>如果用BEM命名法修改成下面这样：</p>
-<pre>`&lt;div class="box  profile  profile--is-pro-user"&gt;
+<pre>&lt;div class="box  profile  profile--is-pro-user"&gt;
 
   &lt;img class="avatar  profile__image" /&gt;
 
   &lt;p class="profile__bio"&gt;...&lt;/p&gt;
 
 &lt;/div&gt;
-`</pre>
+</pre>
 
 <p>现在你可以清楚的看到哪些类和其它是否相关，如果相关又是怎样关联的，我们知道哪些类超出了这个组件范围就不能用了，哪些类在其它地方可以任意重复使用</p>
 <h3 id="JavaScript的钩子"><a href="#JavaScript的钩子" class="headerlink" title="JavaScript的钩子"></a>JavaScript的钩子</h3><p>我们都知道，在HTML文档中，将CSS和JS操作都绑定到同一个类名上是不明智的，我们最好把JS所需要操作的类绑定到一个特殊的类名上，这样可以让我们的代码更干净整洁，更透明，更易于维护。</p>
 <p>我以前尝试重构CSS的时候，不知不觉删除了一些JS的功能，就因为它们绑定在了同一个类上，我们可能单独删除CSS或JS中的任何一个功能。</p>
 <p>所以通常，这些类都加了一个”js-“的前缀，例如：</p>
-<p><pre>`&lt;input type=”submit” class=”btn  js-btn” value=”Follow” /&gt;</pre></p>
+<p><pre>&lt;input type=”submit” class=”btn  js-btn” value=”Follow” /&gt;</pre></p>
 </li>
 </ul>
 <p>这就意味着我们可以在其它地方有一个<code>.btn {}</code>样式的按钮元素，但是没有<code>.js-btn</code>的行为。</p>
@@ -591,7 +585,7 @@ $sprite-height: 212px;
 <h3 id="更多阅读-1"><a href="#更多阅读-1" class="headerlink" title="更多阅读"></a>更多阅读</h3><ul>
 <li><a href="http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/" target="_blank" rel="external">MindBEMding – getting your head ’round BEM syntax</a></li>
 </ul>
-</div><div class="tags"></div><div class="post-share"><div class="bdsharebuttonbox"><span style="float:left;line-height: 28px;height: 28px;font-size:16px;font-weight:blod">分享到：</span><a href="#" data-cmd="more" class="bds_more"></a><a href="#" data-cmd="mshare" title="分享到一键分享" class="bds_mshare"></a><a href="#" data-cmd="fbook" title="分享到Facebook" class="bds_fbook"></a><a href="#" data-cmd="twi" title="分享到Twitter" class="bds_twi"></a><a href="#" data-cmd="linkedin" title="分享到linkedin" class="bds_linkedin"></a><a href="#" data-cmd="youdao" title="分享到有道云笔记" class="bds_youdao"></a><a href="#" data-cmd="evernotecn" title="分享到印象笔记" class="bds_evernotecn"></a><a href="#" data-cmd="weixin" title="分享到微信" class="bds_weixin"></a><a href="#" data-cmd="qzone" title="分享到QQ空间" class="bds_qzone"></a><a href="#" data-cmd="tsina" title="分享到新浪微博" class="bds_tsina"></a></div></div><div class="post-nav"><a href="/2016/10/23/e4-b8-8b-e6-b5-a9-e8-80-81-e8-a1-97-e6-b8-b8-e8-ae-b0/" class="pre">下浩老街游记</a><a href="/2016/09/23/e6-b1-82-e5-ad-97-e7-ac-a6-e4-b8-b2-e4-b8-ad-e7-ac-ac-e4-b8-80-e4-b8-aa-e6-b2-a1-e9-87-8d-e5-a4-8d-e7-9a-84-e5-ad-97-e7-ac-a6/" class="next">求字符串中第一个没重复的字符</a></div><div id="comments"><div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div></div></div></div></div><div class="layout-r hidden_mid_and_down"><div id="sidebar"><div class="widget"><div class="widget-title"><i class="fa fa-xie"> 最新文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/06/10/e5-8f-88-e8-a7-81-e5-91-a8-e6-9c-ab/">又见周末</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/06/oracle-e4-b9-8bsql-e5-9f-ba-e7-a1-80-e5-ad-a6-e4-b9-a0-ef-bc-88-e4-b8-89-ef-bc-89/">Oracle之SQL基础学习（三）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/03/oracle-e4-b9-8bsql-e5-9f-ba-e7-a1-80-e5-ad-a6-e4-b9-a0-ef-bc-88-e4-ba-8c-ef-bc-89/">Oracle之SQL基础学习（二）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/29/oracle-e4-b9-8bsql-e5-9f-ba-e7-a1-80-e5-ad-a6-e4-b9-a0-ef-bc-88-e4-b8-80-ef-bc-89/">Oracle之SQL基础学习（一）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/14/e6-b1-89-e5-be-97-e5-9f-b9-e8-ae-ad-e7-9b-b8-e5-85-b3-e9-97-ae-e7-ad-94/">汉得培训相关问答</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/08/e6-83-b3-e7-9d-80-e9-98-b3-e5-85-89/">想着阳光</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/04/09/e5-b0-8f-e8-81-9a-e7-9a-84-e4-b8-80-e5-a4-a9/">小聚的一天</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/30/e5-8a-a0-e7-8f-ad-e7-9a-84-e6-97-a5-e5-ad-90/">加班的日子</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/19/e6-b1-89-e5-be-97-e7-ac-ac-e4-ba-8c-e5-91-a8/">汉得第二周</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/12/e5-88-9d-e8-bf-9b-e6-b1-89-e5-be-97/">初进汉得</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-gui"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Life/">Life</a><span class="category-list-count">21</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/">Study</a><span class="category-list-count">28</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Work/">Work</a><span class="category-list-count">4</span></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-biao"> 标签</i></div><div class="tagcloud"></div></div><div class="widget"><div class="widget-title"><i class="fa fa-archive"> 归档</i></div><ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">五月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">四月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">二月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">十二月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">十一月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">十月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">九月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">三月 2015</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-you"> 友情链接</i></div><ul></ul><a href="http://www.voyax.me/" title="voya的博客" target="_blank">voya的博客</a></div></div></div></div><a id="totop" href="#top"></a><div id="footer"><div class="footer-info"><p><a href="/baidusitemap.xml">网站地图</a> |  <a href="/atom.xml">订阅</a> |  <a href="/about/">关于</a></p><p>本站总访问量：<i id="busuanzi_container_site_pv"><i id="busuanzi_value_site_pv"></i></i>次</p><p><span> Copyright &copy;<a href="/." rel="nofollow">Ruby.Liu.</a></span><span> Theme by<a rel="nofollow" target="_blank" href="https://github.com/chaooo/hexo-theme-BlueLake"> BlueLake.</a></span><span> Count by<a href="http://busuanzi.ibruce.info/"> busuanzi.</a></span><span> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a></span></p></div></div></div><script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js" async></script><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+</div><div class="tags"></div><div class="post-share"><div class="bdsharebuttonbox"><span style="float:left;line-height: 28px;height: 28px;font-size:16px;font-weight:blod">分享到：</span><a href="#" data-cmd="more" class="bds_more"></a><a href="#" data-cmd="mshare" title="分享到一键分享" class="bds_mshare"></a><a href="#" data-cmd="fbook" title="分享到Facebook" class="bds_fbook"></a><a href="#" data-cmd="twi" title="分享到Twitter" class="bds_twi"></a><a href="#" data-cmd="linkedin" title="分享到linkedin" class="bds_linkedin"></a><a href="#" data-cmd="youdao" title="分享到有道云笔记" class="bds_youdao"></a><a href="#" data-cmd="evernotecn" title="分享到印象笔记" class="bds_evernotecn"></a><a href="#" data-cmd="weixin" title="分享到微信" class="bds_weixin"></a><a href="#" data-cmd="qzone" title="分享到QQ空间" class="bds_qzone"></a><a href="#" data-cmd="tsina" title="分享到新浪微博" class="bds_tsina"></a></div></div><div class="post-nav"><a href="/2016/10/23/e4-b8-8b-e6-b5-a9-e8-80-81-e8-a1-97-e6-b8-b8-e8-ae-b0/" class="pre">下浩老街游记</a><a href="/2016/09/23/e6-b1-82-e5-ad-97-e7-ac-a6-e4-b8-b2-e4-b8-ad-e7-ac-ac-e4-b8-80-e4-b8-aa-e6-b2-a1-e9-87-8d-e5-a4-8d-e7-9a-84-e5-ad-97-e7-ac-a6/" class="next">求字符串中第一个没重复的字符</a></div><div id="comments"><div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div></div></div></div></div><div class="layout-r"><div id="sidebar"><div class="search-pla"></div><div id="toc" class="widget"><div class="widget-title"><i class="fa fa-fei">文章目录</i></div><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#介绍"><span class="toc-text">介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#styleguide的重要性"><span class="toc-text">styleguide的重要性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#免责声明"><span class="toc-text">免责声明</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#语法和格式"><span class="toc-text">语法和格式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#多个文件"><span class="toc-text">多个文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#目录"><span class="toc-text">目录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#宽度为80个字符"><span class="toc-text">宽度为80个字符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#标题"><span class="toc-text">标题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#rulesets的剖析"><span class="toc-text">rulesets的剖析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#多行CSS"><span class="toc-text">多行CSS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#缩进"><span class="toc-text">缩进</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#缩进SASS"><span class="toc-text">缩进SASS</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#对齐"><span class="toc-text">对齐</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#有意义的空白"><span class="toc-text">有意义的空白</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HTML"><span class="toc-text">HTML</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#更多阅读"><span class="toc-text">更多阅读</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#注释"><span class="toc-text">注释</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#高层次"><span class="toc-text">高层次</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#对象拓展指针"><span class="toc-text">对象拓展指针</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#低层次"><span class="toc-text">低层次</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#预处理注释"><span class="toc-text">预处理注释</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#删除注释"><span class="toc-text">删除注释</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#命名约定"><span class="toc-text">命名约定</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#连字符分隔"><span class="toc-text">连字符分隔</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#像BEM一样命名"><span class="toc-text">像BEM一样命名</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#开始正文"><span class="toc-text">开始正文</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#更多层级"><span class="toc-text">更多层级</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#修改元素"><span class="toc-text">修改元素</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HTML中的命名约定"><span class="toc-text">HTML中的命名约定</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JavaScript的钩子"><span class="toc-text">JavaScript的钩子</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#data-属性"><span class="toc-text">data-*属性</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#更近一步"><span class="toc-text">更近一步</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#更多阅读-1"><span class="toc-text">更多阅读</span></a></li></ol></li></ol></div><div class="widget"><div class="widget-title"><i class="fa fa-xie"> 最新文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/06/10/e5-8f-88-e8-a7-81-e5-91-a8-e6-9c-ab/">又见周末</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/06/oracle-e4-b9-8bsql-e5-9f-ba-e7-a1-80-e5-ad-a6-e4-b9-a0-ef-bc-88-e4-b8-89-ef-bc-89/">Oracle之SQL基础学习（三）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/03/oracle-e4-b9-8bsql-e5-9f-ba-e7-a1-80-e5-ad-a6-e4-b9-a0-ef-bc-88-e4-ba-8c-ef-bc-89/">Oracle之SQL基础学习（二）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/29/oracle-e4-b9-8bsql-e5-9f-ba-e7-a1-80-e5-ad-a6-e4-b9-a0-ef-bc-88-e4-b8-80-ef-bc-89/">Oracle之SQL基础学习（一）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/14/e6-b1-89-e5-be-97-e5-9f-b9-e8-ae-ad-e7-9b-b8-e5-85-b3-e9-97-ae-e7-ad-94/">汉得培训相关问答</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/08/e6-83-b3-e7-9d-80-e9-98-b3-e5-85-89/">想着阳光</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/04/09/e5-b0-8f-e8-81-9a-e7-9a-84-e4-b8-80-e5-a4-a9/">小聚的一天</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/30/e5-8a-a0-e7-8f-ad-e7-9a-84-e6-97-a5-e5-ad-90/">加班的日子</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/19/e6-b1-89-e5-be-97-e7-ac-ac-e4-ba-8c-e5-91-a8/">汉得第二周</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/12/e5-88-9d-e8-bf-9b-e6-b1-89-e5-be-97/">初进汉得</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-gui"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Life/">Life</a><span class="category-list-count">19</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/">Study</a><span class="category-list-count">27</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Work/">Work</a><span class="category-list-count">3</span></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-biao"> 标签</i></div><div class="tagcloud"></div></div><div class="widget"><div class="widget-title"><i class="fa fa-archive"> 归档</i></div><ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">五月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">四月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">二月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">十二月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">十一月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">十月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">九月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-you"> 友情链接</i></div><ul></ul><a href="http://www.voyax.me/" title="voya的博客" target="_blank">voya的博客</a></div></div></div></div><a id="totop" href="#top"></a><div id="footer"><div class="footer-info"><p><a href="/baidusitemap.xml">网站地图</a> |  <a href="/atom.xml">订阅</a> |  <a href="/about/">关于</a></p><p>本站总访问量：<i id="busuanzi_container_site_pv"><i id="busuanzi_value_site_pv"></i></i>次</p><p><span> Copyright &copy;<a href="/." rel="nofollow">Ruby.Liu.</a></span><span> Theme by<a rel="nofollow" target="_blank" href="https://github.com/chaooo/hexo-theme-BlueLake"> BlueLake.</a></span><span> Count by<a href="http://busuanzi.ibruce.info/"> busuanzi.</a></span><span> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a></span></p></div></div></div><script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js" async></script><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');

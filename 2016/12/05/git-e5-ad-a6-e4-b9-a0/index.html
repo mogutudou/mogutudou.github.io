@@ -18,103 +18,29 @@ Initialized empty Git repository in /Users/michael/learngit/.git/
 `&lt;/pre&gt;
 
 #### 提交文件到版本库
-
-我们再到这个learngit文件夹中创建一个文件，叫做readme.txt，里面随便写点什么，再用命令`git add`告诉Git，把文件添加到仓库，最后用命令`git commit`告诉Git，把文件提交到仓库：
-
-&lt;pre&gt;`$ git add readme.txt
-$ git commit -m &quot;wrote a readme file&quot;
-[master (root-commit) cb926e7] wrote a readme file
- 1 file changed, 2 insertions(+)
- create mode 100644 readme.txt
-`&lt;/pre&gt;
-
-解释一下`git commit`命令，-m后面输入的是本次提交的说明，可以输入任意内容，当然最好是有意义的，这样你就能从历史记录里方便地找到改动记录。你也可以多次用`git add`命令来添加多个文件，最后再用`git commit`一次性提交到仓库。
-
-`git status`可以查看仓库当前的状态，如果你对仓库中文件进行了修改，通过这个命令就可以看到哪个文件被修改了，如果想看具体修改了哪些内容可通过`git diff`这个命令查看。如我对readme.txt进行了修改，就可以通过`git diff readme.txt`看到哪些地方被改动过了。
-
-#### 版本回退
-
-如果我们不断对文件进行修改，然后不断通过`git commit`提交修改到版本库里，有时候我们修改错了或者甚至误删了文件，我们都可以从某一次commit进行恢复。我们可以通过`git log`命令查看历史提交记录。
-`git log`命令显示从最近到最远的提交日志，如果嫌输出信息太多，看得眼花缭乱的，可以试试加上`--pretty=oneline`参数即`git log --pretty=oneline`命令。
-我们会看到一大串类似3628164...882e1e0的是commit id（版本号），每一次提交都会生成一个独有的id，只要有这个id我们可以回到任何一个之前提交的版本。
-我们可以使用`git reset`命令回到以前的版本，但是Git必须知道当前版本是哪个版本，在Git中，用HEAD表示当前版本，也就是最新的提交3628164...882e1e0（注意我的提交ID和你的肯定不一样），上一个版本就是`HEAD^`，上上一个版本就是`HEAD^^`，当然往上100个版本写100个`^`比较容易数不过来，所以写成`HEAD~100`。
-
-&lt;pre&gt;`$ git reset --hard HEAD^
-HEAD is now at ea34578 add distributed
-`&lt;/pre&gt;
-
-我们还可以用`git log`命令看看现在版本库的状态，也可以用`git reflog`用来记录你的每一次命令：
-
-&lt;pre&gt;`$ git reflog
-ea34578 HEAD@{0}: reset: moving to HEAD^
-3628164 HEAD@{1}: commit: append GPL
-ea34578 HEAD@{2}: commit: add distributed
-cb926e7 HEAD@{3}: commit (initial): wrote a readme file
-`&lt;/pre&gt;
-
-这样我们就可以用`git reset`加版本id来恢复到之前的版本了，注意加了一个`hard`参数：
-
-&lt;pre&gt;`$ git reset --hard 3628164
-HEAD is now at 3628164 append GPL
-`&lt;/pre&gt;
-
-#### 工作区和暂存区
-
-git版本库有工作区和暂存区，暂存区作为中间的一个过渡区，可以用`git add`将工作区的文件添加到暂存区，再用`git commit`提交到版本库，这个概念比较简单。
-我们也可以用`git checkout -- file`可以丢弃工作区的修改。
-
-&lt;pre&gt;`$ git checkout -- readme.txt
-`&lt;/pre&gt;
-
-命令`git checkout -- readme.txt`意思就是，把`readme.txt`文件在工作区的修改全部撤销，这里有两种情况：
-一种是`readme.txt`自修改后还没有被放到暂存区，现在，撤销修改就回到和版本库一模一样的状态；
-一种是`readme.txt`已经添加到暂存区后，又作了修改，现在，撤销修改就回到添加到暂存区后的状态。
-总之，就是让这个文件回到最近一次`git commit`或`git add`时的状态。
-
-#### 添加到远程库
-
-每次我们在本地更新版本库后可以通过使用命令`git push origin master`推送到自己的GitHub远程仓库，也可以用`git clone`将远程的库克隆到本地。
-
-#### 分支管理
-
-我们可以用`git checkout -b dev`命令创建并切换到dev分支：
-
-&lt;pre&gt;`$ git checkout -b dev
-Switched to a new branch &apos;dev&apos;
-`&lt;/pre&gt;
-
-`git checkout`命令加上`-b`参数表示创建并切换，相当于以下两条命令：
-
-&lt;pre&gt;`$ git branch dev
-$ git checkout dev
-Switched to branch &apos;dev&apos;
-`&lt;/pre&gt;
-
-可以用`git branch`查看当前分支
-
-&lt;pre&gt;`$ git branch
-* dev
-  master
-`&lt;/pre&gt;
-
-`git branch`命令会列出所有分支，当前分支前面会标一个`*`号。
-我们在新的分支`dev`上对文件进行修改，切换回master分支后修改内容就不见了，我们需要将分支合并到主分支上，用`git merge`可以完成：
-
-&lt;pre&gt;`$ git merge dev
-Updating d17efd8..fec145a
-Fast-forward
- readme.txt |    1 +
- 1 file changed, 1 insertion(+)
-`&lt;/pre&gt;
-
-注意到上面的`Fast-forward`信息，Git告诉我们，这次合并是“快进模式”，也就是直接把`maste`r指向`dev`的当前提交，所以合并速度非常快。
-当然，也不是每次合并都能`Fast-forward`，我们后面会讲其他方式的合并。
-合并完成后，就可以放心地删除dev分支了，这里使用`git branch -d`命令：
-
-&lt;pre&gt;`$ git branch -d dev
-Deleted branch dev (was fec145a).
-</code></pre><p>当Git无法自动合并分支时，就必须首先解决冲突。解决冲突后，再提交，合并完成。<br>用<code>git log --graph</code>命令可以看到分支合并图。</p>
-</div><div class="tags"></div><div class="post-share"><div class="bdsharebuttonbox"><span style="float:left;line-height: 28px;height: 28px;font-size:16px;font-weight:blod">分享到：</span><a href="#" data-cmd="more" class="bds_more"></a><a href="#" data-cmd="mshare" title="分享到一键分享" class="bds_mshare"></a><a href="#" data-cmd="fbook" title="分享到Facebook" class="bds_fbook"></a><a href="#" data-cmd="twi" title="分享到Twitter" class="bds_twi"></a><a href="#" data-cmd="linkedin" title="分享到linkedin" class="bds_linkedin"></a><a href="#" data-cmd="youdao" title="分享到有道云笔记" class="bds_youdao"></a><a href="#" data-cmd="evernotecn" title="分享到印象笔记" class="bds_evernotecn"></a><a href="#" data-cmd="weixin" title="分享到微信" class="bds_weixin"></a><a href="#" data-cmd="qzone" title="分享到QQ空间" class="bds_qzone"></a><a href="#" data-cmd="tsina" title="分享到新浪微博" class="bds_tsina"></a></div></div><div class="post-nav"><a href="/2017/01/15/e6-80-80-e5-bf-b5-e6-99-b4-e7-a9-ba-e4-b8-87-e9-87-8c/" class="pre">怀念晴空万里</a><a href="/2016/12/03/e9-87-8d-e6-96-b0-e5-ad-a6-e4-b9-a0-e4-b9-8b-e6-97-85/" class="next">重新学习之旅</a></div><div id="comments"><div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div></div></div></div></div><div class="layout-r hidden_mid_and_down"><div id="sidebar"><div class="widget"><div class="widget-title"><i class="fa fa-xie"> 最新文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/06/10/e5-8f-88-e8-a7-81-e5-91-a8-e6-9c-ab/">又见周末</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/06/oracle-e4-b9-8bsql-e5-9f-ba-e7-a1-80-e5-ad-a6-e4-b9-a0-ef-bc-88-e4-b8-89-ef-bc-89/">Oracle之SQL基础学习（三）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/03/oracle-e4-b9-8bsql-e5-9f-ba-e7-a1-80-e5-ad-a6-e4-b9-a0-ef-bc-88-e4-ba-8c-ef-bc-89/">Oracle之SQL基础学习（二）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/29/oracle-e4-b9-8bsql-e5-9f-ba-e7-a1-80-e5-ad-a6-e4-b9-a0-ef-bc-88-e4-b8-80-ef-bc-89/">Oracle之SQL基础学习（一）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/14/e6-b1-89-e5-be-97-e5-9f-b9-e8-ae-ad-e7-9b-b8-e5-85-b3-e9-97-ae-e7-ad-94/">汉得培训相关问答</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/08/e6-83-b3-e7-9d-80-e9-98-b3-e5-85-89/">想着阳光</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/04/09/e5-b0-8f-e8-81-9a-e7-9a-84-e4-b8-80-e5-a4-a9/">小聚的一天</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/30/e5-8a-a0-e7-8f-ad-e7-9a-84-e6-97-a5-e5-ad-90/">加班的日子</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/19/e6-b1-89-e5-be-97-e7-ac-ac-e4-ba-8c-e5-91-a8/">汉得第二周</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/12/e5-88-9d-e8-bf-9b-e6-b1-89-e5-be-97/">初进汉得</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-gui"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Life/">Life</a><span class="category-list-count">21</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/">Study</a><span class="category-list-count">28</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Work/">Work</a><span class="category-list-count">4</span></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-biao"> 标签</i></div><div class="tagcloud"></div></div><div class="widget"><div class="widget-title"><i class="fa fa-archive"> 归档</i></div><ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">五月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">四月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">二月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">十二月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">十一月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">十月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">九月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">三月 2015</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-you"> 友情链接</i></div><ul></ul><a href="http://www.voyax.me/" title="voya的博客" target="_blank">voya的博客</a></div></div></div></div><a id="totop" href="#top"></a><div id="footer"><div class="footer-info"><p><a href="/baidusitemap.xml">网站地图</a> |  <a href="/atom.xml">订阅</a> |  <a href="/about/">关于</a></p><p>本站总访问量：<i id="busuanzi_container_site_pv"><i id="busuanzi_value_site_pv"></i></i>次</p><p><span> Copyright &copy;<a href="/." rel="nofollow">Ruby.Liu.</a></span><span> Theme by<a rel="nofollow" target="_blank" href="https://github.com/chaooo/hexo-theme-BlueLake"> BlueLake.</a></span><span> Count by<a href="http://busuanzi.ibruce.info/"> busuanzi.</a></span><span> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a></span></p></div></div></div><script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js" async></script><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+</code></pre><p>我们再到这个learngit文件夹中创建一个文件，叫做readme.txt，里面随便写点什么，再用命令<code>git add</code>告诉Git，把文件添加到仓库，最后用命令<code>git commit</code>告诉Git，把文件提交到仓库：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$ git add readme.txt</div><div class="line">$ git commit -m &quot;wrote a readme file&quot;</div><div class="line">[master (root-commit) cb926e7] wrote a readme file</div><div class="line">1 file changed, 2 insertions(+)</div><div class="line">create mode 100644 readme.txt</div></pre></td></tr></table></figure></p>
+<p>解释一下<code>git commit</code>命令，-m后面输入的是本次提交的说明，可以输入任意内容，当然最好是有意义的，这样你就能从历史记录里方便地找到改动记录。你也可以多次用<code>git add</code>命令来添加多个文件，最后再用<code>git commit</code>一次性提交到仓库。</p>
+<p><code>git status</code>可以查看仓库当前的状态，如果你对仓库中文件进行了修改，通过这个命令就可以看到哪个文件被修改了，如果想看具体修改了哪些内容可通过<code>git diff</code>这个命令查看。如我对readme.txt进行了修改，就可以通过<code>git diff readme.txt</code>看到哪些地方被改动过了。</p>
+<h4 id="版本回退"><a href="#版本回退" class="headerlink" title="版本回退"></a>版本回退</h4><p>如果我们不断对文件进行修改，然后不断通过<code>git commit</code>提交修改到版本库里，有时候我们修改错了或者甚至误删了文件，我们都可以从某一次commit进行恢复。我们可以通过<code>git log</code>命令查看历史提交记录。</p>
+<p><code>git log</code>命令显示从最近到最远的提交日志，如果嫌输出信息太多，看得眼花缭乱的，可以试试加上<code>--pretty=oneline</code>参数即<code>git log --pretty=oneline</code>命令。</p>
+<p>我们会看到一大串类似3628164…882e1e0的是commit id（版本号），每一次提交都会生成一个独有的id，只要有这个id我们可以回到任何一个之前提交的版本。</p>
+<p>我们可以使用<code>git reset</code>命令回到以前的版本，但是Git必须知道当前版本是哪个版本，在Git中，用HEAD表示当前版本，也就是最新的提交3628164…882e1e0（注意我的提交ID和你的肯定不一样），上一个版本就是<code>HEAD^</code>，上上一个版本就是<code>HEAD^^</code>，当然往上100个版本写100个<code>^</code>比较容易数不过来，所以写成<code>HEAD~100</code>。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git reset --hard HEAD^</div><div class="line">HEAD is now at ea34578 add distributed</div></pre></td></tr></table></figure></p>
+<p>我们还可以用<code>git log</code>命令看看现在版本库的状态，也可以用<code>git reflog</code>用来记录你的每一次命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$ git reflog</div><div class="line">ea34578 HEAD@&#123;0&#125;: reset: moving to HEAD^</div><div class="line">3628164 HEAD@&#123;1&#125;: commit: append GPL</div><div class="line">ea34578 HEAD@&#123;2&#125;: commit: add distributed</div><div class="line">cb926e7 HEAD@&#123;3&#125;: commit (initial): wrote a readme file</div></pre></td></tr></table></figure></p>
+<p>这样我们就可以用<code>git reset</code>加版本id来恢复到之前的版本了，注意加了一个<code>hard</code>参数：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git reset --hard 3628164</div><div class="line">HEAD is now at 3628164 append GPL</div></pre></td></tr></table></figure></p>
+<h4 id="工作区和暂存区"><a href="#工作区和暂存区" class="headerlink" title="工作区和暂存区"></a>工作区和暂存区</h4><p>git版本库有工作区和暂存区，暂存区作为中间的一个过渡区，可以用<code>git add</code>将工作区的文件添加到暂存区，再用<code>git commit</code>提交到版本库，这个概念比较简单。</p>
+<p>我们也可以用<code>git checkout -- file</code>可以丢弃工作区的修改。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git checkout -- readme.txt</div></pre></td></tr></table></figure></p>
+<p>命令<code>git checkout -- readme.txt</code>意思就是，把<code>readme.txt</code>文件在工作区的修改全部撤销，这里有两种情况：<br>    一种是<code>readme.txt</code>自修改后还没有被放到暂存区，现在，撤销修改就回到和版本库一模一样的状态；<br>    一种是<code>readme.txt</code>已经添加到暂存区后，又作了修改，现在，撤销修改就回到添加到暂存区后的状态。<br>    总之，就是让这个文件回到最近一次<code>git commit</code>或<code>git add</code>时的状态。</p>
+<h4 id="添加到远程库"><a href="#添加到远程库" class="headerlink" title="添加到远程库"></a>添加到远程库</h4><p>每次我们在本地更新版本库后可以通过使用命令<code>git push origin master</code>推送到自己的GitHub远程仓库，也可以用<code>git clone</code>将远程的库克隆到本地。</p>
+<h4 id="分支管理"><a href="#分支管理" class="headerlink" title="分支管理"></a>分支管理</h4><p>我们可以用<code>git checkout -b dev</code>命令创建并切换到dev分支：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git checkout -b dev</div><div class="line">Switched to a new branch &apos;dev&apos;</div></pre></td></tr></table></figure></p>
+<p><code>git checkout</code>命令加上<code>-b</code>参数表示创建并切换，相当于以下两条命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ git branch dev</div><div class="line">$ git checkout dev</div><div class="line">Switched to branch &apos;dev&apos;</div></pre></td></tr></table></figure></p>
+<p>可以用<code>git branch</code>查看当前分支<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ git branch</div><div class="line">* dev</div><div class="line">  master</div></pre></td></tr></table></figure></p>
+<p><code>git branch</code>命令会列出所有分支，当前分支前面会标一个<code>*</code>号。</p>
+<p>我们在新的分支<code>dev</code>上对文件进行修改，切换回master分支后修改内容就不见了，我们需要将分支合并到主分支上，用<code>git merge</code>可以完成：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$ git merge dev</div><div class="line">Updating d17efd8..fec145a</div><div class="line">Fast-forward</div><div class="line">readme.txt |    1 +</div><div class="line">1 file changed, 1 insertion(+)</div></pre></td></tr></table></figure></p>
+<p>注意到上面的<code>Fast-forward</code>信息，Git告诉我们，这次合并是“快进模式”，也就是直接把<code>maste</code>r指向<code>dev</code>的当前提交，所以合并速度非常快。</p>
+<p>当然，也不是每次合并都能<code>Fast-forward</code>，我们后面会讲其他方式的合并。</p>
+<p>合并完成后，就可以放心地删除dev分支了，这里使用<code>git branch -d</code>命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git branch -d dev</div><div class="line">Deleted branch dev (was fec145a).</div></pre></td></tr></table></figure></p>
+<p>当Git无法自动合并分支时，就必须首先解决冲突。解决冲突后，再提交，合并完成。<br>用<code>git log --graph</code>命令可以看到分支合并图。</p>
+</div><div class="tags"></div><div class="post-share"><div class="bdsharebuttonbox"><span style="float:left;line-height: 28px;height: 28px;font-size:16px;font-weight:blod">分享到：</span><a href="#" data-cmd="more" class="bds_more"></a><a href="#" data-cmd="mshare" title="分享到一键分享" class="bds_mshare"></a><a href="#" data-cmd="fbook" title="分享到Facebook" class="bds_fbook"></a><a href="#" data-cmd="twi" title="分享到Twitter" class="bds_twi"></a><a href="#" data-cmd="linkedin" title="分享到linkedin" class="bds_linkedin"></a><a href="#" data-cmd="youdao" title="分享到有道云笔记" class="bds_youdao"></a><a href="#" data-cmd="evernotecn" title="分享到印象笔记" class="bds_evernotecn"></a><a href="#" data-cmd="weixin" title="分享到微信" class="bds_weixin"></a><a href="#" data-cmd="qzone" title="分享到QQ空间" class="bds_qzone"></a><a href="#" data-cmd="tsina" title="分享到新浪微博" class="bds_tsina"></a></div></div><div class="post-nav"><a href="/2017/01/15/e6-80-80-e5-bf-b5-e6-99-b4-e7-a9-ba-e4-b8-87-e9-87-8c/" class="pre">怀念晴空万里</a><a href="/2016/12/03/e9-87-8d-e6-96-b0-e5-ad-a6-e4-b9-a0-e4-b9-8b-e6-97-85/" class="next">重新学习之旅</a></div><div id="comments"><div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div></div></div></div></div><div class="layout-r"><div id="sidebar"><div class="search-pla"></div><div id="toc" class="widget"><div class="widget-title"><i class="fa fa-fei">文章目录</i></div><ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#git学习"><span class="toc-text">git学习</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#创建版本库"><span class="toc-text">创建版本库</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#版本回退"><span class="toc-text">版本回退</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#工作区和暂存区"><span class="toc-text">工作区和暂存区</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#添加到远程库"><span class="toc-text">添加到远程库</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#分支管理"><span class="toc-text">分支管理</span></a></li></ol></div><div class="widget"><div class="widget-title"><i class="fa fa-xie"> 最新文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/06/10/e5-8f-88-e8-a7-81-e5-91-a8-e6-9c-ab/">又见周末</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/06/oracle-e4-b9-8bsql-e5-9f-ba-e7-a1-80-e5-ad-a6-e4-b9-a0-ef-bc-88-e4-b8-89-ef-bc-89/">Oracle之SQL基础学习（三）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/03/oracle-e4-b9-8bsql-e5-9f-ba-e7-a1-80-e5-ad-a6-e4-b9-a0-ef-bc-88-e4-ba-8c-ef-bc-89/">Oracle之SQL基础学习（二）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/29/oracle-e4-b9-8bsql-e5-9f-ba-e7-a1-80-e5-ad-a6-e4-b9-a0-ef-bc-88-e4-b8-80-ef-bc-89/">Oracle之SQL基础学习（一）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/14/e6-b1-89-e5-be-97-e5-9f-b9-e8-ae-ad-e7-9b-b8-e5-85-b3-e9-97-ae-e7-ad-94/">汉得培训相关问答</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/08/e6-83-b3-e7-9d-80-e9-98-b3-e5-85-89/">想着阳光</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/04/09/e5-b0-8f-e8-81-9a-e7-9a-84-e4-b8-80-e5-a4-a9/">小聚的一天</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/30/e5-8a-a0-e7-8f-ad-e7-9a-84-e6-97-a5-e5-ad-90/">加班的日子</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/19/e6-b1-89-e5-be-97-e7-ac-ac-e4-ba-8c-e5-91-a8/">汉得第二周</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/12/e5-88-9d-e8-bf-9b-e6-b1-89-e5-be-97/">初进汉得</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-gui"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Life/">Life</a><span class="category-list-count">19</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/">Study</a><span class="category-list-count">27</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Work/">Work</a><span class="category-list-count">3</span></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-biao"> 标签</i></div><div class="tagcloud"></div></div><div class="widget"><div class="widget-title"><i class="fa fa-archive"> 归档</i></div><ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">五月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">四月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">二月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">十二月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">十一月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">十月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">九月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-you"> 友情链接</i></div><ul></ul><a href="http://www.voyax.me/" title="voya的博客" target="_blank">voya的博客</a></div></div></div></div><a id="totop" href="#top"></a><div id="footer"><div class="footer-info"><p><a href="/baidusitemap.xml">网站地图</a> |  <a href="/atom.xml">订阅</a> |  <a href="/about/">关于</a></p><p>本站总访问量：<i id="busuanzi_container_site_pv"><i id="busuanzi_value_site_pv"></i></i>次</p><p><span> Copyright &copy;<a href="/." rel="nofollow">Ruby.Liu.</a></span><span> Theme by<a rel="nofollow" target="_blank" href="https://github.com/chaooo/hexo-theme-BlueLake"> BlueLake.</a></span><span> Count by<a href="http://busuanzi.ibruce.info/"> busuanzi.</a></span><span> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a></span></p></div></div></div><script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js" async></script><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');

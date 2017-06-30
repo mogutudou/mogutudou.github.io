@@ -20,76 +20,19 @@
 <li>BLOB</li>
 <li>CLOB</li>
 </ul>
-<h3 id="管理表"><a href="#管理表" class="headerlink" title="管理表"></a>管理表</h3><p>创建表：</p>
-<pre><code>create table table_name
-(
-column_name datatype,column_name2 datatpye2……
-);
-`&lt;/pre&gt;
-
-比如我们可以创建一个用户信息表。
-我们先想一下表中应该有的字段以及它们的字段类型：编号（数值型）、用户名（字符型）、密码（字符型或数字型）、邮箱（字符型）、注册时间（日期型）等，所以可以写下如下代码：
-
-&lt;pre&gt;`create table userinfo
-(
-id              number(6,0),
-username        varchar2(20),
-password        varchar2(20),
-email           varchar2(60),
-regdate         date
-);
-`&lt;/pre&gt;
-
-如果要查看刚刚已创建好的表userinfo的表结构，就像之前查看数据字典一样的方法，写下代码`desc userinfo`即可。
-
-修改表：
-修改表的结构，向表中添加字段，可以使用下面的语句：
-
-&lt;pre&gt;`alter table table_name 
-add column_name datatype;
-`&lt;/pre&gt;
-
-比如，我们可以向刚刚创建好的用户信息表userinfo中添加一个备注字段
-
-&lt;pre&gt;`alter table userinfo
-add remarks varchar2(500);
-`&lt;/pre&gt;
-
-更改字段的数据类型：
-
-&lt;pre&gt;`alter table table_name 
-modify column_name datatype;
-`&lt;/pre&gt;
-
-我们可以更改数据类型的长度，或者直接更换数据类型
-
-删除字段
-
-&lt;pre&gt;`alter table table_name 
-drop column column_name;
-`&lt;/pre&gt;
-
-修改字段的名字（字段类型不变）
-
-&lt;pre&gt;`alter table table_name
-rename column column_name to new_column_name;
-`&lt;/pre&gt;
-
-对表进行改名
-
-&lt;pre&gt;`rename table_name to new_table_name;
-`&lt;/pre&gt;
-
-删除表
-1、 对表进行截断（删除表中的全部数据，表依旧存在）
-
-&lt;pre&gt;`truncate table table_name;
-`&lt;/pre&gt;
-
-2、 对表进行删除（将表和表中数据全部一起进行删除）
-
-&lt;pre&gt;`drop table table_name;
-</code></pre></div><div class="tags"></div><div class="post-share"><div class="bdsharebuttonbox"><span style="float:left;line-height: 28px;height: 28px;font-size:16px;font-weight:blod">分享到：</span><a href="#" data-cmd="more" class="bds_more"></a><a href="#" data-cmd="mshare" title="分享到一键分享" class="bds_mshare"></a><a href="#" data-cmd="fbook" title="分享到Facebook" class="bds_fbook"></a><a href="#" data-cmd="twi" title="分享到Twitter" class="bds_twi"></a><a href="#" data-cmd="linkedin" title="分享到linkedin" class="bds_linkedin"></a><a href="#" data-cmd="youdao" title="分享到有道云笔记" class="bds_youdao"></a><a href="#" data-cmd="evernotecn" title="分享到印象笔记" class="bds_evernotecn"></a><a href="#" data-cmd="weixin" title="分享到微信" class="bds_weixin"></a><a href="#" data-cmd="qzone" title="分享到QQ空间" class="bds_qzone"></a><a href="#" data-cmd="tsina" title="分享到新浪微博" class="bds_tsina"></a></div></div><div class="post-nav"><a href="/2017/06/06/oracle-e4-b9-8bsql-e5-9f-ba-e7-a1-80-e5-ad-a6-e4-b9-a0-ef-bc-88-e4-b8-89-ef-bc-89/" class="pre">Oracle之SQL基础学习（三）</a><a href="/2017/05/29/oracle-e4-b9-8bsql-e5-9f-ba-e7-a1-80-e5-ad-a6-e4-b9-a0-ef-bc-88-e4-b8-80-ef-bc-89/" class="next">Oracle之SQL基础学习（一）</a></div><div id="comments"><div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div></div></div></div></div><div class="layout-r hidden_mid_and_down"><div id="sidebar"><div class="widget"><div class="widget-title"><i class="fa fa-xie"> 最新文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/06/10/e5-8f-88-e8-a7-81-e5-91-a8-e6-9c-ab/">又见周末</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/06/oracle-e4-b9-8bsql-e5-9f-ba-e7-a1-80-e5-ad-a6-e4-b9-a0-ef-bc-88-e4-b8-89-ef-bc-89/">Oracle之SQL基础学习（三）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/03/oracle-e4-b9-8bsql-e5-9f-ba-e7-a1-80-e5-ad-a6-e4-b9-a0-ef-bc-88-e4-ba-8c-ef-bc-89/">Oracle之SQL基础学习（二）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/29/oracle-e4-b9-8bsql-e5-9f-ba-e7-a1-80-e5-ad-a6-e4-b9-a0-ef-bc-88-e4-b8-80-ef-bc-89/">Oracle之SQL基础学习（一）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/14/e6-b1-89-e5-be-97-e5-9f-b9-e8-ae-ad-e7-9b-b8-e5-85-b3-e9-97-ae-e7-ad-94/">汉得培训相关问答</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/08/e6-83-b3-e7-9d-80-e9-98-b3-e5-85-89/">想着阳光</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/04/09/e5-b0-8f-e8-81-9a-e7-9a-84-e4-b8-80-e5-a4-a9/">小聚的一天</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/30/e5-8a-a0-e7-8f-ad-e7-9a-84-e6-97-a5-e5-ad-90/">加班的日子</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/19/e6-b1-89-e5-be-97-e7-ac-ac-e4-ba-8c-e5-91-a8/">汉得第二周</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/12/e5-88-9d-e8-bf-9b-e6-b1-89-e5-be-97/">初进汉得</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-gui"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Life/">Life</a><span class="category-list-count">21</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/">Study</a><span class="category-list-count">28</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Work/">Work</a><span class="category-list-count">4</span></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-biao"> 标签</i></div><div class="tagcloud"></div></div><div class="widget"><div class="widget-title"><i class="fa fa-archive"> 归档</i></div><ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">五月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">四月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">二月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">十二月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">十一月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">十月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">九月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">三月 2015</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-you"> 友情链接</i></div><ul></ul><a href="http://www.voyax.me/" title="voya的博客" target="_blank">voya的博客</a></div></div></div></div><a id="totop" href="#top"></a><div id="footer"><div class="footer-info"><p><a href="/baidusitemap.xml">网站地图</a> |  <a href="/atom.xml">订阅</a> |  <a href="/about/">关于</a></p><p>本站总访问量：<i id="busuanzi_container_site_pv"><i id="busuanzi_value_site_pv"></i></i>次</p><p><span> Copyright &copy;<a href="/." rel="nofollow">Ruby.Liu.</a></span><span> Theme by<a rel="nofollow" target="_blank" href="https://github.com/chaooo/hexo-theme-BlueLake"> BlueLake.</a></span><span> Count by<a href="http://busuanzi.ibruce.info/"> busuanzi.</a></span><span> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a></span></p></div></div></div><script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js" async></script><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+<h3 id="管理表"><a href="#管理表" class="headerlink" title="管理表"></a>管理表</h3><p>创建表：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">create table table_name</div><div class="line">(</div><div class="line">column_name datatype,column_name2 datatpye2……</div><div class="line">);</div></pre></td></tr></table></figure></p>
+<p>比如我们可以创建一个用户信息表。<br>我们先想一下表中应该有的字段以及它们的字段类型：编号（数值型）、用户名（字符型）、密码（字符型或数字型）、邮箱（字符型）、注册时间（日期型）等，所以可以写下如下代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">create table userinfo</div><div class="line">(</div><div class="line">id              number(6,0),</div><div class="line">username        varchar2(20),</div><div class="line">password        varchar2(20),</div><div class="line">email           varchar2(60),</div><div class="line">regdate         date</div><div class="line">);</div></pre></td></tr></table></figure></p>
+<p>如果要查看刚刚已创建好的表userinfo的表结构，就像之前查看数据字典一样的方法，写下代码<code>desc userinfo</code>即可。</p>
+<p>修改表：<br>修改表的结构，向表中添加字段，可以使用下面的语句：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">alter table table_name </div><div class="line">add column_name datatype;</div></pre></td></tr></table></figure></p>
+<p>比如，我们可以向刚刚创建好的用户信息表userinfo中添加一个备注字段<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">alter table userinfo</div><div class="line">add remarks varchar2(500);</div></pre></td></tr></table></figure></p>
+<p>更改字段的数据类型：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">alter table table_name </div><div class="line">modify column_name datatype;</div></pre></td></tr></table></figure></p>
+<p>我们可以更改数据类型的长度，或者直接更换数据类型</p>
+<p>删除字段<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">alter table table_name </div><div class="line">drop column column_name;</div></pre></td></tr></table></figure></p>
+<p>修改字段的名字（字段类型不变）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">alter table table_name</div><div class="line">rename column column_name to new_column_name;</div></pre></td></tr></table></figure></p>
+<p>对表进行改名<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">rename table_name to new_table_name;</div></pre></td></tr></table></figure></p>
+<p>删除表<br>1、 对表进行截断（删除表中的全部数据，表依旧存在）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">truncate table table_name;</div></pre></td></tr></table></figure></p>
+<p>2、 对表进行删除（将表和表中数据全部一起进行删除）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">drop table table_name;</div></pre></td></tr></table></figure></p>
+</div><div class="tags"></div><div class="post-share"><div class="bdsharebuttonbox"><span style="float:left;line-height: 28px;height: 28px;font-size:16px;font-weight:blod">分享到：</span><a href="#" data-cmd="more" class="bds_more"></a><a href="#" data-cmd="mshare" title="分享到一键分享" class="bds_mshare"></a><a href="#" data-cmd="fbook" title="分享到Facebook" class="bds_fbook"></a><a href="#" data-cmd="twi" title="分享到Twitter" class="bds_twi"></a><a href="#" data-cmd="linkedin" title="分享到linkedin" class="bds_linkedin"></a><a href="#" data-cmd="youdao" title="分享到有道云笔记" class="bds_youdao"></a><a href="#" data-cmd="evernotecn" title="分享到印象笔记" class="bds_evernotecn"></a><a href="#" data-cmd="weixin" title="分享到微信" class="bds_weixin"></a><a href="#" data-cmd="qzone" title="分享到QQ空间" class="bds_qzone"></a><a href="#" data-cmd="tsina" title="分享到新浪微博" class="bds_tsina"></a></div></div><div class="post-nav"><a href="/2017/06/06/oracle-e4-b9-8bsql-e5-9f-ba-e7-a1-80-e5-ad-a6-e4-b9-a0-ef-bc-88-e4-b8-89-ef-bc-89/" class="pre">Oracle之SQL基础学习（三）</a><a href="/2017/05/29/oracle-e4-b9-8bsql-e5-9f-ba-e7-a1-80-e5-ad-a6-e4-b9-a0-ef-bc-88-e4-b8-80-ef-bc-89/" class="next">Oracle之SQL基础学习（一）</a></div><div id="comments"><div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div></div></div></div></div><div class="layout-r"><div id="sidebar"><div class="search-pla"></div><div id="toc" class="widget"><div class="widget-title"><i class="fa fa-fei">文章目录</i></div><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#表是什么？"><span class="toc-text">表是什么？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#表中的数据类型"><span class="toc-text">表中的数据类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#管理表"><span class="toc-text">管理表</span></a></li></ol></div><div class="widget"><div class="widget-title"><i class="fa fa-xie"> 最新文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/06/10/e5-8f-88-e8-a7-81-e5-91-a8-e6-9c-ab/">又见周末</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/06/oracle-e4-b9-8bsql-e5-9f-ba-e7-a1-80-e5-ad-a6-e4-b9-a0-ef-bc-88-e4-b8-89-ef-bc-89/">Oracle之SQL基础学习（三）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/03/oracle-e4-b9-8bsql-e5-9f-ba-e7-a1-80-e5-ad-a6-e4-b9-a0-ef-bc-88-e4-ba-8c-ef-bc-89/">Oracle之SQL基础学习（二）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/29/oracle-e4-b9-8bsql-e5-9f-ba-e7-a1-80-e5-ad-a6-e4-b9-a0-ef-bc-88-e4-b8-80-ef-bc-89/">Oracle之SQL基础学习（一）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/14/e6-b1-89-e5-be-97-e5-9f-b9-e8-ae-ad-e7-9b-b8-e5-85-b3-e9-97-ae-e7-ad-94/">汉得培训相关问答</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/08/e6-83-b3-e7-9d-80-e9-98-b3-e5-85-89/">想着阳光</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/04/09/e5-b0-8f-e8-81-9a-e7-9a-84-e4-b8-80-e5-a4-a9/">小聚的一天</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/30/e5-8a-a0-e7-8f-ad-e7-9a-84-e6-97-a5-e5-ad-90/">加班的日子</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/19/e6-b1-89-e5-be-97-e7-ac-ac-e4-ba-8c-e5-91-a8/">汉得第二周</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/12/e5-88-9d-e8-bf-9b-e6-b1-89-e5-be-97/">初进汉得</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-gui"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Life/">Life</a><span class="category-list-count">19</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/">Study</a><span class="category-list-count">27</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Work/">Work</a><span class="category-list-count">3</span></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-biao"> 标签</i></div><div class="tagcloud"></div></div><div class="widget"><div class="widget-title"><i class="fa fa-archive"> 归档</i></div><ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">五月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">四月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">二月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">十二月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">十一月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">十月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">九月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-you"> 友情链接</i></div><ul></ul><a href="http://www.voyax.me/" title="voya的博客" target="_blank">voya的博客</a></div></div></div></div><a id="totop" href="#top"></a><div id="footer"><div class="footer-info"><p><a href="/baidusitemap.xml">网站地图</a> |  <a href="/atom.xml">订阅</a> |  <a href="/about/">关于</a></p><p>本站总访问量：<i id="busuanzi_container_site_pv"><i id="busuanzi_value_site_pv"></i></i>次</p><p><span> Copyright &copy;<a href="/." rel="nofollow">Ruby.Liu.</a></span><span> Theme by<a rel="nofollow" target="_blank" href="https://github.com/chaooo/hexo-theme-BlueLake"> BlueLake.</a></span><span> Count by<a href="http://busuanzi.ibruce.info/"> busuanzi.</a></span><span> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a></span></p></div></div></div><script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js" async></script><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
