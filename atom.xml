@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://mogutudou.com/"/>
-  <updated>2017-07-02T05:41:49.000Z</updated>
+  <updated>2017-07-04T15:05:53.000Z</updated>
   <id>http://mogutudou.com/</id>
   
   <author>
@@ -14,6 +14,43 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Oracle之SQL基础学习（四）</title>
+    <link href="http://mogutudou.com/2017/07/03/Oracle%E4%B9%8BSQL%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%EF%BC%88%E5%9B%9B%EF%BC%89/"/>
+    <id>http://mogutudou.com/2017/07/03/Oracle之SQL基础学习（四）/</id>
+    <published>2017-07-03T13:14:37.000Z</published>
+    <updated>2017-07-04T15:05:53.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>接之前Oracle之SQL基础学习（三），今天学习约束相关的知识</p>
+<h2 id="约束的作用"><a href="#约束的作用" class="headerlink" title="约束的作用"></a>约束的作用</h2><p>约束用来定义规则，确保数据完整性（精确性和可靠性）。</p>
+<h2 id="非空约束"><a href="#非空约束" class="headerlink" title="非空约束"></a>非空约束</h2><h3 id="在创建表时设置非空约束"><a href="#在创建表时设置非空约束" class="headerlink" title="在创建表时设置非空约束"></a>在创建表时设置非空约束</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">create table table_name(</div><div class="line">  column_name datatype NOT NULL,……</div><div class="line">);</div></pre></td></tr></table></figure>
+<h3 id="在修改表是添加非空约束"><a href="#在修改表是添加非空约束" class="headerlink" title="在修改表是添加非空约束"></a>在修改表是添加非空约束</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">alter table table_name</div><div class="line">modify column_name datatype NOT NULL;</div></pre></td></tr></table></figure>
+<h3 id="在修改表时去除非空约束"><a href="#在修改表时去除非空约束" class="headerlink" title="在修改表时去除非空约束"></a>在修改表时去除非空约束</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">alter table table_name</div><div class="line">modify column_name datatype NULL;</div></pre></td></tr></table></figure>
+<h2 id="主键约束"><a href="#主键约束" class="headerlink" title="主键约束"></a>主键约束</h2><p>作用：确保表当中每一行数据的唯一性</p>
+<h3 id="在创建表时设置主键约束"><a href="#在创建表时设置主键约束" class="headerlink" title="在创建表时设置主键约束"></a>在创建表时设置主键约束</h3><p>相当于为主键设置了一个非空约束<br>方法一：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">create table table_name(</div><div class="line">  column_name datatype PRIMARY KEY,……</div><div class="line">);</div></pre></td></tr></table></figure></p>
+<p>方法二：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">CONSTRAINT constraint_name </div><div class="line">PRIMARY KEY(column_name1,……)</div></pre></td></tr></table></figure></p>
+<p>比如，我们创建一个用户信息表，把其中的id和password设置为主键约束<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">create table userinfo_p（</div><div class="line">  id number(6,0),</div><div class="line">  username varchar2(20),</div><div class="line">  userpwd varchar2(20),</div><div class="line">  constraint pk_id_username primary key(id,username)</div><div class="line">）;</div></pre></td></tr></table></figure></p>
+<h3 id="在修改表时添加主键约束"><a href="#在修改表时添加主键约束" class="headerlink" title="在修改表时添加主键约束"></a>在修改表时添加主键约束</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">add constraint constraint_name</div><div class="line">primary key(column_name1,……);</div></pre></td></tr></table></figure>
+<p>比如我们向之前创建的用户信息表userinfo中添加id为主键约束：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">alter table userinfo</div><div class="line">add constraint pk_id primary key(id);</div></pre></td></tr></table></figure></p>
+<h3 id="更改约束的名称"><a href="#更改约束的名称" class="headerlink" title="更改约束的名称"></a>更改约束的名称</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">rename constraint old_name to new_name</div></pre></td></tr></table></figure>
+<p>我们来试着更改刚刚userinfo表中约束的名称：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">alter table userinfo</div><div class="line">rename constraint pk_id to new_pk_id;</div></pre></td></tr></table></figure></p>
+<h3 id="删除主键约束"><a href="#删除主键约束" class="headerlink" title="删除主键约束"></a>删除主键约束</h3><p>这条语句跟之前的一样，也是需要放在<code>alter table table_name</code>后面的，这条语句适用于暂时禁用该约束，以后仍可能会重新启用该约束的情况。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">disable/enable constraint constraint_name;</div></pre></td></tr></table></figure></p>
+<p>比如我们来禁用刚刚的new_pk_id这个约束。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">alter table userinfo</div><div class="line">disable constraint new_pk_id;</div></pre></td></tr></table></figure></p>
+<p>如果我们想直接删除该约束可用如下drop语句,同样也是跟在<code>alter table table_name</code>后面<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">drop constraint constraint_name;</div></pre></td></tr></table></figure></p>
+<p>还有一种删除主键约束的方法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">drop primary key[cascade]</div></pre></td></tr></table></figure></p>
+<p>未完待续……</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;接之前Oracle之SQL基础学习（三），今天学习约束相关的知识&lt;/p&gt;
+&lt;h2 id=&quot;约束的作用&quot;&gt;&lt;a href=&quot;#约束的作用&quot; class=&quot;headerlink&quot; title=&quot;约束的作用&quot;&gt;&lt;/a&gt;约束的作用&lt;/h2&gt;&lt;p&gt;约束用来定义规则，确保数据完整性（精
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>又见周末</title>
@@ -687,51 +724,6 @@ Initialized empty Git repository in /Users/michael/learngit/.git/
       <category term="JavaScript" scheme="http://mogutudou.com/tags/JavaScript/"/>
     
       <category term="LeetCode" scheme="http://mogutudou.com/tags/LeetCode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>三行诗</title>
-    <link href="http://mogutudou.com/2016/10/29/e4-b8-89-e8-a1-8c-e8-af-97/"/>
-    <id>http://mogutudou.com/2016/10/29/e4-b8-89-e8-a1-8c-e8-af-97/</id>
-    <published>2016-10-29T13:38:01.000Z</published>
-    <updated>2017-07-02T05:39:18.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>最近重庆交通大学在搞一个三行诗的活动，之前网上也见好多人写过，还挺火。这次也想玩玩，就随便写了一些，有的被朋友拿去投稿了（因为我不是交大的，所以不能参加），其实写的很烂，不过好歹是原创，就贴在下面了。</p>
-<p>一共写了5篇：</p>
-<blockquote>
-<p>大学的铅华已过去<br>  交大的传承却永存我们内心<br>  让这个世界绿树常有，鸟语花香</p>
-</blockquote>
-<p>&nbsp;  </p>
-<blockquote>
-<p>云影掠过<br>  常常<br>  我还是只是一只孤燕！！</p>
-</blockquote>
-<p>&nbsp;  </p>
-<blockquote>
-<p>踏上事业之舟，划动奉献之桨<br>  渡向生命的最远方<br>  再见，交大！</p>
-</blockquote>
-<p>&nbsp;  </p>
-<blockquote>
-<p>大学四年，时光荏苒<br>  也许就在这时候<br>  有人在努力，有人在睡觉，当然也有人在刷怪</p>
-</blockquote>
-<p>&nbsp;  </p>
-<blockquote>
-<p>总是在不知不觉之中才发现家中的爸妈，头上多了些许白发<br>  多想时间可以放慢脚步，或许我还可以有机会<br>  闲坐在紫藤萝下，听村里的老爷爷讲完他过去的故事</p>
-</blockquote>
-<p>大家随便看看，如有引用还请注明出处。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;最近重庆交通大学在搞一个三行诗的活动，之前网上也见好多人写过，还挺火。这次也想玩玩，就随便写了一些，有的被朋友拿去投稿了（因为我不是交大的，所以不能参加），其实写的很烂，不过好歹是原创，就贴在下面了。&lt;/p&gt;
-&lt;p&gt;一共写了5篇：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;大
-    
-    </summary>
-    
-      <category term="Life" scheme="http://mogutudou.com/categories/Life/"/>
-    
     
   </entry>
   
