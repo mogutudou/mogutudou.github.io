@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://mogutudou.com/"/>
-  <updated>2017-07-04T15:05:53.000Z</updated>
+  <updated>2017-07-13T15:28:32.000Z</updated>
   <id>http://mogutudou.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://mogutudou.com/2017/07/03/Oracle%E4%B9%8BSQL%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%EF%BC%88%E5%9B%9B%EF%BC%89/"/>
     <id>http://mogutudou.com/2017/07/03/Oracle之SQL基础学习（四）/</id>
     <published>2017-07-03T13:14:37.000Z</published>
-    <updated>2017-07-04T15:05:53.000Z</updated>
+    <updated>2017-07-13T15:28:32.000Z</updated>
     
     <content type="html"><![CDATA[<p>接之前Oracle之SQL基础学习（三），今天学习约束相关的知识</p>
 <h2 id="约束的作用"><a href="#约束的作用" class="headerlink" title="约束的作用"></a>约束的作用</h2><p>约束用来定义规则，确保数据完整性（精确性和可靠性）。</p>
@@ -39,6 +39,14 @@
 <p>比如我们来禁用刚刚的new_pk_id这个约束。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">alter table userinfo</div><div class="line">disable constraint new_pk_id;</div></pre></td></tr></table></figure></p>
 <p>如果我们想直接删除该约束可用如下drop语句,同样也是跟在<code>alter table table_name</code>后面<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">drop constraint constraint_name;</div></pre></td></tr></table></figure></p>
 <p>还有一种删除主键约束的方法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">drop primary key[cascade]</div></pre></td></tr></table></figure></p>
+<h2 id="外键约束"><a href="#外键约束" class="headerlink" title="外键约束"></a>外键约束</h2><h3 id="在创建表时设置外键约束"><a href="#在创建表时设置外键约束" class="headerlink" title="在创建表时设置外键约束"></a>在创建表时设置外键约束</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">create table table1(</div><div class="line">column_name datatype REFERENCES table2(column_name),</div><div class="line">……);</div></pre></td></tr></table></figure>
+<p>table2为主表，table1为从表。<br>注意：<br>1、设置外键约束时，主表的字段必须是主键<br>2、主从表相应的字段必须是同一数据类型<br>3、从表中外键字段的值必须来自主表中的相应字段的值，或者为null值</p>
+<p>例如，我们先创建一个用户类型表为主表<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">create table typeinfo(</div><div class="line">type_id varchar2(10) primary key,</div><div class="line">type_name varchar2(20));</div></pre></td></tr></table></figure></p>
+<p>现在创建一个从表<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">create table userinfo(</div><div class="line">id varchar2(10) primary key,</div><div class="line">user_name varchar2(20),</div><div class="line">type_id_new varchar2(10) references typeinfo(type_id));</div></pre></td></tr></table></figure></p>
+<p>上面是在列级创建的外键约束，下面我们也可以在表级进行创建外键约束<br>我们会用到这样一个语句：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">constraint constraint_name foreign key(column_name) references table_name(column_name)[on delete cascade]</div></pre></td></tr></table></figure></p>
+<p><code>on delete cascade</code>表示级联删除的意思，就是如果主表当中的一条数据被删除之后，从表中使用了这条数据的字段所在的行也会被一起删除掉，确保了主从表数据的完整性。<br>例如，我们重新创建用户信息表，再通过用表级创建外键约束的方式来进行重新设置。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">create table userinfo_f(</div><div class="line">id varchar2(10) primary key,</div><div class="line">username varchar2(20),</div><div class="line">typeid_new varchar2(10),</div><div class="line">constraint fk_typeid_new foreign key(typeid_new) references typeinfo(type_id));</div></pre></td></tr></table></figure></p>
+<p>上面并没有在后面添加级联删除<code>on delete cascade</code></p>
+<h3 id="在修改表时添加外键约束"><a href="#在修改表时添加外键约束" class="headerlink" title="在修改表时添加外键约束"></a>在修改表时添加外键约束</h3><p>这个跟之前在修改表时添加主键约束的用法类似，也是放在<code>alter table table_name</code>后面，语句如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">add constraint constraint_name foreign key(column_name)references </div><div class="line">table_name(column_name)[on delete cascade]</div></pre></td></tr></table></figure></p>
 <p>未完待续……</p>
 ]]></content>
     
