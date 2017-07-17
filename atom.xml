@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://mogutudou.com/"/>
-  <updated>2017-07-13T15:28:32.000Z</updated>
+  <updated>2017-07-17T15:31:17.000Z</updated>
   <id>http://mogutudou.com/</id>
   
   <author>
@@ -16,11 +16,56 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Oracle之SQL基础学习（五）</title>
+    <link href="http://mogutudou.com/2017/07/17/Oracle%E4%B9%8BSQL%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%BA%94%EF%BC%89/"/>
+    <id>http://mogutudou.com/2017/07/17/Oracle之SQL基础学习（五）/</id>
+    <published>2017-07-17T12:49:34.000Z</published>
+    <updated>2017-07-17T15:31:17.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>接之前的Oracle之SQL基础学习（四），今天学习查询相关的知识。查询应该是我们用的最频繁的一个操作了，所以一定要熟练掌握。</p>
+<h2 id="基本查询语句"><a href="#基本查询语句" class="headerlink" title="基本查询语句"></a>基本查询语句</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">select [distinct] column_name1,column_name2……|* </div><div class="line">from table_name</div><div class="line">where [conditions]</div></pre></td></tr></table></figure>
+<p><code>distinct</code>表示去除重复的值，*号表示查询所有字段。</p>
+<h2 id="运算符和表达式"><a href="#运算符和表达式" class="headerlink" title="运算符和表达式"></a>运算符和表达式</h2><ul>
+<li>算术运算符（+,-,*,/）</li>
+<li>比较运算符（&gt;,&gt;=,&lt;,&lt;=,=,&lt;&gt;）</li>
+<li>逻辑运算符（and,or,not）</li>
+</ul>
+<p><img src="http://osejvh91x.bkt.clouddn.com/WechatIMG72.jpeg" alt="模糊查询2"></p>
+<p>在where的条件语句中，比较运算符的优先级大于逻辑运算符，逻辑运算符的优先级为 not &gt; and &gt; or ，也可以在条件语句中加上小括号来辅助理解。</p>
+<p>在select语句中使用运算符，注意在查询语句中使用算术运算符对查询结果进行运算并不会影响表中原有的数据，如需影响表中的数据，可以使用之前学的update语句对表中数据进行更改。</p>
+<h2 id="带条件的查询"><a href="#带条件的查询" class="headerlink" title="带条件的查询"></a>带条件的查询</h2><p>带条件的查询就是在查询语句后面加上<code>where</code>语句，之前也有提到过，现在再大概的讲一下。<br>where语句后面的条件基本上都是用比较运算符连接的表达式。</p>
+<ul>
+<li>单一条件的查询</li>
+<li>多条件的查询<br>条件语句中使用多个比较运算符和多个逻辑运算符，可以达到一个复杂的查询条件，以查找到自己最终需要的目标内容。</li>
+</ul>
+<h2 id="模糊查询"><a href="#模糊查询" class="headerlink" title="模糊查询"></a>模糊查询</h2><p>模糊查询使用的是<code>like</code>关键字，也可以将它规划到比较运算符中。</p>
+<h3 id="通配符的使用（-）"><a href="#通配符的使用（-）" class="headerlink" title="通配符的使用（_,%）"></a>通配符的使用（_,%）</h3><p>一个<code>_</code>只能代表一个字符<br><code>%</code>可以代表0到多个任意字符<br><img src="http://osejvh91x.bkt.clouddn.com/WechatIMG73.jpeg" alt="模糊查询1"></p>
+<h2 id="范围查询"><a href="#范围查询" class="headerlink" title="范围查询"></a>范围查询</h2><p>可以使用<code>between …… and</code>来进行范围查询，注意它是一个闭合区间，它包含两头的值。<br>也可以使用<code>in/not in</code>来进行查询<br><img src="http://osejvh91x.bkt.clouddn.com/%E8%8C%83%E5%9B%B4%E6%9F%A5%E8%AF%A2.jpeg" alt="范围查询1"><br><img src="http://osejvh91x.bkt.clouddn.com/WechatIMG75.jpeg" alt="范围查询2"></p>
+<p>未完待续……</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;接之前的Oracle之SQL基础学习（四），今天学习查询相关的知识。查询应该是我们用的最频繁的一个操作了，所以一定要熟练掌握。&lt;/p&gt;
+&lt;h2 id=&quot;基本查询语句&quot;&gt;&lt;a href=&quot;#基本查询语句&quot; class=&quot;headerlink&quot; title=&quot;基本查询语句&quot;&gt;&lt;
+    
+    </summary>
+    
+      <category term="Study" scheme="http://mogutudou.com/categories/Study/"/>
+    
+    
+      <category term="Oracle" scheme="http://mogutudou.com/tags/Oracle/"/>
+    
+      <category term="SQL" scheme="http://mogutudou.com/tags/SQL/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Oracle之SQL基础学习（四）</title>
     <link href="http://mogutudou.com/2017/07/03/Oracle%E4%B9%8BSQL%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%EF%BC%88%E5%9B%9B%EF%BC%89/"/>
     <id>http://mogutudou.com/2017/07/03/Oracle之SQL基础学习（四）/</id>
     <published>2017-07-03T13:14:37.000Z</published>
-    <updated>2017-07-13T15:28:32.000Z</updated>
+    <updated>2017-07-17T12:51:24.000Z</updated>
     
     <content type="html"><![CDATA[<p>接之前Oracle之SQL基础学习（三），今天学习约束相关的知识</p>
 <h2 id="约束的作用"><a href="#约束的作用" class="headerlink" title="约束的作用"></a>约束的作用</h2><p>约束用来定义规则，确保数据完整性（精确性和可靠性）。</p>
@@ -57,6 +102,12 @@
     
     </summary>
     
+      <category term="Study" scheme="http://mogutudou.com/categories/Study/"/>
+    
+    
+      <category term="Oracle" scheme="http://mogutudou.com/tags/Oracle/"/>
+    
+      <category term="SQL" scheme="http://mogutudou.com/tags/SQL/"/>
     
   </entry>
   
@@ -694,44 +745,6 @@ Initialized empty Git repository in /Users/michael/learngit/.git/
     
     
       <category term="杂谈" scheme="http://mogutudou.com/tags/%E6%9D%82%E8%B0%88/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>LeetCode题目——ugly number</title>
-    <link href="http://mogutudou.com/2016/10/31/leetcode-e9-a2-98-e7-9b-ae-ugly-number/"/>
-    <id>http://mogutudou.com/2016/10/31/leetcode-e9-a2-98-e7-9b-ae-ugly-number/</id>
-    <published>2016-10-31T15:16:02.000Z</published>
-    <updated>2017-07-02T05:58:14.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>写一个函数判断一个数是不是“丑陋的数字”，丑陋的数字是约数只有2，3，5的数字，比如6，8是丑陋的数字，14就不是，因为它还有约数7。<br>用 javascript 写如下：</p>
-<pre><code>var isUgly = function(num) {
-    if(num &amp;lt;= 0) return false;
-    if(num === 1 || num === 2 || num === 3 || num===5) return true;
-    if(num%2 === 0){
-        return isUgly(num/2);
-    }else if(num%3 === 0){
-        return isUgly(num/3);
-    }else if(num%5 === 0){
-        return isUgly(num/5);
-    }else return false;
-};
-</code></pre>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;写一个函数判断一个数是不是“丑陋的数字”，丑陋的数字是约数只有2，3，5的数字，比如6，8是丑陋的数字，14就不是，因为它还有约数7。&lt;br&gt;用 javascript 写如下：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;var isUgly = function(num) {
-    
-    
-    </summary>
-    
-      <category term="Study" scheme="http://mogutudou.com/categories/Study/"/>
-    
-    
-      <category term="JavaScript" scheme="http://mogutudou.com/tags/JavaScript/"/>
-    
-      <category term="LeetCode" scheme="http://mogutudou.com/tags/LeetCode/"/>
     
   </entry>
   
