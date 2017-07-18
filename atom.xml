@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://mogutudou.com/"/>
-  <updated>2017-07-17T15:31:17.000Z</updated>
+  <updated>2017-07-18T16:16:00.000Z</updated>
   <id>http://mogutudou.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://mogutudou.com/2017/07/17/Oracle%E4%B9%8BSQL%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%BA%94%EF%BC%89/"/>
     <id>http://mogutudou.com/2017/07/17/Oracle之SQL基础学习（五）/</id>
     <published>2017-07-17T12:49:34.000Z</published>
-    <updated>2017-07-17T15:31:17.000Z</updated>
+    <updated>2017-07-18T16:16:00.000Z</updated>
     
     <content type="html"><![CDATA[<p>接之前的Oracle之SQL基础学习（四），今天学习查询相关的知识。查询应该是我们用的最频繁的一个操作了，所以一定要熟练掌握。</p>
 <h2 id="基本查询语句"><a href="#基本查询语句" class="headerlink" title="基本查询语句"></a>基本查询语句</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">select [distinct] column_name1,column_name2……|* </div><div class="line">from table_name</div><div class="line">where [conditions]</div></pre></td></tr></table></figure>
@@ -39,8 +39,11 @@
 <li>多条件的查询<br>条件语句中使用多个比较运算符和多个逻辑运算符，可以达到一个复杂的查询条件，以查找到自己最终需要的目标内容。</li>
 </ul>
 <h2 id="模糊查询"><a href="#模糊查询" class="headerlink" title="模糊查询"></a>模糊查询</h2><p>模糊查询使用的是<code>like</code>关键字，也可以将它规划到比较运算符中。</p>
-<h3 id="通配符的使用（-）"><a href="#通配符的使用（-）" class="headerlink" title="通配符的使用（_,%）"></a>通配符的使用（_,%）</h3><p>一个<code>_</code>只能代表一个字符<br><code>%</code>可以代表0到多个任意字符<br><img src="http://osejvh91x.bkt.clouddn.com/WechatIMG73.jpeg" alt="模糊查询1"></p>
+<p>通配符的使用（_,%）：</p>
+<p>一个<code>_</code>只能代表一个字符<br><code>%</code>可以代表0到多个任意字符<br><img src="http://osejvh91x.bkt.clouddn.com/WechatIMG73.jpeg" alt="模糊查询1"></p>
 <h2 id="范围查询"><a href="#范围查询" class="headerlink" title="范围查询"></a>范围查询</h2><p>可以使用<code>between …… and</code>来进行范围查询，注意它是一个闭合区间，它包含两头的值。<br>也可以使用<code>in/not in</code>来进行查询<br><img src="http://osejvh91x.bkt.clouddn.com/%E8%8C%83%E5%9B%B4%E6%9F%A5%E8%AF%A2.jpeg" alt="范围查询1"><br><img src="http://osejvh91x.bkt.clouddn.com/WechatIMG75.jpeg" alt="范围查询2"></p>
+<h2 id="对查询结果进行排序"><a href="#对查询结果进行排序" class="headerlink" title="对查询结果进行排序"></a>对查询结果进行排序</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">select …… from …… [where …… ]</div><div class="line">order by column1 desc/asc,……</div></pre></td></tr></table></figure>
+<p>其中<code>desc</code>表示降序排序，<code>asc</code>表示升序排序</p>
 <p>未完待续……</p>
 ]]></content>
     
